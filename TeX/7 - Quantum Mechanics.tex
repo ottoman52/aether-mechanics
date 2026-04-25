@@ -1,0 +1,2214 @@
+﻿\documentclass[12pt,letterpaper]{article}
+
+% ---- Packages ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}  % Times New Roman text + math (replaces mathptmx)
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\externaldocument{1 - General Overview}
+\externaldocument{3 - Gravity}
+\externaldocument{4 - Magnetic and Electric Fields}
+\externaldocument{5 - Strong and Weak Forces}
+\usepackage{microtype}
+\usepackage{booktabs}
+
+% ---- Section formatting ----
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ---- Spacing ----
+\setstretch{1.15}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% ---- Custom commands ----
+\newcommand{\rhoa}{\rho_{\!A}}
+\newcommand{\Ka}{K_{\!A}}
+\newcommand{\vin}{v_{\mathrm{in}}}
+\newcommand{\rs}{r_s}
+% \hbar is already defined in LaTeX; no redefinition needed
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Unifying Theory of Dynamic Aether Mechanics:\\
+Quantum Mechanics}\\[1em]
+{\large Erik Otto}
+\end{center}
+
+\vspace{1em}
+
+\begin{abstract}
+Within the Dynamic Aether Mechanics framework, quantum phenomena emerge from
+the properties of a quantum superfluid with a logarithmic equation of state.  This
+paper derives wave--particle duality from extended condensate excitations (photons
+as spin-wave modes of the spinor condensate, with Derrick's theorem forbidding
+stable localized particles in free space) that condense near matter via the Dynamic
+Casimir Effect.  Energy quantization arises from angular phase-matching conditions
+in the atomic resonant cavity formed by the nuclear flow gradient, reproducing
+the hydrogen energy levels $E_n = -13.6/n^2$~eV and all spectral series.  The Pauli
+exclusion principle follows from topological vortex interactions: same-circulation
+vortices cannot share a spatial mode because their superposed velocity fields
+carry divergent energy.  The Schr\"odinger equation is recovered via the Madelung
+inverse construction with Wallstrom's topological quantization condition resolved
+by the quantized circulation of the medium.  The electron is identified as a
+quantized vortex ring with mass determined by $m_e c^2 = \tfrac{1}{2}\rho_A
+\kappa_e^2 r_{\mathrm{loop}} [\ln(8r_{\mathrm{loop}}/\xi) - \tfrac{1}{2}]$.
+\end{abstract}
+
+\vspace{1em}
+
+\bigskip
+\noindent\textit{This paper is part of a series presenting the Unifying Theory of
+Dynamic Aether Mechanics.  For the foundational concepts of Aether binding,
+the three independent properties (density, pressure, temperature), and the
+unification of force constants, see Paper~1: General Overview \cite{otto-overview}.}
+\bigskip
+
+\section{Wave--Particle Duality}
+% ============================================================
+
+\subsection{Photons as Spin-Wave Excitations of the Condensate}
+
+The quantum superfluid framework developed in Section~\ref{sec:qss} establishes
+the Aether as a spinor condensate with order parameter
+$\Psi = (\psi_\uparrow, \psi_\downarrow)$.\ This spinor structure supports
+spin-wave excitations: modes in which the two components oscillate in
+antiphase ($\delta\psi_\uparrow = -\delta\psi_\downarrow$), modulating the
+local spin orientation of the condensate without changing the total density.\
+Photons are identified with these spin-wave modes.\ At macroscopic wavelengths
+(all observable light), spin-orbit coupling produces effective mass currents
+from the spin oscillation, making the photon indistinguishable from a
+first-sound perturbation; the effective propagation speed is therefore the
+two-fluid first-sound speed $c_1$ (Paper~6~\cite{otto-cosmology},
+Section~5.1), which is relevant for dark matter lensing consistency.
+
+Two transverse polarization states arise because the spin-wave mode carries a
+vector degree of freedom: the direction of the spinor oscillation in the internal
+$(\psi_\uparrow, \psi_\downarrow)$ space.\ This direction projects onto two
+independent components, corresponding to the two physical polarizations of light.\
+In laboratory spinor BECs, these spin-wave excitations are well-studied and
+propagate as gapless Goldstone modes when the system has continuous spin-rotation
+symmetry \cite{stamper-kurn2013}.
+
+The spatial transversality of these modes---the requirement that the oscillation
+direction is perpendicular to the propagation direction---follows from spin-orbit
+coupling in the condensate.\ In superfluid helium-3 (the A-phase), Volovik showed
+that spin-orbit locking ties the internal spinor direction to the spatial orientation
+of the order parameter, producing emergent transverse gauge bosons from the condensate's
+Goldstone modes \cite{volovik2003}.\ The same mechanism applies here: the Aether
+condensate's spinor structure, combined with the spin-orbit interaction that relates
+the internal spin direction to the spatial wave vector, ensures that the spin-wave
+excitations are transverse.
+
+The spin-wave dispersion relation is $\omega = c\,k$---exactly non-dispersive: all
+frequencies travel at the same speed $c$.\ This is confirmed to extraordinary
+precision by the Fermi LAT gamma-ray timing constraints, which constrain
+Lorentz-violating photon dispersion to energy scales above
+$7.6\,E_{\mathrm{Planck}}$ \cite{vasileiou2013}.\ Since photons propagate in the
+spin-wave channel, this constrains the \emph{spin} healing length $\xi_s \ll \xi$,
+consistent with the spin-wave channel being vastly stiffer than the density channel
+(Section~\ref{sec:strong-constraints}).
+
+The contrast with gluons is instructive.\ Photons propagate through \emph{unbound}
+Aether, whose response is confirmed to be perfectly linear (Hookean) to $10^{-8}$
+precision \cite{reinhardt2007}.\ Gluons are excitations of \emph{compressed} bridge
+material---a dense condensate strand whose nonlinear properties produce the
+self-interactions that distinguish the strong force from electromagnetism.\ The
+distinction is one of medium: the linear bulk condensate versus the nonlinear
+compressed strand.
+
+\textbf{Connection to the flow-vector description.}\quad
+Paper~4~\cite{otto-em} describes the electric field as the Aether ``flow vector''
+and the magnetic field as its vorticity---a macroscopic velocity-field picture.\
+This is not in conflict with the spin-wave identification.\ In superfluid
+helium-3, Volovik \cite{volovik2003} showed that spin-wave Goldstone modes,
+through spin-orbit coupling, produce effective mass currents indistinguishable
+from velocity-field perturbations at macroscopic scales.\ The same mechanism
+applies here: the internal spinor oscillation (the microscopic reality) couples
+to the spatial velocity field through spin-orbit locking, producing the flow
+patterns that Paper~4 describes as the electric and magnetic fields.\ The
+``flow vector'' is the macroscopic effective description of what is
+microscopically a spin-wave excitation; in the bound-state picture of
+Paper~4, this flow vector is the instantaneous displacement of the coherent
+axial-oscillation wave field of a charged particle's bound core ring---a
+localized, standing-wave form of the same fundamental spin-wave degree of
+freedom that propagates as free electromagnetic radiation.
+
+A quantitative derivation showing that the spin-wave dispersion relation reproduces
+Maxwell's equations in full---including the transversality condition
+$\mathbf{k} \cdot \mathbf{E} = 0$ and the absence of a longitudinal photon---requires
+specifying the spin-orbit coupling Hamiltonian of the Aether condensate and remains
+an open calculation.
+
+
+\subsection{Why Photons Cannot Be Localized Particles in Free Space}
+
+The Derrick scaling analysis (Section~\ref{sec:derrick}) proves that no stable, localized
+three-dimensional field configuration exists in the logarithmic condensate.\ Under uniform
+rescaling $\psi(\mathbf{r}) \to \psi(\mathbf{r}/L)$, the energy of any localized
+perturbation scales as $E(L) = AL + BL^3$ with $A, B > 0$.\ Since this is monotonically
+increasing, the configuration always lowers its energy by shrinking to zero size---there
+is no stable soliton.
+
+This result is a \emph{feature}, not a limitation.\ It explains why photons propagate as
+extended waves rather than as compact particles: the unbound Aether simply does not support
+stable localized excitations.\ A ``photon particle'' in free space would be an unstable
+configuration that immediately disperses back into a wave.\ Stable localized structures
+(electrons, quarks) require a different topological mechanism---quantized circulation---which
+photons lack because they carry no topological charge.
+
+\subsection{Energy Quantization: $E = h\nu$}
+
+The condensate obeys bosonic commutation relations
+$[\hat{a}, \hat{a}^\dagger] = 1$ (Section~\ref{sec:qss}), permitting unlimited occupation
+of each mode but requiring that each mode's energy comes in discrete quanta.\ The quantum
+of action $h$ that sets the vortex circulation quantum $\kappa_0 = h/m_A$ also sets the
+minimum energy per wave mode: $E = h\nu$.\ Energy quantization of light is not an
+independent postulate---it follows from the same quantum structure of the medium that
+produces circulation quantization and the Pauli exclusion principle.
+
+\subsection{Wave-to-Particle Transition Near Matter}
+\label{sec:wave-to-particle}
+
+If photons cannot exist as stable particles in free space, what happens when light is
+detected?\ Every atom generates a near-field coherent axial-oscillation wave field
+around its nucleus (its electric field;
+Section~\ref{sec:electric-field}~\cite{otto-em}), whose time-averaged pressure envelope
+creates a velocity gradient that is strongest near the nucleus.\ When a propagating wave
+enters this strong-gradient environment:
+%
+\begin{enumerate}[leftmargin=2em]
+  \item The pressure-gradient refracts the wave inward, compressing it spatially---analogous
+    to how sound is bent and concentrated by wind shear in the atmosphere.
+  \item The local energy density increases as the same wave energy is concentrated into a
+    smaller volume.
+  \item The rapidly moving vortex boundaries of atomic electrons provide the conditions for
+    the Dynamic Casimir Effect: fluctuations in the wave are amplified at the oscillating
+    boundary, facilitating the conversion of distributed wave energy into a localized
+    excitation.
+\end{enumerate}
+%
+Detection is therefore a physical process: the wave condenses into a localized energy
+deposit at a specific atom.\ This is not a ``wavefunction collapse'' requiring an
+external postulate---it is the natural behavior of a spin-wave excitation entering a
+strong-gradient region bounded by oscillating vortex structures.\ (The Derrick analysis
+of Section~\ref{sec:derrick} applies to the \emph{uniform} condensate; the atomic
+environment's steep pressure gradient and oscillating vortex boundaries modify the
+energy functional, enabling localized energy transfer that is forbidden in free space.)
+
+\subsection{The Double-Slit Experiment and Its Variants}
+
+The double-slit experiment is resolved without invoking complementarity or
+observer-dependent collapse.\ Between source and screen, the photon is a
+spin-wave excitation obeying exact superposition---it passes through both
+slits and interferes with itself, identically to any classical wave in a
+linear medium.\ At the screen, each atom's strong-inflow environment condenses
+the wave energy into a localized detection event (probability $\propto$
+$|\psi|^2$), building up the interference pattern one event at a time.\
+Which-path detection destroys the pattern not because ``observation collapses
+the wave'' but because the detector's vortex-boundary interactions extract
+energy and disrupt phase coherence.
+
+This framework naturally accommodates all major variants: single-photon
+interference \cite{taylor1909,grangier1986} (each excitation interferes with
+itself); massive-particle interference up to 25{,}000~amu molecules
+\cite{fein2019} (all particles are condensate excitations with de~Broglie
+wavelength $\lambda = h/(mv)$); Wheeler's delayed-choice experiment
+\cite{wheeler1978,jacques2007} (the wave always propagates through both
+arms---no retrocausality, just delayed boundary conditions);
+interaction-free measurement \cite{elitzurvaidman1993,kwiat1995} (absence
+of a wave component eliminates destructive interference); and the continuous
+$V^2 + D^2 \leq 1$ complementarity tradeoff \cite{englert1996} (partial
+scattering proportionally disrupts phase coherence).\ Decoherence of large
+molecules follows from thermal photon emission carrying which-path
+information, with no fundamental cutoff.
+
+
+\subsection{Entanglement-Dependent Experiments}
+
+Two further double-slit variants---the quantum eraser and the delayed-choice
+quantum eraser---involve entangled particle pairs.\ Their explanation within the
+Aether framework draws on the non-separability of correlated condensate
+excitations (Section~\ref{sec:entanglement-binding}): because both members of an
+entangled pair are topologically bound features of a single quantum condensate,
+their joint state cannot be factored into independent descriptions.\ The
+experimental results follow naturally from this wave-based picture.
+
+\textbf{The quantum eraser} (Scully and Dr\"uhl 1982 \cite{scullydruhl1982}).\ Photons
+passing through a double slit are tagged with which-path information by coupling
+each path to an orthogonal polarization state (or an auxiliary quantum system).\
+With the tags intact, no interference is observed---orthogonal Aether wave modes
+do not superpose.\ However, a subsequent measurement that projects the tagging
+system onto a basis that mixes the two tags (``erasing'' the which-path
+information) restores interference in the corresponding sub-ensemble.\ In the
+Aether model, the tagged waves are spin-wave modes with orthogonal
+polarization structures (distinct patterns of the spinor order parameter).\ Orthogonal modes do not interfere, just as orthogonally polarized classical
+waves produce no fringe pattern.\ The eraser measurement reprojects the wave
+onto a shared polarization basis, recovering the coherence needed for
+interference in that subset of events.\ The total pattern (summed over all
+tagging outcomes) never shows fringes, because the fringe and anti-fringe
+sub-ensembles cancel exactly.
+
+\textbf{The delayed-choice quantum eraser} (Kim et~al.\ 2000
+\cite{kim2000}).\ Entangled photon pairs are produced via spontaneous parametric
+down-conversion.\ The ``signal'' photon passes through a double slit and is
+detected at a screen; the ``idler'' photon travels a longer path to one of
+several detectors.\ Depending on which detector registers the idler, the
+which-path information is either preserved or erased.\ The idler detection
+can occur \emph{after} the signal photon has already been recorded.
+
+The total signal-photon pattern shows no interference---it is featureless.\
+But when the data is sorted by idler outcome, the sub-ensemble whose idlers
+reached the erasure detectors reveals interference fringes (and anti-fringes),
+while the sub-ensemble whose idlers reached the which-path detectors shows
+none.
+
+In the Aether framework, the entangled pair originates as two correlated
+spin-wave excitations produced simultaneously in the down-conversion process.\
+The correlations---encoded in the joint polarization and phase structure of
+the two waves---are established at the source, not imposed retroactively by
+measurement.\ The signal wave at the screen carries these correlations as
+substructure that is invisible in the total intensity pattern but becomes
+apparent when the data is sorted by the idler's outcome.\ The idler
+measurement does not \emph{change} what happened to the signal; it
+\emph{sorts} the signal events into pre-existing correlated sub-ensembles.\
+No faster-than-light influence is required, and no retrocausality is invoked.
+
+\subsubsection{Entanglement as Condensate Non-Separability}
+
+\label{sec:entanglement-binding}
+The preceding explanations of the quantum eraser and delayed-choice quantum eraser
+rest on the claim that correlated wave pairs maintain a joint quantum state that
+cannot be factored into independent single-wave descriptions.\ Within the Aether
+framework, this non-separability is not an additional postulate---it follows
+directly from the binding principle established in Section~\ref{sec:core-binding}.
+
+The core axiom of the theory is that all matter and radiation are excitations of a
+single quantum superfluid condensate described by a spinor order parameter
+$\Psi = (\psi_\uparrow, \psi_\downarrow)$.\ Particles are not objects placed
+\emph{in} the Aether; they are topological deformations \emph{of} it---vortex
+rings, compression solitons, and bridge structures that cannot be separated from
+the condensate.\ This binding is what gives them mass, confinement, and stability.
+
+The same binding principle that explains confinement also addresses entanglement.\
+When two correlated excitations are produced---for example, a photon pair from
+spontaneous parametric down-conversion, or a particle--antiparticle pair from
+vacuum fluctuations---they are not two independent objects that happen to share
+information.\ They are two correlated features of a single quantum field that were
+never separate to begin with.\ The condensate's wavefunction is one state, not two,
+and the correlations between excitations are encoded in that global state from the
+moment of creation.
+
+\textbf{Why this resolves the Bell inequality challenge.}\ Bell's theorem
+\cite{bell1964} proves that no theory based on \emph{local hidden variables} can
+reproduce the correlations predicted by quantum mechanics.\ The key assumption in
+Bell's proof is \emph{separability}: that the joint probability of outcomes at two
+detectors factors into independent probabilities, each depending only on its local
+hidden variable and the local detector setting.\ A classical fluid with
+pre-determined wave properties would satisfy this assumption and would therefore
+obey Bell's inequality.
+
+The Aether condensate is not a classical fluid.\ It is a quantum superfluid whose
+excitations obey bosonic commutation relations $[\hat{a}, \hat{a}^\dagger] = 1$
+(Section~\ref{sec:qss}).\ Two correlated excitations of this condensate share a
+joint quantum state that does not factor into independent local descriptions---the
+separability assumption fails.\ This is not a signal propagating between the
+excitations, nor a hidden variable carried by each; it is the irreducible quantum
+coherence of the medium itself.
+
+\textbf{BEC pair production as a direct analogue.}\ This mechanism is not
+speculative---it is observed in laboratory Bose--Einstein condensates.\
+Bogoliubov excitations of a BEC naturally arise in correlated momentum pairs
+$(k, -k)$ that are entangled by construction \cite{steinhauer2016}.\ These pairs
+violate classical correlation bounds precisely because they are excitations of
+a single quantum field, not independent classical objects.\ In the Aether
+framework, photon pair production (SPDC) is the cosmological-scale analogue of
+Bogoliubov pair production: the same quantum statistics that produce entangled
+phonon pairs in a laboratory BEC produce entangled photon pairs in the Aether
+condensate.
+
+\textbf{No-signaling is automatic.}\ Because the total detection pattern at either
+detector is completely featureless without post-selection---the marginal
+distribution at each detector is uniform regardless of what happens at the
+other---no information is transmitted faster than light.\ The non-local
+correlations are only revealed when results from both detectors are compared after
+the fact.\ This is consistent with the theory's requirement that all causal
+influences propagate at or below the local speed of sound $c_s = \sqrt{\Ka/\rhoa}$ (which equals $c$ at ambient density).
+
+The Aether framework thus provides a physical picture of entanglement: it is the
+quantum coherence of the condensate ground state, inherited by excitation pairs
+through the binding that ties all matter and radiation to the same underlying
+field.\ The same mechanism that confines quarks inside protons (topological binding
+to the condensate) also explains why entangled photons violate Bell inequalities
+(they are correlated excitations of the quantum field they are bound to).\ A formal
+derivation showing that the condensate's field operators produce exactly the
+Bell-violating correlations predicted by quantum mechanics remains an important
+goal for future work.
+
+
+\subsection{The Photoelectric Effect}
+
+The photoelectric effect ($E = h\nu$, threshold at the work function) is
+retained with one change in physical picture: the incoming spin-wave
+excitation condenses into a localized quantum at a single surface atom
+through the DCE mechanism described in Section~\ref{sec:wave-to-particle}.\ The instantaneous
+response follows because the wave energy is already distributed across
+the surface---condensation occurs on atomic timescales, not classical
+accumulation timescales.
+
+
+
+% ============================================================
+\section{Energy Quantization and Atomic Spectra}
+% ============================================================
+
+The preceding sections establish that the Aether is a physical medium with density
+$\rhoa$, bulk modulus $\Ka$, and a wave speed $c = \sqrt{\Ka/\rhoa}$ that is constant
+in the free medium.\ The electric field is the coherent axial-oscillation wave field
+of the bound core ring (Paper~4~\cite{otto-em}), and every atom generates a structured
+near-field pressure environment through the nucleus's wave emission.\ A natural
+question follows: if the Aether is a real medium that supports waves, and if atoms
+create structured near-field environments in this medium, then atoms should function
+as resonant cavities---and their energy levels should be discrete for the same reason
+that a vibrating drumhead or an organ pipe supports only certain frequencies.
+
+This section develops that connection.
+
+\subsection{The Atomic Resonant Cavity}
+
+Every nucleus generates a near-field coherent axial-oscillation wave field (its
+electric field), whose time-averaged pressure envelope creates a velocity gradient
+that is strongest near the nucleus and weakens with distance.\ This velocity gradient
+constitutes a refractive environment: waves propagating tangentially are refracted
+inward by the near-field pressure-gradient shear, analogous to how sound is bent by
+wind gradients in the atmosphere.
+
+An electron in this framework is a permanent Aether binding---a spinning vortex that is
+itself a wave-like disturbance in the medium.\ When an electron is bound to a nucleus,
+its wave structure must be self-consistent within the density environment created by the
+nucleus.\ Specifically, the electron's wave must satisfy two conditions:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Angular phase matching.}\ After propagating around one complete orbit, the
+    wave must return to the same phase---it must constructively interfere with itself.\
+    If it does not, destructive interference eliminates the mode.\ This requires an integer
+    number of wavelengths around the orbital path:
+    %
+    \begin{equation}
+      n\lambda = 2\pi r
+    \end{equation}
+    %
+    where $n$ is a positive integer and $\lambda$ is the de~Broglie wavelength of the
+    electron in the Aether medium.\ This is identical to the condition that selects
+    resonant modes on a vibrating ring or in a whispering gallery: the wave must
+    close on itself.
+
+  \item \textbf{Radial confinement.}\ The near-field pressure gradient creates an effective
+    boundary.\ Near the nucleus, the strong gradient refracts the electron wave inward---confined.\
+    At large distances, the near-field wave envelope weakens and the confining effect
+    vanishes.\ Only certain radial profiles produce standing waves that remain bound
+    (decaying at large~$r$) rather than radiating away into the medium.\ Non-resonant
+    radial modes leak energy into the surrounding Aether and cannot persist.
+\end{enumerate}
+
+Together, these two conditions---angular phase matching and radial confinement---select
+a discrete set of resonant modes from the continuous spectrum of possibilities.\ Each mode
+is labeled by integers: the principal quantum number~$n$ (total number of nodes), the
+angular quantum number~$l$ (angular nodes), and the magnetic quantum number~$m$ (orientation
+of the angular pattern).\ This is directly analogous to the modes of a vibrating drumhead,
+which are labeled by the number of radial nodes and the number of angular nodal lines, and
+whose allowed frequencies are determined by the zeros of Bessel functions.
+
+The critical distinction from standard quantum mechanics is that in the Aether model, the
+boundary conditions have a physical origin: the flow structure of the medium creates the
+cavity.\ The electron wave is not an abstract probability amplitude---it is a real
+disturbance in a real medium, confined by the refractive properties of that medium.
+
+\subsection{Derivation of Energy Levels}
+
+The energy levels of hydrogen can be derived from the resonance condition combined with the
+Coulomb force balance.\ The electron, treated as a wave in the Aether medium, has a
+de~Broglie wavelength determined by its momentum:
+%
+\begin{equation}
+  \lambda = \frac{h}{m_e v}
+\end{equation}
+%
+The angular phase-matching condition $n\lambda = 2\pi r$ gives the
+quantization of angular momentum, $m_e v r = n\hbar$---not as an axiom,
+but as a consequence of requiring constructive self-interference of a wave
+propagating in the Aether around a closed path.\ Combining this with the
+Coulomb force balance $ke^2/r^2 = m_e v^2/r$ yields quantized radii
+$r_n = a_0 n^2$ (where $a_0 = \hbar^2/(m_e k e^2) = 0.529$~\AA{} is the
+Bohr radius), and orbital velocities $v_n = \alpha c / n$, where
+$\alpha = ke^2/(\hbar c) \approx 1/137$.\ The fine structure constant thus
+acquires a direct physical meaning: it is the ratio of the electron's
+orbital velocity to the wave speed of the medium, analogous to a Mach
+number.\ That $\alpha \ll 1$ confirms that atomic physics is deeply
+non-relativistic---the electron's motion is a small perturbation of the
+Aether.
+
+The total energy of each resonant mode is:
+%
+\begin{equation}
+  E_n = -\frac{1}{2}\,\alpha^2\,m_e c^2 \cdot \frac{1}{n^2}
+  = -\frac{13.6\;\mathrm{eV}}{n^2}
+\end{equation}
+%
+This result connects three quantities that already have Aether interpretations in this
+theory: $c = \sqrt{\Ka/\rhoa}$ (wave speed), $\alpha$ (electron flow strength relative to
+the medium), and $m_e c^2$ (the rest energy of the permanent binding).\ The ground state
+energy of hydrogen is not an independent parameter---it is determined by the same medium
+properties that govern electromagnetism and wave propagation.
+
+\subsection{Consistency with Standard Atomic Physics}
+
+The resonant cavity model reproduces all standard results of atomic
+spectroscopy without modification.\ The virial theorem ($T = -E$,
+$V = 2E$) follows from the $1/r$ potential.\ Spectral lines match the
+Rydberg formula $R_\infty = \alpha^2 m_e c/(2h) = 1.0974 \times
+10^7$~m$^{-1}$, giving Lyman-$\alpha$ at 121.6~nm, H-$\alpha$ at
+656.3~nm, and the Lyman limit at 91.2~nm ($= 13.6$~eV).
+
+The cavity model reproduces all standard results of atomic spectroscopy
+without modification: selection rules (from angular momentum exchange
+between the medium and the transitioning mode), fine structure (from
+spin-orbit coupling of the electron vortex with its own Aether flow),
+hyperfine structure including the 21-cm line at 1420.405~MHz (from
+coupling between electron and proton vortex flows), Zeeman and Stark
+effects (from external Aether flow perturbations splitting the cavity
+modes), multi-electron shell filling, the quantum defect formula, and
+exotic systems (positronium, muonic hydrogen).\ All follow from the
+Aether resonance conditions without additional assumptions.
+
+% ============================================================
+\section{The Pauli Exclusion Principle: Topological Vortex Exclusion}
+\label{sec:pauli}
+% ============================================================
+
+One of the deepest results in quantum mechanics is the Pauli exclusion principle:
+no two identical fermions (half-integer spin particles) can simultaneously occupy
+the same quantum state.\ For electrons in atoms, this means no two electrons can
+share all four quantum numbers ($n$, $l$, $m_l$, $m_s$).\ The exclusion principle
+governs the structure of the periodic table, the stability of matter, and the
+properties of every material substance.
+
+Despite its foundational importance, the spin-statistics theorem---which connects
+half-integer spin to antisymmetric wavefunctions---has resisted elementary
+explanation.\ Feynman remarked in 1963 that he could not provide one.\ The proofs
+of Fierz (1939) and Pauli (1940) require abstract axioms (Lorentz invariance,
+positive energy, microcausality), and Duck and Sudarshan's comprehensive review
+\cite{duck1997} concluded that the connection between spin and statistics remains
+one of the least intuitively understood results in physics.
+
+The Aether vortex model offers a physical picture: the exclusion principle arises
+from the \emph{topological instability of multiply quantized vortices}.
+
+\subsection{Electrons as Topological Vortices}
+
+In this theory, an electron is a persistent spin vortex in the Aether---a
+circulatory flow pattern with quantized angular momentum $\pm\hbar/2$.\ The
+vortex has a well-defined \emph{phase winding}: the Aether flow completes a $2\pi$
+phase rotation around the vortex core.\ This $2\pi$ winding is the defining
+topological characteristic of a spin-$\tfrac{1}{2}$ object.\ In the two-fluid
+model (Paper~6~\cite{otto-cosmology}), the electron vortex is a quantized
+circulation in the \emph{superfluid condensate}; all particle structure, binding,
+and electromagnetic phenomena are condensate dynamics.\ The normal component
+(thermal excitations) does not support stable vortices and is relevant only for
+the cosmological thermal structure discussed in Paper~6.
+
+Two fundamental properties of vortex topology are relevant:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Topological charge conservation.}\ In any medium supporting
+    quantized vortices, the total topological charge (net winding number) is
+    conserved.\ Vortices are created and destroyed only in pairs of opposite
+    winding.\ This is confirmed experimentally in superfluid helium and
+    Bose--Einstein condensates \cite{matthews1999}.
+
+  \item \textbf{The double-cover property.}\ A spin-$\tfrac{1}{2}$ vortex
+    requires a $4\pi$ (720$^\circ$) rotation to return to its original state; a
+    $2\pi$ rotation produces a sign change.\ This is the physical content of the
+    SU(2) double cover of SO(3), demonstrated by Dirac's belt trick: a vortex
+    tethered to the surrounding medium by its flow field cannot be untwisted by a
+    single $360^\circ$ rotation, but can be untwisted by $720^\circ$.\ In the
+    Aether model, electron vortices are literally tethered to the medium through
+    their circulation, giving the belt trick a direct physical realization.
+\end{enumerate}
+
+\subsection{Why Same-Spin Vortices Cannot Share an Orbital}
+
+Consider two electron vortices placed in the same resonant cavity mode (same $n$,
+$l$, $m_l$) with the \emph{same} spin orientation (same $m_s$---same circulation
+direction).\ Their phase windings superpose:
+%
+\begin{equation}
+  \text{Same spin: } 2\pi + 2\pi = 4\pi \quad\text{(net winding)}
+\end{equation}
+%
+A $4\pi$ phase winding is topologically equivalent to a spin-1 object---a boson,
+not two fermions.\ The system has undergone a topological transition that changes
+its statistical character.\ This is physically forbidden for two reasons:
+
+\textbf{Energetic instability.}\ A vortex with winding number $s$ has kinetic
+energy proportional to $s^2$, while $s$ individual unit vortices have total energy
+proportional to $s$.\ Therefore a doubly quantized vortex ($s = 2$, energy
+$\propto 4$) is energetically unstable relative to two singly quantized vortices
+(total energy $\propto 2$).\ This instability is well established in superfluid
+physics: multiply quantized vortices in Bose--Einstein condensates spontaneously
+decay into singly quantized vortices \cite{shin2004}.
+
+\textbf{Topological inconsistency.}\ Two spin-$\tfrac{1}{2}$ excitations cannot
+smoothly deform into a single spin-1 excitation while conserving both angular
+momentum and topological charge.\ The transition would require either the creation
+or destruction of a net $2\pi$ winding---violating topological charge conservation.
+
+\subsection{Why Opposite-Spin Vortices Can Share an Orbital}
+
+Two electron vortices with \emph{opposite} spin orientations (opposite circulation
+directions) have phase windings that partially cancel:
+%
+\begin{equation}
+  \text{Opposite spin: } +2\pi + (-2\pi) = 0 \quad\text{(net winding at overlap)}
+\end{equation}
+%
+The combined configuration retains zero net topological charge at the overlap
+region.\ Each vortex maintains its individual identity and topological character---the
+system remains two distinct spin-$\tfrac{1}{2}$ objects.\ This is the only stable
+two-electron configuration within a single resonant cavity mode, and it explains
+the fundamental rule of atomic physics: each orbital holds at most two electrons,
+which must have opposite spins.
+
+\subsection{The Exchange Phase from Vortex Topology}
+
+Berry and Robbins (1997) \cite{berry1997} demonstrated that the exchange phase
+factor $(-1)^{2S}$ for identical particles arises as a \emph{geometric
+(Berry) phase} of topological origin, associated with non-contractible paths in
+the configuration space of identical particles.
+
+In the Aether model, this result has a direct physical interpretation.\ When two
+identical electron vortices are exchanged by moving them around each other, the
+Aether flow between them acquires a twist.\ Because each vortex is a
+spin-$\tfrac{1}{2}$ object requiring $4\pi$ rotation to return to its original
+state, a single exchange (equivalent to a $2\pi$ relative rotation) maps the
+two-vortex state to its negative:
+%
+\begin{equation}
+  \Psi(1,2) \;\xrightarrow{\text{exchange}}\; -\Psi(2,1)
+\end{equation}
+%
+This antisymmetry under exchange is not imposed as an axiom but \emph{follows
+from the topology of vortex flow fields in the three-dimensional Aether}.\ If
+the two vortices are in the same quantum state, $\Psi(1,2) = \Psi(2,1)$, and
+the antisymmetry condition gives $\Psi = -\Psi = 0$---the state cannot exist.
+
+The dependence of exchange statistics on spatial dimensionality provides further
+support: in two dimensions, the configuration space of identical particles has the
+braid group $B_N$ as its fundamental group rather than the symmetric group $S_N$,
+allowing continuous exchange phases (anyons).\ Leinaas and Myrheim (1977)
+\cite{leinaas1977} predicted this, and anyonic statistics have been experimentally
+confirmed in fractional quantum Hall systems.\ In three dimensions, only $\pm 1$
+exchange phases are possible---exactly the boson/fermion dichotomy.\ The fact that
+statistics depends on dimensionality is a strong indication that its origin is
+\emph{topological}, not dynamical.
+
+\subsection{Consequences of Vortex Exclusion}
+
+The topological exclusion principle reproduces the full structure of atomic
+and condensed-matter physics.\ Shell capacities ($2n^2$) follow from the
+two-vortex-per-mode limit summed over $l = 0, \ldots, n{-}1$, and Hund's
+rules follow from minimizing vortex flow-field overlap.\ Electron
+degeneracy pressure ($P \propto n_e^{5/3}$) arises because filling all
+low-energy modes forces additional electrons into higher modes; the
+Chandrasekhar limit ($\sim\!1.44\,M_\odot$ \cite{chandrasekhar1931}) marks
+where vortex flow speeds become relativistic.\ Covalent bonding is the
+sharing of vortex modes between adjacent atomic cavities, with
+bonding/antibonding configurations from constructive/destructive
+flow-field overlap.
+
+The vortex mechanism is directly confirmed in superfluid experiments:
+bosonic $^4$He condenses without pairing (no exclusion), while fermionic
+$^3$He requires Cooper pairing at 2.491~mK \cite{osheroff1972}; multiply
+quantized vortices spontaneously split into singly quantized ones
+(confirming $s^2$ instability) \cite{shin2004}; and half-quantum vortices
+in $^3$He \cite{autti2016} directly realize the spin-$\tfrac{1}{2}$
+topology.
+
+
+
+% ============================================================
+\section{Constraints from Quantum Superfluid Structure}
+\label{sec:qss}
+% ============================================================
+
+The topological vortex model of the Pauli exclusion principle carries a profound
+implication: the Aether is not merely a classical elastic medium but a
+\emph{quantum superfluid} with specific mathematical properties.\ This section
+traces the constraints that spin-statistics imposes on the Aether's microscopic
+structure and shows that they are fully consistent with---and enrich---every
+previously derived result.
+
+
+\subsection{The Quantum Superfluid Requirement}
+
+The spin-statistics connection derived from vortex topology requires three
+properties of the medium that go beyond a classical fluid:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Quantized circulation.}\ The electron spin vortex carries angular
+    momentum $\pm\hbar/2$ and exhibits $2\pi$ phase winding.\ This requires the
+    circulation to be quantized: the line integral of the velocity field around
+    any vortex core takes discrete values $\kappa = n\kappa_0$, where $\kappa_0$
+    is the circulation quantum.\ In a superfluid, $\kappa_0 = h/m_A$, where $m_A$
+    is the mass of the medium's constituent quantum \cite{donnelly1991}.\ This introduces a
+    new fundamental quantity---the Aether quantum mass $m_A$.
+
+  \item \textbf{Spinor order parameter.}\ The existence of two distinct vortex
+    orientations (spin up and spin down) that are related by the SU(2) double
+    cover of SO(3) requires the condensate to be described by a multi-component
+    order parameter $\Psi = (\psi_\uparrow, \psi_\downarrow)$, not a simple
+    scalar field.\ This spinor structure is what makes the belt trick
+    physical---the two components provide the internal degree of freedom that
+    distinguishes the two circulation directions while preserving the topological
+    properties needed for the exchange phase $(-1)^{2S}$.
+
+  \item \textbf{Bosonic field operators.}\ The medium itself must obey bosonic
+    commutation relations $[\hat{a}, \hat{a}^\dagger] = 1$, permitting unlimited
+    occupation of each mode.\ This is consistent with electromagnetic waves
+    propagating as bosonic quasiparticles (photons as phonon-like excitations of
+    the condensate), with the linear superposition of waves, and with the
+    transient binding mechanism in which vacuum fluctuations produce
+    particle--antiparticle pairs from the bosonic ground state.
+\end{enumerate}
+
+These three requirements are not new postulates---they are logical consequences
+of the vortex topology that already appears in the theory.\ The Pauli exclusion
+principle cannot be derived from a medium that lacks any one of them.
+
+
+\subsection{The Equation of State: Why the Aether Is Not a Simple BEC}
+
+The theory's most experimentally constrained property is the invariance of the
+bulk modulus $\Ka$.\ The Fresnel drag coefficient confirms $\Ka$ is constant at
+density ratios up to $n^2 \approx 6$ (diamond), and the Lorentz factor's
+precision to $10^{-8}$ confirms it across all tested velocity regimes.
+
+For a standard weakly interacting Bose--Einstein condensate (BEC), the bulk
+modulus scales as $K_{\mathrm{BEC}} \propto n^2$ (where $n$ is the number
+density), because the pressure goes as $P = g n^2/2$ with constant interaction
+strength $g$.\ This means a simple BEC would have a density-dependent bulk
+modulus---contradicting the confirmed invariance of $\Ka$.
+
+The requirement $\Ka = \text{constant}$ constrains the equation of state.\ Since
+$\Ka = \rhoa\,(\partial P / \partial \rhoa)$, a constant bulk modulus implies:
+%
+\begin{equation}
+  \frac{\partial P}{\partial \rhoa} = \frac{\Ka}{\rhoa}
+  \qquad\Longrightarrow\qquad
+  P = \Ka \ln\!\left(\frac{\rhoa}{\rho_0}\right) + P_0
+\end{equation}
+%
+where $\rho_0$ is the reference (ambient far-field) density of the Aether and
+$P_0$ is the corresponding ambient pressure.\ Throughout this paper, $\rhoa$
+denotes the local Aether density at an arbitrary point, which may differ from
+$\rho_0$ due to gravitational compression or cosmological variation.
+
+This \emph{logarithmic equation of state} arises in quantum field theories with
+logarithmic nonlinearities \cite{rosen1969,zloshchastiev2011} and has been studied in the context of
+superfluids, nuclear matter, and Bose liquids.\ The Aether's equation of state
+is therefore not that of a dilute gas of weakly interacting bosons, but of a
+denser quantum liquid whose self-interaction potential produces constant
+stiffness across all density regimes.
+
+The logarithmic nonlinearity $g(n) = b\,\ln(n/n_0)$ studied in the context
+of quantum condensates \cite{rosen1969,zloshchastiev2011} produces a
+density-independent speed of sound (from $P = bn$, a linear pressure law).\
+This differs from the Aether's logarithmic EOS ($P = \Ka\ln(\rho/\rho_0)$,
+constant bulk modulus, density-\emph{dependent} sound speed), though both
+are called ``logarithmic.''\ The microscopic interaction that produces
+the Aether's EOS can be derived from the Gibbs--Duhem relation
+$dP = n\,d\mu$ with $P = \Ka\ln(n/n_0)$, which yields the chemical
+potential
+%
+\begin{equation}\label{eq:gp-nonlinearity}
+  \mu(n) = \mu_0 + \Ka\!\left(\frac{1}{n_0} - \frac{1}{n}\right)
+\end{equation}
+%
+where $\mu_0 = \mu(n_0)$ is the equilibrium chemical potential.\ In the
+Gross--Pitaevskii equation, $g(n) = \mu(n)$, so the effective nonlinearity
+is an \emph{inverse-density} interaction ($-\Ka/n$ plus a constant)---repulsive
+at low density (preventing cavitation) and asymptotically constant at high
+density.\ This produces exactly $K = \Ka$ (constant) and
+$c_s = \sqrt{\Ka/\rho}$ (density-dependent).\
+It is distinct from the logarithmic \emph{potential} $b\ln(n)$, which
+yields a logarithmic \emph{chemical potential} but a linear pressure.\
+The physical origin of the $\Ka/n$ interaction---whether from
+effective multi-body scattering, quantum corrections to the condensate
+self-energy, or the Aether's internal structure---remains an open question,
+but the functional form itself is uniquely determined by the
+$\Ka$-invariance constraint.
+
+
+\subsection{The Healing Length and the UV Cutoff}
+
+In any quantum superfluid, vortex cores have a characteristic size---the
+\emph{healing length}---below which the condensate density drops to zero:
+%
+\begin{equation}
+  \xi = \frac{\hbar}{m_A\, c\, \sqrt{2}}
+\end{equation}
+%
+where $c = \sqrt{\Ka/\rhoa}$ is the local wave speed.\ The healing length sets the
+minimum scale at which the continuum description of the medium remains valid.
+
+This quantity has a natural identification in the existing theory.\ The Lamb
+shift calculation uses the Compton wavelength $\lambdabar_C = \hbar/(m_e c) =
+386$~fm as the ultraviolet cutoff for vacuum fluctuations.\ If $m_A = m_e$:
+%
+\begin{equation}
+  \xi = \frac{\lambdabar_C}{\sqrt{2}} \approx 273\;\text{fm}
+\end{equation}
+%
+The Compton wavelength and the healing length are the same order of magnitude.\
+What was previously an \emph{ad hoc} cutoff in the QED calculation now has a
+physical interpretation: it is the scale at which the internal structure of the
+Aether vortex core becomes relevant, and the continuum medium description breaks
+down.\ Below $\xi$, the discrete quantum structure of the Aether dominates.
+
+If $m_A \gg m_e$, then $\xi \ll \lambdabar_C$, and the vortex core is much
+smaller than the Compton wavelength.\ In this case, the Compton wavelength would
+represent a larger-scale feature of the vortex (such as the loop radius $r_{\mathrm{loop}}$)
+rather than the core size.
+
+
+\subsection{Electron Mass from Vortex Energy}
+
+The energy of a quantized vortex in a superfluid is determined entirely by the
+medium properties and the vortex geometry.\ For a vortex ring of radius
+$r_{\mathrm{loop}}$ with core size $\xi$, the kinetic energy stored in the
+circulatory flow is \cite{donnelly1991}:
+%
+\begin{equation}\label{eq:vortex-energy}
+  E_{\mathrm{vortex}} = \frac{1}{2}\,\rhoa\,\kappa_e^2\,r_{\mathrm{loop}}
+    \left[\ln\!\left(\frac{8\,r_{\mathrm{loop}}}{\xi}\right) - \frac{1}{2}\right]
+\end{equation}
+%
+where $\kappa_e = h/(2m_A)$ is the circulation quantum for a spin-$\tfrac{1}{2}$
+vortex (half the fundamental quantum $\kappa_0 = h/m_A$).
+
+If the electron \emph{is} a vortex ring, its rest energy must equal this kinetic
+energy:
+%
+\begin{equation}\label{eq:mass-from-topology}
+  m_e\,c^2 = \frac{1}{2}\,\rhoa\,\kappa_e^2\,r_{\mathrm{loop}}
+    \left[\ln\!\left(\frac{8\,r_{\mathrm{loop}}}{\xi}\right) - \frac{1}{2}\right]
+\end{equation}
+%
+This is a remarkable result: \emph{the electron mass is not a free parameter but
+is determined by the Aether density, the circulation quantum, and the vortex
+geometry}.\ Mass arises from topology---the kinetic energy locked into a
+persistent circulatory flow pattern in the medium.
+
+Substituting $\kappa_e = h/(2m_A)$ and $\xi = \hbar/(m_A c \sqrt{2})$:
+%
+\begin{equation}
+  m_e = \frac{\pi^2 \hbar^2\,\rhoa\,r_{\mathrm{loop}}}{2\,m_A^2\,c^2}
+    \left[\ln\!\left(\frac{8\,r_{\mathrm{loop}}\,m_A\,c\,\sqrt{2}}{\hbar}\right)
+    - \frac{1}{2}\right]
+\end{equation}
+%
+This equation connects three previously independent quantities---$m_e$, $\rhoa$,
+and $m_A$---through the vortex geometry.\ Combined with $c^2 = \Ka/\rhoa$, it
+provides a new constraint equation that partially breaks the $\rhoa$ degeneracy
+identified in the force constant analysis.
+
+
+\subsection{Vortex Geometry and Length Contraction}
+
+The vortex energy equation (\ref{eq:mass-from-topology}) has an important
+consequence for the spatial variation of vortex size.\ The Aether inflow velocity
+varies with location (strong near matter, weak in voids), and the two-fluid
+superfluid fraction varies with temperature.\ Since $m_e c^2$ must remain
+invariant (the electron mass is observed to be the same everywhere), the vortex
+geometry must adjust to compensate for the local flow environment.
+
+Rewriting equation~(\ref{eq:mass-from-topology}) using $c^2 = \Ka/\rhoa$:
+%
+\begin{equation}
+  m_e \Ka = \frac{1}{2}\,\rhoa^2\,\kappa_e^2\,r_{\mathrm{loop}}
+    \left[\ln\!\left(\frac{8\,r_{\mathrm{loop}}}{\xi}\right) - \frac{1}{2}\right]
+\end{equation}
+%
+Since $\Ka$, $m_e$, and $\kappa_e$ are all invariant, the right-hand side must
+be constant:
+%
+\begin{equation}
+  r_{\mathrm{loop}} \left[\ln\!\left(\frac{8\,r_{\mathrm{loop}}}{\xi}\right)
+  - \frac{1}{2}\right] \propto \frac{1}{\rhoa^2}
+\end{equation}
+%
+Because $\xi = \hbar/(m_A c\sqrt{2})$ itself depends on density through
+$c = \sqrt{\Ka/\rhoa}$, the healing length grows as $\xi \propto \sqrt{\rhoa}$
+in denser regions.\ The logarithmic factor $\ln(8r_{\mathrm{loop}}/\xi) - 1/2$
+therefore varies weakly (logarithmically) with density, so the dominant
+scaling remains $r_{\mathrm{loop}} \propto 1/\rhoa^2$ to leading order.
+
+In regions of effectively higher Aether density, the vortex ring radius shrinks.\
+This provides a microscopic \emph{consistency check} on length contraction.\
+The macroscopic contraction itself is derived in
+Paper~2~\cite{otto-relativity}: the wave equation governing all binding
+forces is Lorentz-invariant \cite{lorentz1904}, so any rest-frame
+equilibrium maps to a moving equilibrium contracted by $1/\gamma$ in the
+direction of motion.
+
+At the vortex level, when an electron moves through the Aether, the dynamic
+compression ahead of it (Bernoulli: $\delta\rho/\rhoa \approx v^2/(2c^2)$)
+creates a denser rest-frame environment, and the vortex adjusts its geometry to
+maintain $m_e c^2 = E_{\mathrm{vortex}}$ in the compressed medium.\ This
+dynamic compression is physically distinct from gravitational inflow, where
+Bernoulli gives $\Delta\rho = 0$ exactly (free-fall kinetic energy balances the
+gravitational potential).\ A moving object does real work on the medium,
+creating a genuine density increase.
+
+The vortex scaling $r_{\mathrm{loop}} \propto 1/\rhoa^2$ predicts a contraction
+proportional to $1/\gamma^2$ at leading order, while the exact geometric
+result is $1/\gamma$.\ The factor-of-two discrepancy in the exponent arises
+because the Donnelly vortex energy formula is non-relativistic---it assumes a
+vortex at rest in the fluid.\ Additionally, the Bernoulli stagnation pressure
+$v^2/(2c^2)$ is the \emph{maximum} compression (directly ahead of the object);
+the actual density field is angle-dependent, and the effective compression
+experienced by a point vortex in a flowing medium differs from the uniform
+stagnation value.\ A relativistic treatment of vortex dynamics in a flowing
+superfluid would be needed to close this gap (see Open Questions).
+
+
+\subsection{The Aether Quantum Mass}
+
+The circulation quantum $\kappa_0 = h/m_A$ introduces a new fundamental
+quantity: the mass $m_A$ of the Aether's constituent quantum.\ This is the mass
+scale that determines the vortex core size, the circulation quantum, and---through
+the vortex energy equation---the relationship between particle mass and Aether
+density.
+
+The linearity constraint provides an important bound on $m_A$.\ The vacuum
+fluctuation amplitude satisfies:
+%
+\begin{equation}
+  \left\langle\left(\frac{\delta\rho}{\rhoa}\right)^{\!2}\right\rangle
+  = \frac{2\,u_{\mathrm{vac}}}{\rhoa\,c^2}
+  \approx \frac{2 \times 10^5}{\rhoa}\;\text{kg/m}^3
+\end{equation}
+%
+For the linear approximation to hold ($\delta\rho/\rhoa \ll 1$), we need
+$\rhoa \gg 2 \times 10^5$~kg/m$^3$.\ The vortex energy equation then constrains
+$m_A$:
+
+\begin{itemize}[leftmargin=2em]
+  \item If $m_A = m_e$: the vortex energy equation gives $\rhoa \sim 10^6$~kg/m$^3$,
+    which is marginally linear ($\delta\rho/\rhoa \sim 0.45$).\ The confirmed
+    precision of the Lorentz factor to $10^{-8}$ makes this uncomfortable.
+
+  \item If $m_A \sim 100\,m_e$: the equation gives $\rhoa \sim 10^{10}$~kg/m$^3$,
+    with $\delta\rho/\rhoa \sim 0.005$---comfortably within the linear regime.
+
+  \item If $m_A \sim m_{\mathrm{Planck}}$: $\rhoa$ becomes extremely large and the
+    medium is extraordinarily stiff ($\Ka \sim 10^{46}$~J/m$^3$), with vacuum
+    fluctuations completely negligible relative to the background density.
+\end{itemize}
+
+The experimental data thus \emph{favors} $m_A \gg m_e$: the heavier the Aether
+quantum, the higher $\rhoa$, and the more comfortably the linearity constraint
+is satisfied.\ This is consistent with the gamma-ray timing constraints from the
+Fermi Large Area Telescope \cite{vasileiou2013}, which constrain Lorentz-violating
+photon dispersion to energy scales above $7.6\,E_{\mathrm{Planck}}$.\ Since
+photons propagate as spin-wave excitations (microscopically distinct from
+density waves, though macroscopically equivalent through spin-orbit
+coupling), this constrains the spin healing length $\xi_s$, not the
+density healing length $\xi$---consistent
+with the spin channel being far stiffer than the density channel.
+
+
+
+\subsection{Topological Stability and Derrick's Theorem}
+\label{sec:derrick}
+
+The quantum superfluid framework raises an essential question: could the electron be
+a \emph{hedgehog skyrmion}---a spherically symmetric texture in the spinor order
+parameter---rather than a quantized vortex ring?\ Skyrmions are topologically
+nontrivial field configurations classified by the homotopy group $\pi_3(S^3) = \mathbb{Z}$,
+and they serve as particle-like solitons in nuclear physics (the Skyrme model
+\cite{skyrme1962}).\ In three spatial dimensions, the hedgehog ansatz takes the form
+$\hat{n}(\mathbf{r}) = \hat{r}$ with a radial profile $F(r)$ satisfying $F(0) = \pi$
+and $F(\infty) = 0$, wrapping the order parameter sphere exactly once.
+
+However, Derrick's theorem \cite{derrick1964} places a fatal constraint on such
+configurations in the logarithmic condensate.\ Under a uniform spatial rescaling
+$\psi(\mathbf{r}) \to \psi(\mathbf{r}/L)$, the energy functional separates into
+terms with definite scaling behavior:
+%
+\begin{equation}
+  E_{\mathrm{gradient}} \propto L, \qquad
+  E_{\mathrm{potential}} \propto L^3
+\end{equation}
+%
+The gradient energy (both density and spin contributions) scales as $L$ because
+$|\nabla\psi|^2$ contributes a factor $1/L^2$ while the volume element contributes
+$L^3$.\ The logarithmic potential energy $V(\psi) = \Ka[\,|\psi|^2(2\ln|\psi| - 1) + 1\,]$
+scales as $L^3$ from the volume element alone.\ The total energy is therefore:
+%
+\begin{equation}
+  E(L) = A\,L + B\,L^3 \qquad (A, B > 0)
+\end{equation}
+%
+Since both coefficients are strictly positive, $dE/dL = A + 3BL^2 > 0$ for all $L > 0$.
+The energy is \emph{monotonically increasing}---the configuration always lowers its
+energy by shrinking ($L \to 0$).\ There is no stable skyrmion.
+
+Numerical verification confirms this conclusion.\ Using the coupled Euler--Lagrange
+equations for the hedgehog energy functional
+%
+\begin{equation}
+  E = C \cdot \Ka \cdot \xi^3 = 4\pi\Ka\xi^3 \int_0^\infty s^2\,ds\;
+    \bigl[\,g'^2 + g^2(F'^2 + \sin^2\!F/s^2) + g^2(2\ln g - 1) + 1\,\bigr]
+\end{equation}
+%
+where $s = r/\xi$ and $g = |\psi|/\psi_\infty$, iterative relaxation from physically
+reasonable initial profiles drives the spin texture $F(s)$ toward zero everywhere
+and the dimensionless energy coefficient $C$ toward zero---the skyrmion collapses
+to a point.
+
+This stands in sharp contrast to the Skyrme model, where a quartic derivative
+term $\propto |\nabla\psi|^4$ contributes an energy that scales as $1/L$:
+%
+\begin{equation}
+  E_{\mathrm{Skyrme}}(L) = A\,L + \frac{D}{L} \qquad \Rightarrow \qquad
+  L_{\mathrm{min}} = \sqrt{D/A}
+\end{equation}
+%
+The competition between the $L$ and $1/L$ terms creates a stable minimum at finite
+size.\ The logarithmic condensate has no such quartic term---its equation of state
+is fundamentally softer.
+
+This result has a profound physical consequence: \textbf{the electron cannot be a
+hedgehog skyrmion in the logarithmic condensate.}\ It must instead be a quantized
+vortex ring, whose stability rests on an entirely different mechanism---circulation
+quantization:
+%
+\begin{equation}
+  \kappa = n\,\frac{h}{m_A} \qquad (n \in \mathbb{Z})
+\end{equation}
+%
+The quantized circulation $\kappa$ is a \emph{discrete} topological invariant.\ Unlike
+the continuous hedgehog texture, which can be smoothly deformed to zero (Derrick
+collapse), a vortex ring's winding number is exactly integer and cannot change
+continuously.\ The vortex core size is fixed at the healing length
+$\xi = \hbar/(m_A c\sqrt{2})$, and the circulation quantum $\kappa_0 = h/m_A$ is
+determined by the microscopic structure of the medium.\ Neither can be reduced
+by any smooth deformation of the field.
+
+The distinction is between two types of topological protection:
+%
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Homotopy (skyrmion):} $\pi_3(S^3) = \mathbb{Z}$.\ The winding number
+    is a topological invariant under continuous deformations that preserve the boundary
+    conditions.\ However, Derrick's theorem shows that the energetically favored
+    deformation is $L \to 0$---the configuration \emph{collapses} rather than unwinding.
+    The topological charge is conserved but concentrated into a singular point.
+
+  \item \textbf{Circulation quantization (vortex):} $\kappa = n\,h/m_A$.\ The
+    quantization is enforced by the single-valuedness of the condensate wave function
+    around any closed loop encircling the vortex core.\ This is a \emph{stronger}
+    constraint: the core cannot collapse because $\xi$ is fixed by the healing length,
+    and the circulation cannot decrease because $\kappa_0$ is fixed by $h/m_A$.
+\end{itemize}
+%
+The Derrick instability of the hedgehog skyrmion therefore provides independent
+theoretical support for identifying the electron as a quantized vortex ring rather
+than a field-theoretic soliton.\ The electron's stability is not an energetic
+balance between competing gradient terms (as in the Skyrme model) but a consequence
+of discrete topological quantization inherent to the superfluid medium.
+
+
+
+\subsection{Constraints from the Strong Force}
+\label{sec:strong-constraints}
+
+The identification of the strong force as a compressed-Aether bridge
+(Section~\ref{sec:strong-force}) provides an independent set of constraints on
+the Aether's microscopic properties.\ The QCD string tension, the deconfinement
+temperature, and the flux tube geometry are all precisely measured, and each
+imposes a quantitative requirement on the same parameters---$\rhoa$, $\Ka$,
+$m_A$, and $\xi$---that appear in the vortex energy equation and the linearity
+constraint.
+
+\subsubsection*{Bridge diameter and the healing length}
+
+The deconfinement temperature $T_{\mathrm{deconf}} \approx 170$~MeV determines
+the bridge diameter through the thermal energy balance: the bridge dissolves when
+the thermal energy per unit cross-section equals the string tension:
+%
+\begin{equation}
+  d_{\mathrm{bridge}} \approx \frac{k_B T_{\mathrm{deconf}}}{\sigma}
+    \approx \frac{170\;\mathrm{MeV}}{1\;\mathrm{GeV/fm}} \approx 0.17\;\mathrm{fm}
+  \label{eq:bridge-diameter}
+\end{equation}
+%
+Lattice QCD simulations measure the flux tube width (FWHM of the chromoelectric
+field distribution) at approximately 0.5~fm \cite{cardoso2013,cea2024}, somewhat
+larger than this core estimate because the field profile has tails beyond the core.
+
+The bridge is a condensate structure, and the minimum scale of any structure in
+a quantum superfluid is the healing length $\xi = \hbar/(m_A\,c_{\mathrm{local}}\sqrt{2})$,
+which decreases inside the compressed bridge where $c_{\mathrm{local}} < c$,
+making the bridge core even more compact.\ The bridge core diameter must
+therefore satisfy $d_{\mathrm{bridge}} \gtrsim \xi$, giving:
+%
+\begin{equation}
+  \xi \lesssim 0.17\;\mathrm{fm}
+  \label{eq:xi-upper-bound}
+\end{equation}
+%
+Combined with the definition $\xi = \hbar / (m_A c \sqrt{2})$, this constrains
+the Aether quantum mass:
+%
+\begin{equation}
+  m_A \gtrsim \frac{\hbar}{\xi_{\max}\, c\, \sqrt{2}}
+    \approx \frac{1.055 \times 10^{-34}}{1.7 \times 10^{-16} \times 3 \times 10^8
+    \times 1.414} \approx 1.5 \times 10^{-27}\;\mathrm{kg}
+    \approx 820\;\mathrm{MeV}/c^2
+  \label{eq:mA-lower-bound}
+\end{equation}
+%
+If the bridge diameter is several times $\xi$ (as expected, since the
+condensation process typically extends over a few healing lengths), the
+constraint relaxes.\ However, three independent lines of evidence converge on
+a substantially narrower range:
+%
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Bridge diameter from lattice QCD.}\ High-precision lattice
+    simulations measure the chromoelectric flux tube core width at
+    $d_{\mathrm{core}} \approx 0.30$--$0.35$~fm \cite{cardoso2013}.\ If the
+    bridge diameter equals $d_{\mathrm{core}}$ and
+    $d_{\mathrm{bridge}} \sim 1$--$2\,\xi$, then
+    $\xi \approx 0.15$--$0.35$~fm, giving
+    $m_A \approx 470$--$930$~MeV/$c^2$.
+
+  \item \textbf{Self-consistent vortex--bridge equations.}\ Simultaneously
+    solving the electron vortex energy equation~\eqref{eq:mass-from-topology}
+    and the bridge compression ratio with the lattice-measured string tension
+    $\sigma \approx 0.18$~GeV$^2$ yields a self-consistent solution in the
+    range $m_A \approx 600$--$1000$~MeV/$c^2$.
+
+  \item \textbf{Glueball mass spectrum.}\ If Aether quanta are the
+    fundamental degrees of freedom, the lightest glueball (a bound state of
+    pure medium excitations) provides an upper bound on $m_A$.\ Lattice QCD
+    finds $m_{0^{++}} \approx 1710$~MeV/$c^2$ for the lightest scalar
+    glueball \cite{morningstar1999}, but the lowest-mass glueball candidate
+    consistent with experimental data sits near $\sim$1500--1700~MeV.\ Since
+    a glueball must contain at least two quanta, this suggests
+    $m_A \lesssim 850$~MeV/$c^2$.
+\end{enumerate}
+%
+The overlap of these three constraints yields a \emph{convergence zone}:
+%
+\begin{equation}
+  500\;\mathrm{MeV}/c^2 \;\lesssim\; m_A \;\lesssim\; 850\;\mathrm{MeV}/c^2
+  \label{eq:mA-range}
+\end{equation}
+%
+This range corresponds to $\xi \approx 0.17$--$0.28$~fm,
+$\rhoa \approx 4 \times 10^{11}$--$10^{12}$~kg/m$^3$, and
+$\Ka \approx 4 \times 10^{28}$--$10^{29}$~J/m$^3$---all consistent with the
+values derived independently from the electron vortex equation and the bridge
+compression ratio (Table above).\ The convergence of $m_A$ to the hadronic
+mass scale is physically natural: the Aether quantum is the fundamental unit
+of the medium, and hadrons are its primary bound structures.
+
+
+\subsubsection*{Two density scales: ambient and bound}
+
+The string tension $\sigma \approx 1$~GeV/fm imposes a constraint on the energy
+density inside the bridge.\ If the bridge has cross-sectional area
+$A \approx \pi\xi^2/4$ (taking the bridge diameter as approximately $\xi$ in the minimum-size scenario), the internal energy density is:
+%
+\begin{equation}
+  \varepsilon_{\mathrm{bridge}} = \frac{\sigma}{A}
+    \approx \frac{1.6 \times 10^5\;\mathrm{J/m}}{\pi\,\xi^2/4}
+    \sim 10^{36}\text{--}10^{37}\;\mathrm{J/m^3}
+  \label{eq:bridge-energy-density}
+\end{equation}
+%
+If this energy density equaled $\Ka$, it would imply
+$\rhoa = \Ka/c^2 \sim 10^{19}\text{--}10^{20}$~kg/m$^3$.\ However, the
+vortex energy equation for the electron
+%
+\begin{equation}
+  m_e c^2 = \tfrac{1}{2}\,\rhoa\,\kappa_e^2\,r_{\mathrm{loop}}\,
+    [\ln(8r_{\mathrm{loop}}/\xi) - \tfrac{1}{2}]
+\end{equation}
+%
+with $r_{\mathrm{loop}} \approx \lambdabar_C \approx 386$~fm requires a much
+lower ambient density:
+%
+\begin{equation}
+  \rhoa \sim 10^{11}\text{--}10^{12}\;\mathrm{kg/m^3}, \qquad
+  \Ka = \rhoa\,c^2 \sim 10^{28}\text{--}10^{29}\;\mathrm{J/m^3}
+  \label{eq:ambient-density}
+\end{equation}
+%
+The two constraints are not contradictory---they reveal that \textbf{the binding
+process compresses Aether by a factor of approximately $7 \times 10^7$}.\ The ambient
+superfluid has density $\rhoa \sim 10^{11}$~kg/m$^3$ and bulk modulus
+$\Ka \sim 10^{28}$~J/m$^3$.\ The compressed material inside a bridge has an effective
+energy density $\sim 10^{36}$~J/m$^3$---approximately $7 \times 10^7$ times the ambient
+$\Ka$.
+
+This compression ratio is not a free parameter---it is algebraically determined
+by three measured or constrained quantities.\ The bridge energy density is
+$\varepsilon_{\mathrm{bridge}} = \sigma / A = 4\sigma / (\pi\xi^2)$, and the
+compression ratio is:
+%
+\begin{equation}
+  X \equiv \frac{\rho_{\mathrm{bridge}}}{\rhoa}
+    = \frac{\varepsilon_{\mathrm{bridge}}}{\Ka}
+    = \frac{4\sigma}{\pi\,\xi^2\,\Ka}
+  \label{eq:compression-ratio}
+\end{equation}
+%
+The logarithmic equation of state $P = \Ka \ln(\rho/\rho_0) + P_0$---here
+extrapolated well beyond the experimentally tested regime, assuming $\Ka$ remains
+constant at extreme compressions (see Open Question~10)---governs
+how much work is required to achieve this compression.\ For a parcel of Aether
+compressed from $\rho_0$ to $\rho_f = X \rho_0$, the energy per unit volume of
+the compressed material is:
+%
+\begin{equation}
+  \varepsilon_{\mathrm{compress}} = \Ka\bigl[X - \ln X - 1\bigr]
+  \label{eq:compression-energy}
+\end{equation}
+%
+For large $X$, $\ln X \ll X$, so $\varepsilon_{\mathrm{compress}} \approx
+\Ka\, X = \varepsilon_{\mathrm{bridge}}$: the compression work accounts for
+essentially all of the bridge energy density.\ The bridge is a compressed
+strand of Aether whose energy is almost entirely stored as work against the
+medium's bulk modulus.\ The logarithmic
+term $\ln X \approx 18$ (for $X \approx 7 \times 10^7$) provides a small correction
+of order $10^{-7}$ relative to $X$.
+
+This clarifies the relationship between the ``bound'' and ``compressed'' descriptions
+of bridge material used in earlier sections.\ The bridge is not a phase transition
+in the thermodynamic sense (unlike the electron vortex, whose stability rests on
+topological circulation quantization).\ Rather, it is a region of extreme elastic
+compression \emph{stabilized by the quark vortex endpoints that anchor it}.\ The
+quark vortices at each end provide the topological boundary conditions that maintain
+the compressed strand; without them, the compression would immediately relax back
+to ambient density.\ The deconfinement ``melting'' described in
+Section~\ref{sec:strong-force} is the thermal disruption of these anchoring vortex
+endpoints, which releases the elastic energy and allows the compressed Aether to
+expand back to its ambient state.\ The bridge material thus remains in the same
+thermodynamic phase as the surrounding superfluid---it is simply compressed to
+$\sim\!7 \times 10^7$ times ambient density by the topological constraints at its
+endpoints.
+
+\paragraph{Cross-check from the electron vortex equation.}
+Using the electron-derived $\Ka$ values from
+equation~\eqref{eq:ambient-density} with a range of healing-length assumptions
+(including values outside the narrowed range $\xi = 0.17$--$0.28$~fm to test
+robustness) yields a remarkably consistent compression ratio:
+%
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\hline
+\textbf{Scenario} & $\Ka$ (J/m$^3$) & $X = 4\sigma/(\pi\xi^2\Ka)$ & $\log_{10} X$ \\
+\hline
+$\xi = 0.17$~fm  & $9.6 \times 10^{28}$ & $7.3 \times 10^{7}$ & 7.87 \\
+$\xi = 0.10$~fm  & $2.6 \times 10^{29}$ & $7.8 \times 10^{7}$ & 7.89 \\
+$\xi = 0.06$~fm  & $6.8 \times 10^{29}$ & $8.3 \times 10^{7}$ & 7.92 \\
+$\xi = 0.40$~fm  & $2.0 \times 10^{28}$ & $6.5 \times 10^{7}$ & 7.81 \\
+\hline
+\end{tabular}
+\end{center}
+%
+Across all scenarios, $\log_{10} X = 7.85 \pm 0.05$---the compression ratio is
+pinned at $X \approx 7 \times 10^7$, independent of which $\xi$ is assumed.\
+This convergence occurs because both $\Ka$ and $\xi$ are determined by the same
+underlying parameters ($\rhoa$, $m_A$, $c$), so their $\xi$-dependence cancels
+in the ratio.
+
+\paragraph{Physical consequences of the compression.}
+The compressed bridge interior has qualitatively different properties from the
+ambient superfluid.\ The speed of sound in the logarithmic condensate is
+$c_s = \sqrt{\Ka/\rho}$; in the bridge, $c_{s,\mathrm{bridge}} = c / \sqrt{X}
+\approx 10^{-4}\,c \approx 3 \times 10^4$~m/s.\ Excitations inside the bridge
+propagate $10{,}000$ times slower than in the ambient medium---the bridge
+interior is a slow, dense conduit, qualitatively consistent with the behavior
+of gluons versus photons (which propagate
+freely through the ambient superfluid).
+The slow propagation speed explains the mass scale and self-interaction
+properties of gluons; confinement itself arises from the bridge-snapping
+mechanism described in Section~\ref{sec:strong-force}.
+
+\paragraph{Bridge profile and minimum width.}
+The bridge diameter $d_{\mathrm{bridge}} \approx 0.30$--$0.35$~fm is only
+$1$--$2$ times the healing length $\xi \approx 0.17$--$0.28$~fm.\ A structure
+this compact has no extended bulk interior: the entire cross-section lies within
+the $\sim\!\xi$-wide transition region where the condensate density rises from
+ambient to its peak and returns.\ The compression ratio $X \approx 7 \times 10^7$
+therefore represents the \emph{peak} central density, not a uniform interior
+value; the volume-averaged compression is lower.
+
+This compactness has two important consequences.\ First, the bridge sits at the
+\emph{minimum possible width}: the condensate cannot sustain a compressed
+structure narrower than $\sim\!\xi$, so the bridge is as thin as the medium
+permits.\ This is energetically optimal---for a fixed string tension $\sigma$,
+minimizing the cross-sectional area minimizes the total compressed volume and
+hence the total energy per unit length.\ Second, because the bridge profile is
+entirely governed by the healing-length recovery dynamics, its radial density
+distribution is predicted to follow the Gross--Pitaevskii condensate profile
+for a cylindrical perturbation---a Gaussian-like ``Gausson'' characteristic of
+logarithmic nonlinearities.\ Lattice QCD simulations measure the transverse
+chromoelectric field profile with a width (FWHM) of $w \approx 0.5$~fm at
+separations $d \gtrsim 0.7$~fm \cite{cardoso2013,cea2024}, consistent with
+the predicted $\sim\!2$--$3\,\xi \approx 0.4$--$0.6$~fm.\ The measured
+profile is well fit by both Gaussian and $\operatorname{sech}^2$ functional
+forms \cite{cea2024}; current lattice precision cannot distinguish between
+these and the GP Gausson, which differ primarily in their tail behaviour.\
+Earlier dual-superconductor fits extract a penetration depth
+$\lambda \approx 0.22$--$0.24$~fm \cite{cea2012}, overlapping with
+$\xi \approx 0.17$--$0.28$~fm.\ The width agreement is non-trivial: the
+bridge model predicts it from $\xi$ alone, with no adjustable parameter.\
+A future precision measurement of the tail profile---Gaussian versus
+$\operatorname{sech}^2$ versus Bessel---would provide a sharper test.
+
+The bridge draws its compressed material from the surrounding volume.\ A
+minimum bridge segment (carrying the pair-creation energy $2m_e c^2$) has
+length $L_{\min} = 2m_e c^2/\sigma \approx 10^{-3}$~fm and draws Aether from a
+sphere of radius $\sim$16~fm, roughly the size of a large nucleus.\ For
+quark--antiquark pair creation (hadronization), the bridge must store
+enough energy to create a new quark--antiquark pair including
+their kinetic energy within the resulting mesons ($\sim$1~GeV total),
+requiring a length $L_{\mathrm{snap}} \approx 1.2$~fm---matching the
+string-breaking distance measured in lattice QCD simulations
+\cite{bali2005,bulava2019}.
+
+
+\subsubsection*{Refined parameter estimates}
+
+Combining the strong force constraints with the vortex energy equation and the
+speed of light yields a consistent set of Aether properties:
+%
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\hline
+\textbf{Property} & \textbf{Value} & \textbf{Determined by} \\
+\hline
+Healing length $\xi$       & $0.17$--$0.28$~fm     & Bridge diameter / lattice QCD \\
+Aether quantum mass $m_A$  & $500$--$850$~MeV/$c^2$  & Flux tube width, glueball mass \\
+Ambient density $\rhoa$    & $\sim 10^{11}$--$10^{12}$~kg/m$^3$ & Electron vortex energy \\
+Bulk modulus $\Ka$          & $\sim 10^{28}$--$10^{29}$~J/m$^3$  & $\Ka = \rhoa\,c^2$ \\
+Compression ratio          & $\sim 7 \times 10^{7}$         & $\sigma / (\Ka \cdot \pi\xi^2/4)$ \\
+Bridge density              & $\sim 10^{19}$--$10^{20}$~kg/m$^3$ & String tension \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent\textit{The Coulomb-constant cross-check of
+Paper~7(a)~\cite{otto-boundcore}, Section~``Tightened Parameter Ranges,''
+narrows these ranges further: $m_A \in [628,689]$~MeV/$c^2$,
+$\rhoa \in [8.9\times10^{11}, 1.07\times10^{12}]$~kg/m$^3$,
+$\xi \in [0.20, 0.22]$~fm, $\Ka \in [8.0\times10^{28}, 9.6\times10^{28}]$~J/m$^3$.\
+The compression ratio along the Coulomb curve is
+$\approx 5.2\times10^{7}$ ($\log_{10}X \approx 7.71$), about $35\%$ below
+the electron-mass-only value above; see Paper~7(a) §10 for the
+$f_{\mathrm{core}}$-reconciliation caveat.}
+%
+Several cross-checks confirm internal consistency:
+%
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Linearity.}\ With $\rhoa \sim 10^{11}$~kg/m$^3$, the density
+    perturbation from an electron at its Compton wavelength is
+    $\delta\rho/\rhoa = 2Gm_e/(\lambdabar_C c^2) \approx 3.5 \times 10^{-45}$,
+    confirming the Lorentz factor to extraordinary precision.
+
+  \item \textbf{Proton mass.}\ Three bridge arms of length $\sim$0.3~fm at
+    string tension $\sigma \approx 1$~GeV/fm give
+    $E_{\mathrm{bridge}} \approx 3 \times 0.3 \times 1 = 900$~MeV, compared
+    to the measured proton mass of 938~MeV---the remaining $\sim$38~MeV is
+    accounted for by the quark endpoint masses ($\sim$9~MeV) and the junction
+    binding energy.
+
+  \item \textbf{Fermi LAT and the spin-wave cutoff.}\ The density healing
+    length $\xi \approx 0.17$--$0.28$~fm corresponds to a UV cutoff energy
+    $E_{\mathrm{UV}} = \hbar c / \xi \approx 700$--$1200$~MeV.\ If photons
+    were density-wave (Bogoliubov) excitations, their dispersion would
+    deviate from $\omega = ck$ at this scale---inconsistent with the Fermi
+    LAT quadratic constraint ($E_{\mathrm{QG},2} \gtrsim 10^{11}$~GeV).\
+    However, the theory identifies photons as \emph{spin-wave} excitations
+    of the spinor condensate, which have a separate spin healing length
+    $\xi_s = \hbar / \sqrt{2\,m_A\,q}$, where $q$ is the spin-dependent
+    coupling strength.\ The Fermi LAT constraint requires
+    $\xi_s \ll \xi$, i.e., $q \gg \tilde{g}\,n_0$.\ This is physically
+    consistent: the electromagnetic force (spin-wave channel) is
+    $\sim\!10^{36}$ times stronger than gravity (density channel), so
+    the spin coupling should vastly exceed the density coupling.\ The
+    Fermi LAT thus provides an independent confirmation that the photon
+    channel is the \emph{stiff} degree of freedom of the condensate,
+    while gravity operates through the much softer density channel.
+
+  \item \textbf{UV cutoff at the hadronic scale.}\ The energy scale
+    $E_{\mathrm{UV}} = \hbar c / \xi \approx 700$--$1200$~MeV sits precisely
+    at the QCD confinement scale, where perturbative QFT gives way to
+    non-perturbative hadron physics.\ This is not a coincidence: both the
+    theory's continuum breakdown and the onset of confinement reflect the
+    same underlying transition---the scale at which individual Aether quanta
+    become resolvable.
+
+  \item \textbf{Bridge compactness.}\ With $d_{\mathrm{bridge}} \approx
+    0.30$--$0.35$~fm and $\xi \approx 0.17$--$0.28$~fm, the ratio
+    $d_{\mathrm{bridge}}/\xi \approx 1.1$--$2.1$: bridges are only
+    1--2 healing lengths across.\ Unlike most superfluid structures, which
+    extend over many healing lengths, the bridge is essentially
+    ``all core''---compressed to the absolute minimum scale the condensate
+    permits.\ This maximal compactness is consistent with the bridge
+    carrying the maximum possible energy density for a given cross-section.
+
+  \item \textbf{Vortex ring geometry.}\ The narrowed $\xi$ pins the
+    electron's aspect ratio to $r_{\mathrm{loop}}/\xi \approx
+    1{,}400$--$2{,}300$, giving $\ln(8r_{\mathrm{loop}}/\xi) - 1/2 \approx
+    8.8$--$9.3$ ($\pm 3\%$ from the mean).\ The electron is a macroscopic
+    vortex ring relative to the medium's fundamental scale---a large, stable
+    structure far above the core size, consistent with its exceptional
+    stability.\ The near-constancy of the logarithmic factor means the
+    electron mass equation determines $\rhoa$ to better than one significant
+    figure once $m_A$ is known.
+
+  \item \textbf{Proton geometry.}\ The proton charge radius
+    ($r_p \approx 0.84$~fm) spans only $3$--$5\,\xi$, and each Y-junction
+    arm ($\sim$0.3~fm) is barely $1$--$1.8\,\xi$.\ The proton's internal
+    structure operates at the absolute minimum scale of the condensate, with
+    no extended ``bulk bridge'' region---consistent with the difficulty of
+    perturbative QCD at low momentum transfer.
+
+  \item \textbf{String-breaking distance.}\ The hadronization length
+    $L_{\mathrm{snap}} \approx 1.2$~fm corresponds to $4$--$7\,\xi$:
+    a bridge must stretch several healing lengths beyond equilibrium
+    before pair creation becomes energetically favorable.\ Lattice QCD
+    simulations measure the string-breaking distance at
+    $r_{\mathrm{break}} \approx 1.2$~fm \cite{bali2005,bulava2019},
+    in direct agreement with this prediction.
+\end{itemize}
+
+
+
+
+\subsection{Emergence of the Schr\"{o}dinger Equation}
+
+The theory's quantum superfluid structure contains all the ingredients needed to derive
+the Schr\"{o}dinger equation for quasiparticle excitations.\ This derivation is not a
+new postulate---it follows from the condensate dynamics already established.
+
+\subsubsection*{The Madelung representation}
+
+The Gross--Pitaevskii equation for the Aether order parameter
+$\psi = \sqrt{\rho/m_A}\,e^{i\phi}$ decomposes via the Madelung
+transformation \cite{madelung1927} into continuity and Euler equations,
+with a quantum potential
+$Q = -(\hbar^2/2m_A)\,\nabla^2\!\sqrt{\rho}/\sqrt{\rho}$ encoding all
+interference and diffraction effects.\ The inverse transformation
+recovers the nonlinear Schr\"{o}dinger equation (Gross--Pitaevskii), which
+for small perturbations around a uniform background linearizes to the
+ordinary Schr\"{o}dinger equation for quasiparticle excitations.
+
+\subsubsection*{The Wallstrom objection and its resolution}
+
+Wallstrom \cite{wallstrom1994} raised a well-known objection to hydrodynamic derivations
+of quantum mechanics: the Madelung equations are necessary but not sufficient, because
+they do not enforce single-valuedness of $\psi$.\ A classical fluid can have arbitrary
+circulation, but quantum mechanics requires the phase $\phi$ to change by $2\pi n$ around
+any closed loop, giving quantized circulation $\oint\mathbf{v}\cdot d\mathbf{l} = n\,h/m_A$.
+
+In the Aether framework, this objection is resolved automatically.\ The medium is a
+quantum superfluid whose order parameter $\psi$ is single-valued by construction---this
+is the same property that produces quantized vortices (Section~\ref{sec:qss}).\ The
+circulation quantization $\kappa = n\,h/m_A$ is not an additional assumption but is
+already built into the theory's fundamental structure.\ The Wallstrom gap---which is
+fatal for attempts to derive quantum mechanics from classical fluid mechanics---does not
+apply to a genuine quantum superfluid.
+
+\subsubsection*{Bogoliubov linearization}
+
+An independent route---spectral analysis rather than hydrodynamic
+transformation---comes from linearizing the Gross--Pitaevskii equation
+around the condensate ground state, yielding the Bogoliubov--de~Gennes
+equations \cite{bogoliubov1947} for quasiparticle amplitudes.\ The
+excitation spectrum transitions from phonon-like ($\omega \propto k$) at
+long wavelengths to free-particle-like ($\omega \propto k^2$) at short
+wavelengths, with crossover at the healing length $\xi$.\ Both routes
+yield the same result.
+
+This provides a concrete physical picture: \textbf{the Schr\"{o}dinger equation describes
+the dynamics of quasiparticle excitations above the condensate ground state}.\ Particles
+are vortex excitations of the Aether, and their quantum-mechanical behavior---interference,
+tunneling, discrete energy levels---is the behavior of quantized excitations in a superfluid,
+governed by the linearized condensate dynamics.
+
+
+% ============================================================
+
+% ============================================================
+\section{Summary of Theoretical Properties}
+% ============================================================
+
+\subsection{Properties of Light (Paper 7 contribution)}
+
+\begin{itemize}[leftmargin=2em]
+  \item Photons are spin-wave excitations of the spinor Aether condensate---transverse
+    oscillations of the condensate's internal spin degree of freedom, microscopically
+    distinct from longitudinal density compressions.\ At macroscopic wavelengths,
+    spin-orbit coupling produces effective mass currents, making photons
+    indistinguishable from first-sound perturbations with propagation speed~$c_1$
+    (Paper~6~\cite{otto-cosmology}).\ Derrick's theorem forbids stable localized
+    particles in the logarithmic condensate, so photons propagate as extended waves
+    in free space.\
+    Detection occurs when the wave enters the strong near-field pressure-gradient
+    environment near matter, where DCE dynamics facilitate condensation into a
+    localized quantum $E = h\nu$.\
+    Polarization states correspond to the two spin-wave modes of the spinor order
+    parameter.
+  \item Through spin-orbit coupling \cite{volovik2003}, these spin-wave excitations
+    produce effective mass currents that manifest as the flow-vector (electric) and
+    flow-angle (magnetic) fields described in Paper~4~\cite{otto-em}.
+\end{itemize}
+
+
+\subsection{Properties of Atomic Structure}
+
+\begin{enumerate}[leftmargin=2em]
+  \item Atoms function as resonant cavities in the Aether, with the nuclear electric field
+    (the near-field coherent axial-oscillation wave envelope) creating a pressure gradient
+    that confines electron waves through acoustic refraction.
+  \item Energy levels are discrete because only resonant modes---those satisfying angular
+    phase matching and radial confinement---persist in the cavity.\ Non-resonant modes
+    destructively interfere and radiate away.
+  \item The quantization condition ($n\lambda = 2\pi r$) is the requirement for
+    constructive self-interference of a wave propagating around a closed path in the
+    medium.
+  \item The ground state energy $E_1 = -\frac{1}{2}\alpha^2 m_e c^2 = -13.6$~eV is
+    determined by three quantities with established Aether interpretations: $c$ (wave
+    speed), $\alpha$ (electron flow strength), and $m_e c^2$ (binding rest energy).
+  \item The fine structure constant $\alpha \approx 1/137$ is the ratio of the electron's
+    orbital velocity to the Aether wave speed---an atomic Mach number.
+  \item The Bohr radius $a_0 = 0.529$~\AA{} is the characteristic size of the smallest
+    resonant mode in the nuclear Aether cavity.
+  \item Fine structure arises from the interaction of the electron's spin vortex with
+    its orbital motion through the Aether (spin-orbit coupling), producing corrections
+    of order $\alpha^2$.
+  \item Hyperfine structure arises from the coupling of two nested spin vortices
+    (electron and proton), producing the 21~cm hydrogen line.
+  \item The Zeeman and Stark effects result from external Aether flows (magnetic
+    circulation, electric inflow) distorting the symmetry of the resonant cavity.
+  \item The quantum defect in multi-electron atoms measures how deeply the electron's
+    resonant mode penetrates the inner flow structure of the Aether cavity.
+  \item Energy levels scale as $Z^2$ for hydrogen-like ions, reflecting the stronger
+    Aether inflow from higher nuclear charge.
+  \item Exotic systems (positronium, muonic hydrogen) follow the same cavity model with
+    modified reduced masses, providing independent experimental confirmation.
+\end{enumerate}
+
+
+
+\subsection{Properties of Fermion Statistics}
+
+\begin{enumerate}[leftmargin=2em]
+  \item The Pauli exclusion principle arises from the topological instability of
+    multiply quantized vortices in the Aether: two same-circulation vortices
+    superpose to create a doubly wound configuration that is energetically unstable
+    ($s^2$ vs.\ $s$ energy scaling) and topologically inconsistent.
+  \item Each resonant cavity mode admits at most two electron vortices, which must
+    have opposite circulation (opposite spin), producing the fundamental
+    two-electron-per-orbital rule.
+  \item The antisymmetric wavefunction under particle exchange follows from the
+    SU(2) topology of spin-$\tfrac{1}{2}$ vortices: exchange is equivalent to a
+    $2\pi$ relative rotation, which produces a sign change for half-integer
+    winding objects.
+  \item Atomic shell capacities ($2n^2$) follow from the resonant cavity mode
+    count $\sum_{l=0}^{n-1} 2(2l+1)$ with two opposite-circulation vortices per mode.
+  \item Hund's first rule (maximize spin) reflects the minimization of
+    vortex--vortex interaction energy: same-circulation vortices in different modes
+    have less flow-field overlap than opposite-circulation vortices in the same mode.
+  \item Electron degeneracy pressure arises because topological vortex exclusion
+    forces electrons into higher-energy cavity modes, creating a pressure that
+    resists compression and scales as $n_e^{5/3}$.
+  \item The Chandrasekhar limit ($1.44\,M_\odot$) is the point where vortex flow
+    speeds in the highest occupied modes approach $c$, the wave speed of the medium.
+  \item Integer-spin particles (bosons) have $2\pi$ phase winding per rotation and
+    acquire no sign change under exchange, permitting unlimited state occupation---consistent
+    with the observed behavior of photons and helium-4 atoms.
+  \item Covalent chemical bonds require opposite-circulation vortex pairs in shared
+    cavity modes; same-circulation pairs are forbidden by topological exclusion.
+  \item The dependence of exchange statistics on spatial dimensionality (fermion/boson
+    in 3D, anyons in 2D) confirms the topological origin of the exclusion principle.
+\end{enumerate}
+
+
+
+\subsection{Properties of Quantum Superfluid Structure}
+
+\begin{enumerate}[leftmargin=2em]
+  \item The Aether is a quantum superfluid with quantized circulation
+    $\kappa = n \kappa_0$, where $\kappa_0 = h/m_A$ and $m_A$ is the mass of
+    the Aether's constituent quantum.
+  \item The condensate is described by a spinor (two-component) order parameter
+    $\Psi = (\psi_\uparrow, \psi_\downarrow)$, encoding the two possible
+    vortex circulations (spin up and spin down).
+  \item The Aether field operators obey bosonic commutation relations, consistent
+    with linear wave superposition, photon propagation, and vacuum pair
+    production.
+  \item The equation of state is logarithmic: $P = \Ka \ln(\rhoa/\rho_0) + P_0$,
+    the unique form that produces a density-independent bulk modulus $\Ka$.
+  \item The Aether is not a simple weakly interacting Bose--Einstein condensate
+    (which would have $K \propto n^2$), but a denser quantum liquid with a
+    specific self-interaction potential.
+  \item The healing length $\xi = \hbar/(m_A c \sqrt{2})$ sets the vortex core
+    size and the minimum scale of the continuum description.
+  \item Electron mass arises from vortex topology: $m_e c^2 = \frac{1}{2}\rhoa\,
+    \kappa_e^2\,r_{\mathrm{loop}}[\ln(8r_{\mathrm{loop}}/\xi) - \frac{1}{2}]$, where $\kappa_e
+    = h/(2m_A)$ is the half-quantum circulation.
+  \item The Compton wavelength $\lambdabar_C = \hbar/(m_e c)$ is physically
+    identified with the vortex core or loop scale, providing a physical basis
+    for the QED ultraviolet cutoff.
+  \item Length contraction arises microscopically from vortex geometry adjustment:
+    $r_{\mathrm{loop}} \propto 1/\rhoa^2$ maintains constant rest energy as
+    local density varies.
+  \item The linearity constraint ($\delta\rho/\rhoa \ll 1$) favors $m_A \gg m_e$,
+    corresponding to $\rhoa \gg 10^6$~kg/m$^3$ and an extremely stiff medium.
+  \item Derrick's theorem proves that hedgehog skyrmions are unstable in the
+    logarithmic condensate: the energy $E = AL + BL^3$ ($A, B > 0$) has no finite
+    minimum, so the configuration collapses to a point.\ The electron must be a
+    quantized vortex ring, stabilized by discrete circulation quantization
+    $\kappa = nh/m_A$ rather than continuous energy balance.
+\end{enumerate}
+
+
+
+
+% ============================================================
+\section{Experimental Support and Connections to Established Physics}
+% ============================================================
+
+All experimentally confirmed results of quantum mechanics---including the
+Casimir effect, Lamb shift, anomalous magnetic moment, hydrogen spectroscopy,
+Bell inequality violations, matter-wave interference, electron spin resonance,
+and the photoelectric effect---are reproduced by this framework.\ The Aether
+model adds no corrections to standard QM predictions at currently accessible
+energies; deviations are predicted only at compressions approaching
+$\delta\rho/\rhoa \sim 1$, far beyond experimental reach.
+
+
+% ============================================================
+\section{Open Questions and Testable Predictions}
+% ============================================================
+
+The following areas relevant to this paper remain underdeveloped and represent opportunities for further refinement or falsification:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Quantifying the DCE threshold for electron vortices.} The Dynamic Casimir Effect has
+    well-defined mathematical conditions for when virtual particles become real.\ Mapping
+    these conditions onto the electron spin vortex would yield the specific vortex velocity
+    required for permanent binding, the expected ratio of transient to permanent events,
+    and the energy cost of mass formation.\ This is the single most important formalization
+    needed to make the theory quantitatively predictive.
+
+  \item \textbf{Enhanced mass production in extreme environments.} The DCE mechanism predicts that
+    environments with higher vortex velocities or Aether densities should produce more
+    permanent binding events.\ This predicts enhanced particle production in neutron star
+    interiors, near black hole event horizons, and in high-energy particle collisions---environments where effective boundary velocities approach or exceed the DCE threshold.
+
+  \item \textbf{Schwinger, Unruh, and Hawking effect unification.} The Schwinger effect (pair
+    production in strong electromagnetic fields), the Unruh effect (thermal radiation from
+    acceleration), and Hawking radiation (thermal emission from black holes) all involve
+    the conversion of vacuum fluctuations into observable particles or radiation.\ In the
+    Aether model, all three arise from the same mechanism: disruption of the transient
+    binding cycle's symmetry by velocity gradients or strong fields.\ The Schwinger
+    threshold provides a field-strength condition, the Unruh temperature provides an
+    acceleration condition, and the Hawking temperature provides a gravitational-gradient
+    condition---all of which should be expressible in terms of Aether binding parameters.
+    Demonstrating that all three effects yield consistent binding physics would strongly
+    support the unified mechanism.
+
+  \item \textbf{Quantitative unification of $G$ and $k$.} The theory predicts that the gravitational
+    constant $G$ should be derivable from the Coulomb constant $k$, the speed of light $c$,
+    and the asymmetry fraction $\epsilon$ of the transient bind--unbind cycle:
+    $G = k \cdot \epsilon \cdot (\psi/\phi)^2 \times (\text{geometric factors})$.\ Calculating
+    $\epsilon$ from the Heisenberg uncertainty principle and the DCE threshold would
+    eliminate $G$ as an independent constant.
+
+  \item \textbf{Quantitative derivation of the near-field pressure profile near a nucleus.}\
+    The resonant cavity model requires a specific pressure gradient around the
+    nucleus to produce the correct energy levels.\ Can this profile be derived
+    self-consistently from the theory's description of electric fields as coherent
+    axial-oscillation wave fields (Paper~4~\cite{otto-em}), combined with the gravitational
+    inflow from the nuclear mass?\ The profile must yield both the Bohr radius
+    ($a_0 = 0.529$~\AA) and the $1/n^2$ energy scaling.
+
+  \item \textbf{Physical origin of electron spin quantization.}\ The resonant cavity
+    model explains orbital quantization (angular phase matching) and energy quantization
+    (radial confinement), but the quantization of electron spin---the fact that the spin
+    vortex takes only two discrete orientations ($\pm\hbar/2$)---requires additional
+    explanation.\ What property of the Aether vortex restricts it to exactly two states?
+
+
+  \item \textbf{Derivation of anticommutation relations from Aether dynamics.}\
+    The exclusion principle is mathematically encoded in the anticommutation
+    relations $\{\hat{\psi}, \hat{\psi}^\dagger\} = 1$ for fermion field operators.\
+    Can these be derived from the dynamical equations governing vortex interactions
+    in the Aether, rather than imposed as an axiom?\ A successful derivation would
+    demonstrate that quantum field theory's algebraic structure emerges from the
+    medium's topology.
+
+  \item \textbf{Boson--fermion distinction from vortex winding number.}\ The theory
+    explains fermion exclusion through half-integer ($2\pi$) phase winding and boson
+    non-exclusion through integer ($2\pi \times 2s$) winding.\ Can this be made
+    quantitatively precise for composite particles?\ A deuteron (spin-1 boson) is
+    composed of three spin-$\tfrac{1}{2}$ quarks---what is the vortex topology of the
+    composite, and does it correctly predict bosonic statistics?
+
+
+  \item \textbf{Photon polarization from condensate spin-orbit coupling.}\ The
+    theory identifies photon polarization states with spin-wave excitations of
+    the spinor condensate, with spatial transversality arising from spin-orbit
+    coupling (Section~\ref{sec:qss}).\ Can the spin-orbit coupling Hamiltonian
+    of the Aether condensate be specified, and does the resulting spin-wave
+    dispersion relation reproduce Maxwell's equations---including the
+    transversality condition $\mathbf{k} \cdot \mathbf{E} = 0$ and the
+    absence of a longitudinal photon?
+
+  \item \textbf{Pinning the Aether quantum mass $m_A$.}\ Three independent
+    constraints (lattice QCD flux tube width, self-consistent vortex--bridge
+    equations, and the glueball mass spectrum) converge on
+    $m_A \approx 500$--$850$~MeV/$c^2$.\ Can precision measurements of vacuum
+    fluctuations, gravitational wave stiffness, or next-order corrections to
+    atomic spectra determine $m_A$ to better than $\pm 10\%$?
+
+  \item \label{item:log-eos-micro}\textbf{Physical origin of the
+    inverse-density interaction.}\ The $\Ka$-invariance constraint uniquely
+    determines the Gross--Pitaevskii nonlinearity as $g(n) = \mu_0 - \Ka/n$
+    (Eq.~\ref{eq:gp-nonlinearity})---an inverse-density interaction that is
+    repulsive at low density and asymptotically constant at high density.\
+    What microscopic physics between Aether quanta produces this specific
+    functional form?\ Candidates include effective multi-body scattering
+    at high density, quantum corrections to the condensate self-energy,
+    or an intrinsic structural property of the Aether's internal degrees
+    of freedom.\ Note that this is distinct from the logarithmic
+    Gross--Pitaevskii potential $g(n) = b\ln(n/n_0)$
+    \cite{rosen1969,zloshchastiev2011}, which yields a linear pressure
+    $P = bn$ (density-independent speed, density-dependent bulk modulus)---the
+    inverse of the Aether's requirements.
+
+  \item \textbf{Breaking the $\rhoa$ degeneracy.}\ The vortex energy equation
+    (\ref{eq:mass-from-topology}) connects $m_e$, $\rhoa$, and $m_A$ through
+    the vortex geometry, but introduces $m_A$ as a new unknown.\ The system
+    still has one degree of freedom.\ What additional constraint---from
+    dispersion measurements, gravitational wave coupling, or vacuum
+    impedance---can independently determine $\rhoa$ or $m_A$ and close the
+    system?
+
+  \item \textbf{Particle mass spectrum from vortex topology.}\ If the electron
+    is a quantized vortex ring with circulation $\kappa_e = h/(2m_A)$ and loop
+    radius $r_{\mathrm{loop}}$, can the full lepton mass spectrum (electron,
+    muon, tau) be derived from the allowed quantized vortex configurations in
+    the logarithmic condensate?\ Higher-energy vortex knots, linked rings, or
+    multiply-wound configurations may correspond to heavier particles.\ Can the
+    baryon masses (proton, neutron) similarly arise from three-vortex composite
+    topologies?\ The Derrick instability of hedgehog skyrmions
+    (Section~\ref{sec:derrick}) rules out one class of solitonic particles, but
+    the full classification of stable vortex configurations in a spinor
+    superfluid with logarithmic interactions remains open.
+
+  \item \textbf{Formal derivation of Bell-violating correlations from the
+    condensate.}\ The theory provides a physical mechanism for entanglement:
+    correlated excitations of the quantum superfluid condensate inherit
+    non-separable joint states from the condensate's global wavefunction,
+    and the binding principle ensures that excitations cannot be described
+    independently of the field they are bound to
+    (Section~\ref{sec:entanglement-binding}).\ This mechanism is consistent
+    with all observed entanglement phenomena and has a direct analogue in
+    laboratory BEC pair production \cite{steinhauer2016}.\ What remains is
+    a formal derivation: starting from the condensate's field operators and
+    bosonic commutation relations, show that the resulting two-excitation
+    correlation function reproduces exactly the $\cos^2(\theta_A - \theta_B)$
+    dependence that violates Bell inequalities.\ This would elevate
+    entanglement from a qualitative prediction to a quantitative one.
+
+\end{enumerate}
+
+
+
+% ============================================================
+\section{Proposed Experiments}
+% ============================================================
+
+The following experiments target specific predictions relevant to this paper:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Quadratic Lorentz-violating photon dispersion.}\
+    Special relativity predicts that Lorentz invariance is exact at all
+    energies---photons of any frequency travel at exactly $c$.\ In the Aether
+    model, Lorentz invariance is emergent and must break down at wavelengths
+    approaching the relevant healing length.\ For photons (spin-wave
+    excitations), the controlling scale is the \emph{spin} healing length
+    $\xi_s$, which is much smaller than the density healing length $\xi$
+    because the spin coupling vastly exceeds the density coupling
+    (Section~\ref{sec:strong-constraints}).\ The predicted dispersion
+    relation is $\omega^2 = k^2 c^2 (1 \pm k^2 \xi_s^2)$: a
+    \emph{quadratic} energy dependence, not linear, because the isotropic
+    medium preserves CPT symmetry.\ Current Fermi LAT constraints require
+    $\xi_s \lesssim 10^{-27}$~m, consistent with the spin-wave channel
+    being $\sim\!10^{22}$ times stiffer than the density channel.\
+    The Cherenkov Telescope Array (CTA), with its improved sensitivity to
+    time-of-arrival delays from high-redshift gamma-ray bursts, could push
+    the quadratic LIV constraint by one to two orders of magnitude.\ A
+    detection of quadratic (but not linear) dispersion would be a specific
+    signature of a medium-based theory.
+
+  \item \textbf{Vacuum birefringence from condensate anisotropy.}\
+    Both photon polarizations are spin-wave excitations in the same
+    channel, but they correspond to two transverse directions of the
+    spinor oscillation.\ If the condensate ground state has any
+    preferred orientation (e.g., residual nematic or ferromagnetic
+    order), the two transverse directions become inequivalent and the
+    polarization states propagate at marginally different speeds---vacuum
+    birefringence.\ Standard electrodynamics (in the absence of external
+    fields) predicts zero vacuum birefringence.\ The Aether model predicts
+    $\Delta c / c \sim (E / E_{\mathrm{Planck}})^2$ from any small
+    breaking of rotational symmetry within the spin-wave channel, which is
+    undetectable at optical frequencies but could accumulate over cosmological
+    distances for gamma-ray photons.\ Polarimetric observations of GRB
+    afterglows and blazar jets already constrain vacuum birefringence at levels
+    approaching $\Delta c / c < 10^{-38}$; future X-ray polarimetry missions
+    (IXPE, eXTP) could tighten these bounds further.\ A null result would
+    confirm that the condensate ground state is fully isotropic in the
+    spin-wave sector.
+
+\end{enumerate}
+
+\noindent\textit{For all proposed experiments, see Paper~1: General Overview \cite{otto-overview}.}
+
+
+% ============================================================
+\section{Mathematical Summary}
+% ============================================================
+
+This section collects the key equations relevant to the topics covered in this paper.
+\noindent\textit{For the complete mathematical summary, see Paper~1: General Overview \cite{otto-overview}.}
+
+\subsection{Fundamental Aether Parameters}
+% --------------------------------------------------
+
+The theory posits four microscopic parameters from which all macroscopic
+phenomena derive:
+%
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\hline
+\textbf{Symbol} & \textbf{Name} & \textbf{Constrained range} & \textbf{Primary constraint} \\
+\hline
+$\rhoa$  & Ambient density     & $10^{11}$--$10^{12}$~kg/m$^3$         & Electron vortex energy \\
+$\Ka$    & Bulk modulus         & $10^{28}$--$10^{29}$~J/m$^3$          & $\Ka = \rhoa\,c^2$ \\
+$m_A$    & Aether quantum mass  & $500$--$850$~MeV/$c^2$                & Flux tube width / glueball mass \\
+$\xi$    & Healing length       & $0.17$--$0.28$~fm                     & Bridge diameter (lattice QCD) \\
+\hline
+\end{tabular}
+\end{center}
+
+These four are not independent.\ Two defining relations connect them:
+%
+\begin{align}
+  c &= \sqrt{\Ka / \rhoa}
+    \label{eq:sum-speed-of-light} \\
+  \xi &= \frac{\hbar}{m_A\,c\,\sqrt{2}}
+    \label{eq:sum-healing-length}
+\end{align}
+%
+leaving two free Aether parameters (e.g., $\rhoa$ and $m_A$) from which all
+others follow.\ (A third parameter, $\epsilon$, enters through gravity; see below.)
+
+
+% --------------------------------------------------
+\subsection{Equation of State}
+% --------------------------------------------------
+
+The Aether obeys a logarithmic equation of state, the unique form that produces
+a density-independent bulk modulus (Section~\ref{sec:qss}):
+%
+\begin{equation}
+  P = \Ka \ln\!\Bigl(\frac{\rho}{\rho_0}\Bigr) + P_0
+  \label{eq:sum-eos}
+\end{equation}
+%
+Key consequence: the speed of sound $c_s = \sqrt{\Ka/\rho}$ varies with
+density.\ At ambient density, $c_s = c$.\ Note: in gravitational fields,
+Bernoulli's equation for free-fall inflow gives $\Delta\rho/\rhoa = 0$
+exactly, so $c$ does not vary near gravitating masses; the density
+dependence is relevant for material media and for the two-fluid
+cosmological structure where the superfluid fraction varies with
+temperature.\ This equation of state guarantees that $\Ka$ is constant
+under compression, which is experimentally confirmed by:
+%
+\begin{itemize}[leftmargin=2em]
+  \item Velocity time dilation measurements spanning $10^{-6}\,c$ to $0.9994\,c$
+    (precision $\sim 10^{-8}$).
+  \item The Fresnel drag coefficient $1 - 1/n^2$, exact across materials with
+    density ratios up to $\sim$6:1.
+\end{itemize}
+
+
+% --------------------------------------------------
+\subsection{Particle Properties from Vortex Topology}
+% --------------------------------------------------
+
+\paragraph{Circulation quantum.}
+%
+\begin{equation}
+  \kappa_0 = \frac{h}{m_A}, \qquad
+  \kappa_e = \frac{h}{2\,m_A} \quad (\text{half-quantum, electron})
+  \label{eq:sum-circulation}
+\end{equation}
+
+\paragraph{Electron mass from vortex energy.}
+%
+\begin{equation}
+  m_e\,c^2 = \tfrac{1}{2}\,\rhoa\,\kappa_e^2\,r_{\mathrm{loop}}\,
+    \bigl[\ln\!\bigl(8r_{\mathrm{loop}}/\xi\bigr) - \tfrac{1}{2}\bigr]
+  \label{eq:sum-electron-mass}
+\end{equation}
+%
+with $r_{\mathrm{loop}} \approx \lambdabar_C = \hbar/(m_e c) \approx 386$~fm.
+
+\paragraph{Vortex stability.}
+Multiply quantized vortices ($n \geq 2$) are energetically unstable
+($E \propto n^2$, while $n$ single vortices have $E \propto n$), providing
+the Pauli exclusion principle.\ Each orbital mode admits at most two
+opposite-circulation vortices.
+
+\paragraph{Derrick's theorem.}
+Hedgehog skyrmions in the logarithmic condensate have energy
+$E = A L + B L^3$ with $A, B > 0$; no finite minimum exists.\ Particles must
+be quantized vortex rings (Section~\ref{sec:derrick}).
+
+
+% --------------------------------------------------
+\subsection{Atomic Structure}
+% --------------------------------------------------
+
+\paragraph{Ground state energy.}
+%
+\begin{equation}
+  E_1 = -\tfrac{1}{2}\,\alpha^2\,m_e\,c^2 = -13.6\;\mathrm{eV}
+  \label{eq:sum-hydrogen}
+\end{equation}
+
+\paragraph{Quantization condition.}
+Constructive self-interference in the resonant Aether cavity:
+%
+\begin{equation}
+  n\,\lambda = 2\pi\,r
+  \label{eq:sum-quantization}
+\end{equation}
+
+\paragraph{Fine structure constant.}
+The electron's orbital velocity as a fraction of the Aether wave speed
+(atomic Mach number):
+%
+\begin{equation}
+  \alpha = \frac{v_{\mathrm{orbital}}}{c} \approx \frac{1}{137}
+  \label{eq:sum-alpha}
+\end{equation}
+
+
+% --------------------------------------------------
+
+\section*{Acknowledgments}
+\addcontentsline{toc}{section}{Acknowledgments}
+
+The author acknowledges the use of Claude (Anthropic) for \LaTeX{} formatting
+and editorial assistance.
+
+\bigskip
+
+
+% ============================================================
+% BIBLIOGRAPHY
+% ============================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{reinhardt2007}
+Reinhardt, S., Saathoff, G., Buhr, H., et al.,
+``Test of relativistic time dilation with fast optical atomic clocks at different velocities,''
+\textit{Nature Physics}, \textbf{3}, 861--864 (2007).
+
+
+\bibitem{duck1997}
+Duck, I.\ and Sudarshan, E.C.G.,
+\textit{Pauli and the Spin-Statistics Theorem}
+(World Scientific, Singapore, 1997).
+
+
+\bibitem{berry1997}
+Berry, M.V.\ and Robbins, J.M.,
+``Indistinguishability for quantum particles: spin, statistics and the geometric phase,''
+\textit{Proc.\ R.\ Soc.\ Lond.\ A}, \textbf{453}, 1771--1790 (1997).
+
+
+\bibitem{leinaas1977}
+Leinaas, J.M.\ and Myrheim, J.,
+``On the theory of identical particles,''
+\textit{Il Nuovo Cimento B}, \textbf{37}, 1--23 (1977).
+
+
+\bibitem{matthews1999}
+Matthews, M.R.\ et al.,
+``Vortices in a Bose--Einstein condensate,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{83}, 2498--2501 (1999).
+
+
+\bibitem{shin2004}
+Shin, Y.\ et al.,
+``Dynamical instability of a doubly quantized vortex in a Bose--Einstein condensate,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{93}, 160406 (2004).
+
+
+\bibitem{chandrasekhar1931}
+Chandrasekhar, S.,
+``The maximum mass of ideal white dwarfs,''
+\textit{Astrophys.\ J.}, \textbf{74}, 81--82 (1931).
+
+
+\bibitem{osheroff1972}
+Osheroff, D.D., Richardson, R.C., and Lee, D.M.,
+``Evidence for a new phase of solid He$^3$,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{28}, 885--888 (1972).
+
+
+\bibitem{autti2016}
+Autti, S.\ et al.,
+``Observation of half-quantum vortices in topological superfluid 3,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{117}, 255301 (2016).
+
+
+
+\bibitem{donnelly1991}
+Donnelly, R.J.,
+\textit{Quantized Vortices in Helium~II}
+(Cambridge University Press, Cambridge, 1991).
+
+
+\bibitem{vasileiou2013}
+Vasileiou, V., Jacholkowska, A., Piron, F., et al.,
+``Constraints on Lorentz invariance violation from Fermi--Large Area Telescope
+observations of gamma-ray bursts,''
+\textit{Phys.\ Rev.\ D}, \textbf{87}, 122001 (2013).
+
+
+\bibitem{derrick1964}
+Derrick, G.~H.,
+``Comments on nonlinear wave equations as models for elementary particles,''
+\textit{J.\ Math.\ Phys.}, \textbf{5}, 1252--1254 (1964).
+
+
+\bibitem{skyrme1962}
+Skyrme, T.~H.~R.,
+``A unified field theory of mesons and baryons,''
+\textit{Nucl.\ Phys.}, \textbf{31}, 556--569 (1962).
+
+
+\bibitem{steinhauer2016}
+Steinhauer, J.,
+``Observation of quantum Hawking radiation and its entanglement in an analogue black hole,''
+\textit{Nature Phys.}, \textbf{12}, 959--965 (2016).
+
+
+\bibitem{volovik2003}
+Volovik, G.~E.,
+\textit{The Universe in a Helium Droplet}
+(Oxford University Press, Oxford, 2003).
+
+
+\bibitem{taylor1909}
+Taylor, G.~I.,
+``Interference fringes with feeble light,''
+\textit{Proc.\ Camb.\ Phil.\ Soc.}, \textbf{15}, 114--115 (1909).
+
+
+\bibitem{grangier1986}
+Grangier, P., Roger, G., and Aspect, A.,
+``Experimental evidence for a photon anticorrelation effect on a beam splitter: A new light on single-photon interferences,''
+\textit{Europhys.\ Lett.}, \textbf{1}(4), 173--179 (1986).
+
+
+\bibitem{fein2019}
+Fein, Y.~Y., Geyer, P., Zwick, P., et~al.,
+``Quantum superposition of molecules beyond 25\,kDa,''
+\textit{Nat.\ Phys.}, \textbf{15}, 1242--1245 (2019).
+
+
+\bibitem{wheeler1978}
+Wheeler, J.~A.,
+``The `past' and the `delayed-choice' double-slit experiment,''
+in \textit{Mathematical Foundations of Quantum Theory}, ed.\ A.~R.\ Marlow
+(Academic Press, New York, 1978), pp.\ 9--48.
+
+
+\bibitem{jacques2007}
+Jacques, V., Wu, E., Grosshans, F., Treussart, F., Grangier, P., Aspect, A., and Roch, J.-F.,
+``Experimental realization of Wheeler's delayed-choice gedanken experiment,''
+\textit{Science}, \textbf{315}(5814), 966--968 (2007).
+
+
+\bibitem{elitzurvaidman1993}
+Elitzur, A.~C.\ and Vaidman, L.,
+``Quantum mechanical interaction-free measurements,''
+\textit{Found.\ Phys.}, \textbf{23}(7), 987--997 (1993).
+
+
+\bibitem{kwiat1995}
+Kwiat, P., Weinfurter, H., Herzog, T., Zeilinger, A., and Kasevich, M.~A.,
+``Interaction-free measurement,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{74}(24), 4763--4766 (1995).
+
+
+\bibitem{englert1996}
+Englert, B.-G.,
+``Fringe visibility and which-way information: An inequality,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{77}(11), 2154--2157 (1996).
+
+
+\bibitem{scullydruhl1982}
+Scully, M.~O.\ and Dr\"uhl, K.,
+``Quantum eraser: A proposed photon correlation experiment concerning observation and `delayed choice' in quantum mechanics,''
+\textit{Phys.\ Rev.\ A}, \textbf{25}(4), 2208--2213 (1982).
+
+
+\bibitem{kim2000}
+Kim, Y.-H., Yu, R., Kulik, S.~P., Shih, Y., and Scully, M.~O.,
+``Delayed `choice' quantum eraser,''
+\textit{Phys.\ Rev.\ Lett.}, \textbf{84}(1), 1--5 (2000).
+
+
+\bibitem{bell1964}
+Bell, J.~S.,
+``On the Einstein Podolsky Rosen paradox,''
+\textit{Physics Physique Fizika}, \textbf{1}(3), 195--200 (1964).
+
+
+\bibitem{stamper-kurn2013}
+Stamper-Kurn, D.~M.\ and Ueda, M.,
+``Spinor Bose gases: Symmetries, magnetism, and quantum dynamics,''
+\textit{Rev.\ Mod.\ Phys.}, \textbf{85}, 1191--1244 (2013).
+
+
+\bibitem{madelung1927}
+Madelung, E.,
+``Quantentheorie in hydrodynamischer Form,''
+\textit{Z.\ Phys.}, \textbf{40}, 322--326 (1927).
+
+
+\bibitem{wallstrom1994}
+Wallstrom, T.~C.,
+``Inequivalence between the Schr\"odinger equation and the Madelung hydrodynamic equations,''
+\textit{Phys.\ Rev.\ A}, \textbf{49}(3), 1613--1617 (1994).
+
+
+\bibitem{bogoliubov1947}
+Bogoliubov, N.~N.,
+``On the theory of superfluidity,''
+\textit{J.\ Phys.\ (USSR)}, \textbf{11}, 23--32 (1947).
+
+
+\bibitem{cardoso2013}
+Cardoso, N., Cardoso, M., and Bicudo, P.,
+``Inside the SU(3) quark-antiquark QCD flux tube: screening versus quantum widening,''
+\textit{Phys.\ Rev.\ D}, \textbf{88}(5), 054504 (2013).
+
+
+\bibitem{morningstar1999}
+Morningstar, C.~J.\ and Peardon, M.~J.,
+``The glueball spectrum from an anisotropic lattice study,''
+\textit{Phys.\ Rev.\ D}, \textbf{60}(3), 034509 (1999).
+
+
+\bibitem{cea2024}
+Cea, P., Cosmai, L., and Ferretti, A.,
+``The chromoelectric flux tube revisited,''
+arXiv:2409.20168 [hep-lat] (2024).
+
+
+\bibitem{cea2012}
+Cea, P.\ and Cosmai, L.,
+``Chromoelectric flux tubes and coherence length in QCD,''
+\textit{Phys.\ Rev.\ D}, \textbf{86}(5), 054501 (2012).
+
+
+
+
+\bibitem{otto-overview}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: General Overview,''
+(2026).
+
+\bibitem{otto-relativity}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: Special Relativity,''
+(2026).
+
+\bibitem{otto-cosmology}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: Cosmology,''
+(2026).
+
+\bibitem{otto-em}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: Magnetic and Electric Fields,''
+(2026).
+
+\bibitem{lorentz1904}
+Lorentz, H.~A.,
+``Electromagnetic phenomena in a system moving with any velocity smaller than that of light,''
+\textit{Proceedings of the Royal Netherlands Academy of Arts and Sciences}, \textbf{6}, 809--831 (1904).
+
+\bibitem{rosen1969}
+Rosen, G.,
+``Dilatation covariance and exact solutions in local relativistic field theories,''
+\textit{J.\ Math.\ Phys.}, \textbf{10}, 1882--1887 (1969).
+
+\bibitem{zloshchastiev2011}
+Zloshchastiev, K.~G.,
+``Volume element structure and roton-maxon-phonon excitations in superfluid helium beyond the Gross-Pitaevskii approximation,''
+\textit{Eur.\ Phys.\ J.\ B}, \textbf{85}, 273 (2012).
+
+\bibitem{bali2005}
+Bali, G.~S., Neff, H., Duessel, T., Lippert, T., and Schilling, K.,
+``Observation of string breaking in QCD,''
+\textit{Phys.\ Rev.\ D}, \textbf{71}(11), 114513 (2005).
+
+\bibitem{bulava2019}
+Bulava, J., H\"orz, B., Knechtli, F., Koch, V., Moir, G., Morningstar, C., and Peardon, M.,
+``String breaking by light and strange quarks in QCD,''
+\textit{Phys.\ Lett.\ B}, \textbf{793}, 493--498 (2019).
+
+\bibitem{otto-boundcore}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: Bound Core Electron Model,''
+(2026).
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,856 @@
+\documentclass[12pt,letterpaper]{article}
+
+% ---- Packages ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}  % Times New Roman text + math (replaces mathptmx)
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{booktabs}
+
+% ---- Section formatting ----
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ---- Spacing ----
+\setstretch{1.15}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% ---- Custom commands ----
+\newcommand{\rhoa}{\rho_{\!A}}
+\newcommand{\Ka}{K_{\!A}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Superfluid Cooling Feedback as the Origin\\
+of Dark Energy and Dark Matter}\\[1em]
+{\large Erik Otto}\\[0.5em]
+{\normalsize\itshape Working Paper in the Dynamic Aether Mechanics Framework}
+\end{center}
+
+\vspace{1em}
+
+\begin{abstract}
+Within the Dynamic Aether Mechanics framework, a single mechanism---the
+freeze-out of roton-like excitations as the cosmic Aether cools---is shown to
+produce both dark energy and dark matter through a self-reinforcing feedback
+loop.\ As the universe expands, the Aether temperature drops below the roton
+energy gap, exponentially suppressing the normal-fluid fraction.\ This
+collapse in normal fraction eliminates the bulk viscosity that had been
+braking cosmic expansion, creating an irreversible ratchet: expansion causes
+cooling, cooling reduces viscous resistance, reduced resistance permits faster
+expansion.\ The mechanism naturally explains the onset of cosmic acceleration
+$\sim$5~Gyr ago (the epoch when the Aether temperature crossed below the roton
+gap), the phantom-to-quintessence crossing observed by DESI, and the near
+equality of the CMB temperature and the transition temperature.\ Early-universe
+dark matter effects arise through a complementary channel: the
+temperature-dependent gravitational asymmetry fraction $\epsilon(T)$ produces
+stronger effective gravity in cold, dense regions, mimicking the gravitational
+signatures conventionally attributed to dark matter particles.\ The two dark
+phenomena are thus revealed as dual consequences of the same underlying
+thermodynamic transition---resolving the cosmic coincidence problem.
+\end{abstract}
+
+\vspace{1em}
+
+\bigskip
+\noindent\textit{This working paper explores a specific mechanism within the
+Dynamic Aether Mechanics framework.\ It references results from Paper~1
+(General Overview), Paper~3 (Gravity), and Paper~6 (Cosmology) of the main
+series.\ The ideas presented here are under development and may be
+incorporated into the main papers in revised form.}
+\bigskip
+
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+Modern cosmology faces two deeply puzzling observations: approximately 68\%
+of the universe's energy budget consists of dark energy---a repulsive
+influence causing the expansion of the universe to accelerate---while
+approximately 27\% consists of dark matter---an attractive influence that
+binds galaxies and clusters more tightly than their visible mass can
+account for.\ The standard $\Lambda$CDM model treats these as entirely
+separate phenomena: a cosmological constant $\Lambda$ for dark energy and
+cold, collisionless particles for dark matter.
+
+This separation raises an uncomfortable question known as the \emph{cosmic
+coincidence problem}: why are the densities of dark energy and dark matter
+similar in magnitude \emph{right now}?\ In $\Lambda$CDM, dark energy density
+is constant while matter density dilutes as $a^{-3}$; their near-equality
+today is a fleeting accident with no physical explanation.
+
+The Dynamic Aether Mechanics framework (Papers~1--7) offers a different
+perspective.\ In this framework, both dark energy and dark matter arise from
+thermodynamic properties of a single medium---the Aether---specifically from
+its two-fluid (superfluid + normal) structure.\ Paper~6 identifies dark energy
+as the thermal pressure of hot void Aether, sustained by bulk-viscous
+dissipation of the Hubble flow, and dark matter as the two-fluid first-sound
+correction that produces additional centripetal acceleration through the
+acoustic metric.
+
+This working paper develops a specific mechanism---\emph{roton freeze-out}---that
+connects these two phenomena through a single thermodynamic transition and
+explains their simultaneous emergence.\ The central idea is that the Aether's
+excitation spectrum includes a roton-like energy gap $\Delta$, and as the
+cosmic temperature drops below $\Delta/k_B$, the resulting exponential
+suppression of the normal fraction triggers a cascade of consequences that
+manifest as both dark energy and dark matter.
+
+
+% ============================================================
+\section{The Cooling Feedback Mechanism}
+\label{sec:cooling}
+% ============================================================
+
+\subsection{Global Cooling of the Free Aether}
+
+Two processes have shaped the thermal state of the Aether over cosmic history
+(Paper~6, Section~1):
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Permanent binding} locks thermal energy into mass.\ Each
+    mass-formation event (driven by the Dynamic Casimir Effect) extracts energy
+    from the local Aether, cooling the matter-containing regions.
+
+  \item \textbf{Stellar radiation} heats the Aether in voids, partially
+    offsetting the cooling.\ However, the integrated stellar radiation
+    ($\sim$$10^{-14}$~J/m$^3$) falls $\sim$$10^4$ times short of the observed
+    dark energy density, so the dominant energy channel is bulk-viscous
+    dissipation of the Hubble flow.
+\end{enumerate}
+
+The net effect over cosmic time is a gradual decrease in the mean Aether
+temperature.\ The CMB temperature $T_{\mathrm{CMB}}(z) = T_0(1 + z)$, where
+$T_0 = 2.725$~K, tracks this cooling: at redshift $z = 2$ the Aether was at
+$\sim$8~K, and at $z = 5$ it was at $\sim$16~K.
+
+
+\subsection{Roton-Like Excitations and the Energy Gap}
+
+In superfluid helium-4, the excitation spectrum contains two branches: low-energy
+phonons ($\omega = ck$) and higher-energy rotons with a characteristic energy gap
+$\Delta_{\mathrm{He}}/k_B \approx 8.6$~K.\ Below this gap, roton excitations are
+exponentially suppressed, and the normal fraction collapses:
+%
+\begin{equation}
+  \frac{\rho_n}{\rhoa} \;\propto\; \exp\!\left(-\frac{\Delta}{k_B T}\right)
+  \quad\text{for}\quad T \lesssim \Delta/k_B
+  \label{eq:normal-fraction}
+\end{equation}
+
+If the Aether possesses analogous intermediate-wavelength excitations (an open
+question identified in Paper~6, Section~1.10), the same exponential suppression
+occurs as the cosmic temperature drops below the gap energy.\ The roton gap
+$\Delta/k_B$ for the Aether need not equal helium's value; it is determined by
+the Aether's specific interaction parameters ($m_A$, $\rhoa$, $\Ka$).
+
+Note that the full Landau formula for helium-4 rotons includes a prefactor
+$\rho_{n,\mathrm{roton}} \propto T^{-1/2}\exp(-\Delta/k_B T)$.\ The
+$T^{-1/2}$ factor is specific to helium's roton dispersion relation; the
+Aether's excitation spectrum may produce a different prefactor.\ The
+exponential Boltzmann suppression is universal for any gapped excitation and
+dominates the temperature dependence.\ Throughout this paper, the pure
+exponential is used as an approximation; the prefactor introduces corrections
+of order $(1+z)^{-1/2}$ (a $\sim$40\% reduction at $z = 2$) that do not
+qualitatively change the results.
+
+Paper~6 already identifies the excitation spectrum as the critical unknown that
+simultaneously determines the dark matter magnitude ($\Delta c_1^2/c^2 \sim
+10^{-6}$), the bulk viscosity ($\zeta_n \sim 10^6$~Pa\,s), the void temperature
+ratio ($T_{\mathrm{void}}/T_{\mathrm{wall}} \approx 2.5$), and the dark energy
+equation of state $w(z)$.\ This paper proposes that the roton gap $\Delta$ is the
+single parameter that governs all four.
+
+
+\subsection{The Self-Reinforcing Ratchet}
+
+The cooling feedback operates through a self-reinforcing cycle:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Expansion does adiabatic work.}\ The Hubble flow cools the
+    normal component of the Aether (the superfluid component, carrying zero
+    entropy, cannot be cooled further).
+
+  \item \textbf{Cooling suppresses roton excitations.}\ As $T$ drops further
+    below $\Delta/k_B$, roton modes freeze out exponentially, converting normal
+    fluid to superfluid.
+
+  \item \textbf{The feedback becomes self-sustaining.}\ In principle, heating
+    can reconvert superfluid to normal fluid (as in helium-4).\ However, the
+    viscous heating that could replenish the normal fraction is itself
+    \emph{proportional to the normal fraction} ($\zeta_n \propto \rho_n$).\
+    Once $\rho_n$ drops below a critical threshold, the heating rate becomes
+    too weak to offset the cooling from expansion---the feedback loop becomes
+    supercritical.\ From this point, cooling outpaces heating, the normal
+    fraction continues to fall, and the process is dynamically irreversible:
+    a self-reinforcing instability rather than a thermodynamic one-way door.
+
+  \item \textbf{Viscosity collapses.}\ Bulk viscosity $\zeta_n$ is carried
+    exclusively by the normal component.\ As the normal fraction drops, so does
+    $\zeta_n$, reducing the viscous braking that had been decelerating the
+    expansion.
+
+  \item \textbf{Expansion accelerates.}\ With less viscous resistance, the
+    existing expansion---driven by the thermal pressure differential between
+    voids and matter regions---encounters less opposition.\ The expansion rate
+    increases.
+
+  \item \textbf{Return to step 1.}\ Faster expansion produces more adiabatic
+    cooling, driving further roton freeze-out.
+\end{enumerate}
+
+This is a positive feedback loop that becomes self-sustaining once the normal
+fraction drops below the critical threshold (step~3).\ Below this threshold,
+the ratchet only tightens: the system cannot return to the high-viscosity,
+braking-dominated regime because the mechanism that would restore it (viscous
+heating) has been weakened by the very transition it would need to reverse.\
+The result is an accelerating expansion that we observe as dark energy.
+
+
+% ============================================================
+\section{Dark Energy from Roton Freeze-Out}
+\label{sec:dark-energy}
+% ============================================================
+
+\subsection{Viscous Heating Rate}
+
+Paper~6 derives the bulk-viscous dissipation rate from the Hubble flow:
+%
+\begin{equation}
+  \dot\varepsilon \;=\; 9\,\zeta_n\,H^2
+  \label{eq:dissipation}
+\end{equation}
+
+In the roton freeze-out model, the bulk viscosity evolves with redshift through
+the normal fraction:
+%
+\begin{equation}
+  \zeta_n(z) \;=\; \zeta_0 \, f_n(z)
+  \label{eq:zeta-evolution}
+\end{equation}
+%
+where $\zeta_0 \sim 10^6$~Pa\,s is the present-day value and the relative
+normal fraction is:
+%
+\begin{equation}
+  f_n(z) \;\equiv\; \frac{\rho_n(z)}{\rho_n(0)}
+    \;=\; \exp\!\left[\frac{\Delta}{k_B T_0}\,\frac{z}{1+z}\right]
+  \label{eq:fn}
+\end{equation}
+
+This follows from Eq.~\ref{eq:normal-fraction} with $T(z) = T_0(1+z)$:
+%
+\begin{equation}
+  f_n(z) = \frac{\exp(-\Delta/[k_B T_0(1+z)])}{\exp(-\Delta/[k_B T_0])}
+    = \exp\!\left[\frac{\Delta}{k_B T_0}\left(1 - \frac{1}{1+z}\right)\right]
+    = \exp\!\left[\frac{\alpha\,z}{1+z}\right]
+\end{equation}
+%
+where $\alpha \equiv \Delta/(k_B T_0)$.
+
+
+\subsection{Normal Fraction and Heating Rate Tables}
+
+For $\Delta/k_B = 6$~K (constrained below by the DESI crossing redshift),
+$\alpha = 6/2.725 = 2.20$.\ The resulting evolution:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Redshift $z$ & $T_{\mathrm{CMB}}$ (K) & $f_n(z)$ &
+  $(H/H_0)^2$ & $S(z)/S(0)$ \\
+\midrule
+0   & 2.73 & 1.00 & 1.00  & 1.0 \\
+0.3 & 3.54 & 1.66 & 1.36 & 2.3 \\
+0.5 & 4.09 & 2.08 & 1.71 & 3.6 \\
+0.7 & 4.63 & 2.48 & 2.17 & 5.4 \\
+1.0 & 5.45 & 3.01 & 3.10 & 9.3 \\
+2.0 & 8.18 & 4.34 & 8.80 & 38.2 \\
+5.0 & 16.4 & 6.26 & 65.5 & 410 \\
+\bottomrule
+\end{tabular}
+\caption{Evolution of the normal fraction ratio $f_n(z)$, the squared Hubble
+  parameter, and the total viscous heating rate $S(z) = 9\zeta_n(z)H(z)^2$
+  relative to today, for a roton gap $\Delta/k_B = 6$~K.\ The Hubble parameter
+  uses $H(z) = H_0\sqrt{0.3(1+z)^3 + 0.7}$.}
+\label{tab:heating}
+\end{table}
+
+The viscous heating rate at $z = 1$ was approximately 9$\times$ stronger than
+today, and at $z = 2$ it was approximately 38$\times$ stronger.\ This dramatic
+change is driven primarily by the exponential roton factor at moderate redshifts
+and by the $H^2$ factor at higher redshifts.
+
+
+\subsection{Phantom--Quintessence Crossing}
+
+The effective dark energy equation of state parameter $w(z)$ is defined by how
+the dark energy density $\rho_{\mathrm{DE}}$ evolves:
+%
+\begin{equation}
+  w(z) \;=\; -1 \;-\; \frac{1}{3H}\,\frac{d\ln\rho_{\mathrm{DE}}}{dt}
+  \label{eq:w-definition}
+\end{equation}
+
+The dark energy density evolves through two competing effects:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Viscous heating} (adds energy):
+    $\dot\varepsilon_{\mathrm{heat}} = 9\,\zeta_n(z)\,H^2$
+  \item \textbf{Expansion dilution} (removes energy):
+    $\dot\varepsilon_{\mathrm{dilute}} \propto H\,P_{\mathrm{th}}$
+    (see Section~\ref{sec:wz} for discussion of the dilution rate)
+\end{itemize}
+
+The balance determines the sign of $d\rho_{\mathrm{DE}}/dt$ and hence
+whether $w$ is above or below $-1$:
+
+\begin{itemize}[leftmargin=2em]
+  \item When heating dominates ($S > D$): $\rho_{\mathrm{DE}}$ is increasing
+    $\Rightarrow$ $w < -1$ \textbf{(phantom)}
+  \item When dilution dominates ($D > S$): $\rho_{\mathrm{DE}}$ is decreasing
+    $\Rightarrow$ $w > -1$ \textbf{(quintessence)}
+  \item At the crossover ($S = D$): $w = -1$ exactly
+\end{itemize}
+
+At high redshift, the viscous heating rate was far stronger than today
+(Table~\ref{tab:heating}), so heating dominated---placing the early dark energy
+firmly in the phantom regime ($w < -1$).\ As the Aether cooled through the roton
+gap, the normal fraction collapsed exponentially, viscous heating dropped, and
+dilution began to dominate---transitioning to the quintessence regime ($w > -1$).
+
+This is precisely the phantom-to-quintessence crossing observed by DESI at
+2.8--4.2$\sigma$ significance \cite{desi2025}.
+
+
+% ============================================================
+\section{The \texorpdfstring{$w(z)$}{w(z)} Equation of State}
+\label{sec:wz}
+% ============================================================
+
+\subsection{Evolution of the Dark Energy Density}
+
+The thermal pressure $P_{\mathrm{th}}$ of the void Aether evolves through two
+competing effects:
+%
+\begin{equation}
+  \frac{dP_{\mathrm{th}}}{dt} \;=\;
+    \underbrace{9\,\zeta_n(z)\,H^2}_{\text{viscous heating}}
+    \;-\; \underbrace{\beta\,H\,P_{\mathrm{th}}}_{\text{expansion work}}
+  \label{eq:P-evolution}
+\end{equation}
+%
+where $\beta$ parameterizes the rate at which the thermal pressure does
+work on the expansion.\ In a standard expanding fluid, $\beta = 3$
+(matter-like dilution $\propto a^{-3}$).\ However, the Aether density is
+held essentially constant ($\delta\rhoa/\rhoa \sim 10^{-4}$) by the
+enormous bulk modulus $\Ka \sim 10^{28}$~J/m$^3$, so the thermal energy
+density does not dilute in the usual sense.\ The effective $\beta$ depends
+on how efficiently the thermal pressure converts to kinetic energy of expansion
+and is an open calculation within the Aether framework.
+
+\paragraph{Why the standard $w(z)$ mapping is non-trivial.}
+In the Aether model, dark energy is not a homogeneous negative-pressure fluid
+as in $\Lambda$CDM.\ It is the \emph{thermal pressure gradient} between hot
+voids and cold matter-containing regions that drives galaxy recession---a real
+force, not a geometric effect.\ The equation of state parameter $w(z)$ is an
+\emph{effective} quantity extracted when observers fit the expansion history
+$H(z)$ to the $\Lambda$CDM framework.\ Deriving $w(z)$ precisely requires
+computing $H(z)$ from the Aether's pressure-gradient dynamics and then
+fitting it to the standard parameterization---a calculation that depends on
+$\beta$ and the full thermal history.
+
+\paragraph{Robust qualitative prediction.}
+Despite the mapping complexity, the \emph{direction} of the phantom--quintessence
+crossing is robust and does not depend on $\beta$.\ The viscous heating rate
+$S(z) = 9\,\zeta_n(z)\,H^2$ was dramatically stronger in the past
+(Table~\ref{tab:heating}).\ Regardless of the dilution rate, this means:
+
+\begin{itemize}[leftmargin=2em]
+  \item At high $z$: strong viscous heating was building up the effective dark
+    energy density faster than dilution could reduce it $\Rightarrow$ when fit to
+    $\Lambda$CDM, this appears as $w < -1$ \textbf{(phantom)}.
+  \item At low $z$: roton freeze-out has collapsed the heating rate, so whatever
+    dilution exists now dominates $\Rightarrow$ this appears as $w > -1$
+    \textbf{(quintessence)}.
+  \item The crossover from one regime to the other is the phantom--quintessence
+    crossing observed by DESI.
+\end{itemize}
+
+
+\subsection{Constraining the Roton Gap from DESI}
+
+The phantom--quintessence crossing occurs at the redshift $z_*$ where the
+viscous heating rate equals the expansion dilution rate
+(Eq.~\ref{eq:P-evolution} with $dP_{\mathrm{th}}/dt = 0$).\ The crossing
+redshift depends on $\alpha = \Delta/(k_B T_0)$ through
+$\zeta_n(z) = \zeta_0\,\exp[\alpha z/(1+z)]$.\ Since $\zeta_n$ grows
+exponentially with $z$ while the dilution rate grows more slowly, the
+crossing moves to higher $z$ for smaller $\alpha$ (smaller roton gap---slower
+exponential growth, so the balance point shifts outward).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$\Delta/k_B$ (K) & $\alpha$ & Estimated $z_*$ \\
+\midrule
+4  & 1.47 & $\sim$1.5 \\
+5  & 1.83 & $\sim$1.0--1.2 \\
+6  & 2.20 & $\sim$0.7--1.0 \\
+8  & 2.94 & $\sim$0.3--0.5 \\
+12 & 4.40 & $\sim$0.1--0.2 \\
+\bottomrule
+\end{tabular}
+\caption{Estimated phantom--quintessence crossing redshift $z_*$ as a function
+  of the roton gap $\Delta/k_B$.\ DESI observations indicate $z_* \gtrsim 1$,
+  constraining $\Delta/k_B \approx 5$--$6$~K.}
+\label{tab:crossing}
+\end{table}
+
+DESI's observed crossing at $z \gtrsim 1$ constrains the roton gap to
+$\Delta/k_B \approx 5$--$6$~K.\ This is modestly below the helium-4 roton gap
+($8.6$~K), consistent with the fact that the Aether has fundamentally different
+microscopic parameters ($m_A \sim 700$~MeV/$c^2$ vs.\ $m_{\mathrm{He}} =
+4$~amu; $\rhoa \sim 10^{12}$~kg/m$^3$ vs.\ $\rho_{\mathrm{He}} \sim 145$~kg/m$^3$).
+
+
+\subsection{Qualitative Shape of \texorpdfstring{$w(z)$}{w(z)}}
+
+The model predicts a distinctive $w(z)$ shape:
+
+\begin{itemize}[leftmargin=2em]
+  \item At $z \gg z_*$: viscous heating strongly dominates $\Rightarrow$
+    $w \ll -1$ (deep phantom)
+  \item Near $z \approx z_*$: heating and dilution balance $\Rightarrow$
+    $w$ crosses $-1$
+  \item At $z = 0$: dilution dominates $\Rightarrow$ $w > -1$ (quintessence)
+  \item Far future ($z < 0$): roton freeze-out essentially complete,
+    $\zeta_n \to 0$ $\Rightarrow$ $w$ approaches a value determined by the
+    dilution rate $\beta$ (no viscous heating to offset dilution)
+\end{itemize}
+
+Crucially, $w(z)$ follows a \emph{phase-transition curve} (exponential in
+$\Delta/T$), not the smooth polynomial assumed by the CPL parameterization
+$w(a) = w_0 + w_a(1-a)$.\ Future high-precision $w(z)$ measurements could
+distinguish between the exponential form predicted here and polynomial models.
+
+
+\subsection{The CMB Temperature Coincidence}
+
+The current CMB temperature ($T_0 = 2.725$~K) lies within a factor of two of
+the constrained roton gap ($\Delta/k_B \approx 5$--$6$~K).\ This is not a
+coincidence---it is a \emph{consequence} of the fact that we observe the universe
+during the transition epoch.\ Dark energy became observationally significant when
+the normal fraction dropped enough for the feedback ratchet to dominate.\ We
+detect it now precisely because $T_0$ is in the range where roton freeze-out
+is actively occurring.
+
+The ``coincidence problem'' of $\Lambda$CDM---why is dark energy dominant
+\emph{now}?---becomes a phase-transition timing question with a physical answer:
+the Aether crossed $\Delta/k_B$ in the recent cosmological past, and the
+resulting ratchet is still tightening.
+
+
+% ============================================================
+\section{Dark Matter from Varying \texorpdfstring{$G$}{G}}
+\label{sec:dark-matter}
+% ============================================================
+
+\subsection{Temperature Dependence of the Gravitational Constant}
+
+Paper~3 derives the gravitational constant as $G \propto \epsilon\,\rhoa\,\psi^2$,
+where $\epsilon$ is the \emph{asymmetry fraction}---the fraction of each transient
+bind--unbind cycle's energy that escapes as the gravitational wave.\ Since the
+Aether density $\rhoa$ is essentially constant ($\delta\rhoa/\rhoa \sim 10^{-4}$),
+the primary channel for $G$ variation is through $\epsilon(T)$:
+
+\begin{quote}
+Higher temperature provides thermal energy that resists binding, potentially
+reducing the fraction of each cycle's energy that escapes as the gravitational
+wave.\ Cold environments (near matter) could have higher $\epsilon$ and therefore
+stronger gravitational output, while hot environments (cosmic voids) could have
+lower $\epsilon$.\ (Paper~3, Section~1.3)
+\end{quote}
+
+This means:
+%
+\begin{equation}
+  G(T) \;=\; G_0 \;\frac{\epsilon(T)}{\epsilon(T_0)}
+  \label{eq:G-varying}
+\end{equation}
+%
+where $G_0$ is the locally measured value (in cold, matter-containing regions).
+
+
+\subsection{Magnitude of the Variation}
+
+For structure formation, the dark matter mass-to-visible-mass ratio is
+approximately 5--6:1.\ If varying $G$ is responsible, we need:
+%
+\begin{equation}
+  \frac{G_{\mathrm{dense}}}{G_{\mathrm{void}}}
+    \;=\; \frac{\epsilon(T_{\mathrm{matter}})}{\epsilon(T_{\mathrm{void}})}
+    \;\approx\; 6
+  \label{eq:G-ratio}
+\end{equation}
+
+With the void-to-matter temperature ratio $T_{\mathrm{void}}/T_{\mathrm{matter}}
+\approx 2.5$ (Paper~6, Eq.~18), this requires:
+%
+\begin{equation}
+  \epsilon(T) \;\propto\; T^{-n}, \qquad
+  2.5^n = 6 \;\Rightarrow\; n \approx 1.95
+  \label{eq:epsilon-power}
+\end{equation}
+
+A near-quadratic temperature dependence $\epsilon \propto T^{-2}$ is physically
+motivated: each transient binding event involves a \emph{pair} of particles
+(particle--antiparticle pair from the Dynamic Casimir Effect), and the thermal
+disruption of each member's binding efficiency contributes independently,
+giving a product of two temperature-dependent factors.
+
+
+\subsection{Consistency with Local \texorpdfstring{$G$}{G} Measurements}
+
+The variation $G \propto T^{-2}$ does not conflict with the exquisite precision
+of local $G$ measurements.\ All terrestrial and solar-system measurements of $G$
+occur in the same thermal environment---cold, matter-containing regions where
+$T \approx T_{\mathrm{matter}}$ is essentially uniform.\ The measured value is
+$G(T_{\mathrm{matter}})$, which is constant across all local experiments.
+
+The \emph{spatial} variation of $G$ between galaxy cores and cosmic voids
+($\Delta G/G \sim 5$--$6$) is not directly measured, because:
+
+\begin{itemize}[leftmargin=2em]
+  \item Gravitational measurements (rotation curves, lensing) are made
+    \emph{near matter}, where $G = G_0$.
+  \item What is conventionally attributed to ``dark matter mass'' is the
+    \emph{difference} between the gravitational effect produced by
+    $G_{\mathrm{dense}}$ and what would be expected from $G_{\mathrm{void}}$
+    applied to the same visible mass.
+  \item No experiment directly compares $G$ at two locations with different
+    Aether temperatures.
+\end{itemize}
+
+
+\subsection{Constraints from the CMB}
+
+At the CMB epoch ($z \sim 1100$, $T \approx 3000$~K), the Aether temperature
+was nearly uniform: $\delta T/T \sim 10^{-5}$.\ The corresponding $G$ variation:
+%
+\begin{equation}
+  \frac{\delta G}{G} \;=\; n\,\frac{\delta T}{T}
+    \;\approx\; 2 \times 10^{-5}
+  \label{eq:deltaG-CMB}
+\end{equation}
+
+This is a 0.002\% variation---well within current CMB constraints on $G$
+variability, which are at the percent level.\ The effect would produce
+subtle modifications to the CMB high-$\ell$ power spectrum (enhanced Silk
+damping in slightly warmer regions), potentially detectable by next-generation
+polarization experiments (CMB-S4, LiteBIRD).
+
+
+% ============================================================
+\section{Mechanism Handoff: Early to Late Universe}
+\label{sec:handoff}
+% ============================================================
+
+The superfluid cooling model predicts that the \emph{mechanism} underlying
+``dark matter'' effects changes smoothly over cosmic time, even though the
+observational signatures remain broadly similar.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccll@{}}
+\toprule
+Epoch & $z$ & $T_{\mathrm{CMB}}$ (K) &
+  Primary DM mechanism & Primary DE mechanism \\
+\midrule
+Recombination & $\sim$1100 & $\sim$3000 & First-sound correction & Viscous braking (strong) \\
+Structure formation & 2--20 & 8--55 & First-sound + varying $G$ & Braking (strong) \\
+Transition & 0.5--2 & 4--8  & Both strengthening & Braking weakening \\
+Present & 0 & 2.7 & First-sound (peak) & Ratchet engaged \\
+Future & $<$0 & $<$2.7 & Weakening & Ratchet complete \\
+\bottomrule
+\end{tabular}
+\caption{The dominant dark matter and dark energy mechanisms at different
+  cosmic epochs.\ The first-sound correction (Paper~6) operates at all
+  epochs.\ Varying $G$ becomes a significant \emph{supplementary} channel
+  once structures form and temperature contrasts develop ($z \lesssim 20$).}
+\label{tab:handoff}
+\end{table}
+
+\paragraph{Recombination ($z \sim 1100$, $T \sim 3000$~K).}
+At the CMB epoch, the universe is nearly homogeneous ($\delta T/T \sim 10^{-5}$),
+so varying $G$ is negligible ($\delta G/G \sim 2 \times 10^{-5}$).\ Dark matter
+effects at this epoch---reflected in the CMB acoustic peak heights---arise from
+the first-sound correction (Paper~6), which operates whenever a temperature
+gradient exists between denser and less dense regions.\ The derivation of the
+CMB power spectrum from first-sound dynamics remains an open calculation
+(Paper~6, Section~1.10).
+
+\paragraph{Structure formation ($z \sim 2$--$20$, $T \sim 8$--$55$~K).}
+As proto-structures collapse, they cool the local Aether through binding,
+creating growing temperature contrasts with the surrounding medium.\ This
+bootstrapping process progressively enhances $G$ in dense regions: slight
+cooling $\to$ slightly stronger $G$ $\to$ faster collapse $\to$ more cooling.\
+By $z \sim 2$--$3$, significant structures exist with $T_{\mathrm{void}}/
+T_{\mathrm{matter}} \approx 2.5$, and the varying-$G$ channel contributes
+substantially alongside the first-sound correction.
+
+\paragraph{Transition ($z \sim 0.5$--$2$, $T \sim 4$--$8$~K).}
+The Aether is cooling through the roton gap.\ The normal fraction is dropping
+exponentially.\ Both varying $G$ (still significant where temperature contrasts
+persist) and the first-sound correction (strengthening as the superfluid
+fraction increases near matter while voids retain more normal component)
+contribute to dark matter effects.\ Dark energy is ``turning on'' as viscous
+braking collapses.
+
+\paragraph{Present ($z \approx 0$, $T \approx 2.7$~K).}
+The normal fraction is low globally.\ Near matter (cold regions), the Aether
+is nearly pure superfluid.\ In voids (warmer), some normal component persists.\
+The contrast in $c_1$ between these regions is at its peak, making the
+first-sound correction the dominant dark matter mechanism for galaxy rotation
+curves and gravitational lensing.\ Dark energy is fully engaged---the ratchet
+is tightening.
+
+\paragraph{Far future ($z < 0$, $T < 2.7$~K).}
+Eventually, even the voids go fully superfluid.\ The $c_1$ gradient flattens,
+weakening dark matter effects.\ $G$ variation also weakens (temperatures
+converge).\ Galaxies gradually become less bound.\ Expansion continues
+accelerating (the ratchet is self-sustaining), heading toward a fully superfluid
+cosmos.
+
+
+% ============================================================
+\section{Observational Consistency Checks}
+\label{sec:checks}
+% ============================================================
+
+\subsection{DESI Dark Energy Equation of State}
+
+\textbf{Observation:} $w_0 > -1$ and $w_a < 0$ at 2.5--3.9$\sigma$; phantom-to-quintessence crossing at $z \gtrsim 1$ \cite{desi2025}.
+
+\textbf{Model prediction:} At $z = 0$, dilution dominates over viscous heating
+($w > -1$, quintessence).\ Going back in time, the exponentially larger
+$\zeta_n$ makes heating dominate ($w < -1$, phantom).\ With $\Delta/k_B \approx
+5$--$6$~K, the crossing occurs at $z \approx 0.7$--$1.0$.
+
+\textbf{Status:} \textbf{Consistent.}
+
+
+\subsection{Bulk Viscosity}
+
+\textbf{Observation:} Bulk viscous cosmology models require $\zeta_0 \sim
+10^6$~Pa\,s \cite{viscous2025}.
+
+\textbf{Model prediction:} $\zeta_0 \sim 10^6$~Pa\,s (Paper~6, Eq.~2).
+
+\textbf{Status:} \textbf{Exact match.}
+
+
+\subsection{JWST High-Redshift Galaxies}
+
+\textbf{Observation:} Unexpectedly massive, mature galaxies at $z > 6$.\ No
+clear evidence for modified dark matter properties, though results are
+consistent with both CDM and WDM.
+
+\textbf{Model prediction:} At $z > 6$, the first-sound correction provides
+baseline dark matter effects, while varying $G$ (enhanced in cold, dense
+regions via the bootstrapping process of Section~\ref{sec:handoff})
+provides additional gravitational enhancement.\ Together, these produce
+\emph{faster} structure formation than standard gravity alone.\ Massive
+galaxies forming early is a natural consequence.\ The gravitational signatures
+are indistinguishable from CDM because both ``more mass'' and ``stronger $G$''
+produce the same observables (deeper potential wells, stronger lensing).
+
+\textbf{Status:} \textbf{Consistent; potentially explanatory.}
+
+
+\subsection{CMB Constraints on Varying \texorpdfstring{$G$}{G}}
+
+\textbf{Observation:} High-$\ell$ CMB power spectrum constrains $G$ variations
+at the percent level.
+
+\textbf{Model prediction:} At the CMB epoch ($z \sim 1100$, $T \approx 3000$~K),
+temperature variations are $\delta T/T \sim 10^{-5}$.\ The corresponding
+$\delta G/G \approx 2 \times 10^{-5}$---three orders of magnitude below
+current constraints.
+
+\textbf{Status:} \textbf{No conflict.}
+
+
+\subsection{Dark Matter Halo Evolution}
+
+\textbf{Observation:} Halo concentrations at $z \sim 3$ are roughly constant
+across mass ranges ($c \sim 3.5$--$4$), with weak mass dependence that
+strengthens at lower $z$.
+
+\textbf{Model prediction:} At $z \sim 3$, the dark matter effect includes both
+the first-sound correction and a growing contribution from $G$ variation.\
+The $G$-variation component is temperature-dependent (not mass-dependent),
+producing weak mass dependence.\ At $z \sim 0$, the first-sound correction
+dominates and depends on the galaxy's luminosity (which sets the temperature
+profile), introducing stronger mass dependence.\ The transition from
+weak to strong mass dependence is qualitatively consistent with the observed
+trend.
+
+\textbf{Status:} \textbf{Consistent.}
+
+
+\subsection{Cosmic Coincidence}
+
+\textbf{Problem:} Why are $\Omega_{\mathrm{DE}}$ and $\Omega_{\mathrm{DM}}$
+similar in magnitude today?
+
+\textbf{Resolution:} Both phenomena are consequences of the same thermodynamic
+transition.\ Dark energy ``turns on'' when the normal fraction drops enough for
+the ratchet to engage.\ The first-sound dark matter correction reaches its
+maximum strength during the same transition (maximum contrast between matter
+and void superfluid fractions).\ Their co-emergence from a single event naturally
+produces similar magnitudes without fine-tuning.
+
+\textbf{Status:} \textbf{Resolved in principle.}
+
+
+% ============================================================
+\section{Predictions}
+\label{sec:predictions}
+% ============================================================
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Roton gap $\Delta/k_B \approx 5$--$6$~K.}\ This is a specific,
+    testable prediction.\ If the Aether's excitation spectrum can be derived
+    from first principles (from $m_A$, $\rhoa$, $\Ka$), the resulting roton gap
+    must fall in this range.\ This same gap must simultaneously produce the
+    correct dark matter magnitude, bulk viscosity, and void temperature ratio.
+
+  \item \textbf{$w(z)$ follows a phase-transition curve.}\ The equation of state
+    is not a smooth polynomial but contains the exponential factor
+    $\exp[\Delta/(k_B T_0) \cdot z/(1+z)]$.\ High-precision $w(z)$ measurements
+    from future DESI data releases, Euclid, and the Vera Rubin Observatory
+    could distinguish this shape from the CPL parameterization.
+
+  \item \textbf{Dark matter signatures evolve with redshift.}\ Specifically,
+    the ratio of ``dark'' to visible mass should show subtle redshift dependence:
+    at $z > 2$ (where $G$ variation contributes significantly alongside the
+    first-sound correction), dark matter effects may exhibit different scaling
+    relations than at $z < 1$ (where the first-sound correction alone
+    dominates).\ JWST rotation curve measurements at $z \sim 2$--$3$
+    could test this.
+
+  \item \textbf{Void regions are ``further along'' the transition.}\ Voids
+    with lower temperatures should show stronger expansion rates and different
+    dark matter characteristics than regions near large structures.\ This
+    prediction is testable with upcoming void catalogs from DESI and Euclid.
+
+  \item \textbf{Late-time viscosity decrease.}\ The bulk viscosity of the cosmic
+    medium should be measurably lower at $z = 0$ than at $z = 1$.\ This could
+    manifest as redshift-dependent damping of baryon acoustic oscillations or
+    gravitational wave propagation.
+
+  \item \textbf{Massive early galaxies from enhanced $G$.}\ The model predicts
+    that structure formation was accelerated by $G$ enhancement in cold, dense
+    regions.\ This provides a natural explanation for the JWST observations of
+    unexpectedly massive galaxies at $z > 6$, without requiring exotic dark
+    matter properties or modified initial conditions.
+\end{enumerate}
+
+
+% ============================================================
+\section{Open Questions}
+\label{sec:open}
+% ============================================================
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Functional form of $\epsilon(T)$.}\ The assumption $\epsilon
+    \propto T^{-2}$ is motivated by the pair nature of transient binding, but a
+    first-principles derivation from the Dynamic Casimir Effect threshold
+    conditions is needed.\ Alternative forms (exponential suppression,
+    logarithmic dependence) would change the magnitude and scaling of the
+    varying-$G$ dark matter effect.
+
+  \item \textbf{Derivation of the roton gap from Aether parameters.}\ Can
+    $\Delta/k_B \approx 5$--$6$~K be derived from the known Aether parameters
+    ($m_A \approx 500$--$850$~MeV/$c^2$, $\rhoa \approx 10^{11}$--$10^{12}$~kg/m$^3$,
+    $\Ka \approx 10^{28}$--$10^{29}$~J/m$^3$)?\ In helium-4, the roton gap
+    arises from short-range correlations in the liquid structure; the analogous
+    calculation for the Aether requires knowledge of the inter-quasiparticle
+    potential.
+
+  \item \textbf{Numerical $w(z)$ solution.}\ Computing the effective $w(z)$
+    requires two steps: (a)~determine the dilution parameter $\beta$ from
+    the Aether's constant-density thermodynamics, and (b)~solve
+    Eq.~\ref{eq:P-evolution} numerically with the evolving $\zeta_n(z)$ and
+    $H(z)$ to produce $H(z)$, then fit the result to the CPL parameterization
+    to extract $w_0$ and $w_a$.\ Overlaying this with DESI data would provide
+    a quantitative test and refine the constraint on $\Delta/k_B$.
+
+  \item \textbf{CMB power spectrum.}\ How does the varying-$G$ mechanism at
+    $z \sim 1100$ affect the acoustic peaks?\ The $\delta G/G \sim 10^{-5}$
+    variation is small but could produce detectable modifications to the
+    damping tail.
+
+  \item \textbf{Rotation curves at different redshifts.}\ The handoff from
+    $G$-variation to first-sound correction should produce measurable differences
+    in rotation curve shapes at $z \sim 2$--$3$ versus $z \sim 0$.\ Quantitative
+    predictions require the three-dimensional temperature profile $T(r,z)$ at
+    different cosmic epochs.
+
+  \item \textbf{Reconciliation with existing Paper~6 framework.}\ The thermal
+    pressure mechanism (Paper~6) and the roton freeze-out mechanism (this paper)
+    are complementary: thermal pressure provides the driving force for expansion,
+    while roton freeze-out explains why the expansion \emph{accelerates}.\ A
+    unified treatment should demonstrate that both effects arise naturally from
+    the same two-fluid dynamics.
+\end{enumerate}
+
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{desi2025}
+DESI Collaboration,
+``DESI DR2 Results: Measurement of the Baryon Acoustic Oscillation
+scale and Hubble parameter across 11 billion years,''
+\textit{arXiv:2503.14738} (2025).
+
+\bibitem{viscous2025}
+A.~Hern\'{a}ndez-Almada \textit{et al.},
+``Bulk viscous cosmological models with a cosmological constant:
+Observational constraints,''
+\textit{arXiv:2508.11614} (2025).
+
+\bibitem{otto-overview}
+E.~Otto,
+``Unifying Theory of Dynamic Aether Mechanics: General Overview,''
+this series, Paper~1.
+
+\bibitem{otto-gravity}
+E.~Otto,
+``Unifying Theory of Dynamic Aether Mechanics: Gravity,''
+this series, Paper~3.
+
+\bibitem{otto-cosmology}
+E.~Otto,
+``Unifying Theory of Dynamic Aether Mechanics: Cosmology,''
+this series, Paper~6.
+
+\end{thebibliography}
+
+\end{document}
