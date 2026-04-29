@@ -1,0 +1,901 @@
+﻿\documentclass[12pt,letterpaper]{article}
+
+% ---- Packages ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}  % Times New Roman text + math (replaces mathptmx)
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\externaldocument{3 - Gravity}
+\externaldocument{7 - Quantum Mechanics}
+\usepackage{microtype}
+\usepackage{booktabs}
+
+% ---- Section formatting ----
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ---- Spacing ----
+\setstretch{1.15}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% ---- Custom commands ----
+\newcommand{\rhoa}{\rho_{\!A}}
+\newcommand{\Ka}{K_{\!A}}
+\newcommand{\vin}{v_{\mathrm{in}}}
+\newcommand{\rs}{r_s}
+% \hbar is already defined in LaTeX; no redefinition needed
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Unifying Theory of Dynamic Aether Mechanics:\\
+Special Relativity}\\[1em]
+{\large Erik Otto}
+\end{center}
+
+\vspace{1em}
+
+\begin{abstract}
+Within the Dynamic Aether Mechanics framework, special relativity emerges
+naturally from the properties of a compressible quantum superfluid medium.  This
+paper derives the Lorentz factor $\gamma = 1/\sqrt{1 - v^2/c^2}$ from geometric
+path-length effects in the medium, time dilation from both velocity (path geometry)
+and gravity (inflow-velocity-dependent time dilation), and mass--energy equivalence $E = mc^2$
+from the compression wave energy of dissolving mass.  The five classical experiments
+historically regarded as having disproved aether theories---Michelson--Morley,
+Kennedy--Thorndike, Sagnac, stellar aberration, and Fizeau---are all quantitatively
+predicted by the model.  The linearity of the medium's pressure--density response is
+confirmed to $10^{-8}$ precision across velocities from $10^{-6}\,c$ to $0.9994c$.
+\end{abstract}
+
+\vspace{1em}
+
+\bigskip
+\noindent\textit{This paper is part of a series presenting the Unifying Theory of
+Dynamic Aether Mechanics.  For the foundational concepts of Aether binding,
+the three independent properties (density, pressure, temperature), and the
+unification of force constants, see Paper~1: General Overview \cite{otto-overview}.}
+\bigskip
+
+\section{Special Relativity}
+\label{sec:special-relativity}
+% ============================================================
+
+The greatest challenge to this theory is not internal failures, but the extraordinary
+success of special relativity.\ However, many effects predicted by special relativity also
+emerge naturally from dynamic Aether.
+
+
+\subsection{Length Contraction}
+
+Every force that binds matter---electromagnetic, strong, weak---propagates
+through the Aether at the local speed of sound $c = \sqrt{\Ka/\rhoa}$.\ The
+wave equation governing this propagation,
+$\partial^2\phi/\partial t^2 = c^2\,\nabla^2\phi$, is invariant under the
+Lorentz transformation \cite{lorentz1904}.\ This invariance guarantees that
+if a bound system is in equilibrium at rest, the transformed
+configuration---contracted by $1/\gamma$ in the direction of motion, with
+perpendicular dimensions unchanged---is also a valid equilibrium for the same
+system moving at $v$ through the medium.\ Lorentz \cite{lorentz1904} proved
+this rigorously for electromagnetic forces; in this theory the result extends
+to all matter, because every binding force propagates through the Aether
+at~$c$.\ Length contraction is therefore not an \textit{ad hoc}
+hypothesis but a mathematical consequence of all forces sharing the same
+medium and the same propagation speed.
+
+The anisotropy that drives the contraction is visible in the force propagation
+times of a moving system.\ Force signals traveling along the direction of motion
+encounter asymmetric propagation: upstream at effective speed $c - v$,
+downstream at $c + v$.\ The round-trip signal time along a separation $L$
+parallel to the motion is
+%
+\begin{equation}
+  t_{\parallel} = \frac{L}{c - v} + \frac{L}{c + v}
+    = \frac{2L/c}{1 - v^2/c^2}
+\end{equation}
+%
+while the round-trip time across the same separation perpendicular to the
+motion is
+%
+\begin{equation}
+  t_{\perp} = \frac{2L}{\sqrt{c^2 - v^2}}
+    = \frac{2L/c}{\sqrt{1 - v^2/c^2}}
+\end{equation}
+%
+These differ by a factor of $\gamma$: force signals along the direction of
+motion are delayed relative to perpendicular signals.\ In the contracted
+equilibrium ($L' = L/\gamma$ parallel, $L$ perpendicular), this anisotropy is
+absorbed into the steady-state field configuration---the retarded fields of
+all the moving constituents self-consistently produce the same binding as in
+the rest frame.
+
+Note that this contraction is experimentally confirmed only for
+\emph{velocity-driven} motion through the Aether.\ In the gravitational case,
+the Aether's natural coordinate system (Painlev\'{e}--Gullstrand coordinates)
+has flat spatial slices: the inflow produces time dilation
+(Section~\ref{sec:grav-time-dilation}) but no radial spatial distortion.\
+Gravitational length contraction has no experimental confirmation.
+
+A secondary consequence of velocity contraction is compression of the Aether
+in the rest frame of the moving object.\ Because the object does real work on
+the medium, a genuine density increase $\delta\rho/\rhoa \approx v^2/(2c^2)$
+develops via Bernoulli (see Paper~7~\cite{otto-quantum}, Section~6.2 for the
+vortex-level treatment).\ This compression is a consequence of the
+contraction, not its cause---the cause is the Lorentz invariance of the wave
+equation.\ The compression is physically distinct from gravitational inflow,
+where free-fall kinetic energy exactly balances potential energy, leaving
+$\Delta\rho = 0$.
+
+
+\subsection{Time Dilation---Velocity}
+
+All internal processes of an object---atomic oscillations, wave propagation within its
+structure, binding cycles---depend on waves that propagate at speed $c$ relative to the
+Aether, not relative to the object.\ When the object moves at velocity $v$ through the
+Aether, these internal waves must travel longer geometric paths through the medium.
+
+Consider any wave-based process within the moving object.\ A wave crossing the object
+perpendicular to its direction of motion covers distance $ct$ in the Aether frame while the
+object moves $vt$.\ By the Pythagorean theorem, the perpendicular distance covered by the
+wave is only $\sqrt{c^2 - v^2}\,t$.\ The internal process that took time $t_0$ at rest now
+takes time $t_0 / \sqrt{1 - v^2/c^2}$---exactly the Lorentz factor $\gamma$.
+
+Since every force in this theory (electric, magnetic, gravitational) propagates through
+Aether at speed $c$, every internal process of the moving object is slowed by the same
+factor.\ Time is fundamentally a measure of relative particle movement (a year measures
+Earth's orbital motion; a clock measures the motion of its internal mechanisms), so this
+universal slowing produces the observed time dilation.
+
+Note that time dilation and length contraction share the same root cause---motion
+through a medium with finite propagation speed $c$---and both follow from the
+Lorentz invariance of the wave equation governing that medium.\ Time dilation
+arises from longer \emph{wave paths} (Pythagorean theorem); length contraction
+arises from the \emph{anisotropic retarded-field configuration} of a moving
+bound system, whose equilibrium contracts by $1/\gamma$ in the direction of
+motion \cite{lorentz1904}.
+
+The factor $v^2/c^2$ that governs time dilation is the same factor that appears in the
+magnetic-to-electric force ratio ($F_{\mathrm{mag}} = F_{\mathrm{elec}} \cdot v_1 v_2/c^2$) and in relativistic energy
+($E = \gamma mc^2$).\ All four arise from the same Aether mechanics: the ratio of motion
+velocity to medium propagation speed.\ This connection is developed in the Unification of
+Force Constants section.
+
+
+\subsection{Time Dilation---Gravitational}
+\label{sec:grav-time-dilation}
+
+Near massive objects, the Aether flows inward---drawn by the collective electron
+vortices of the mass through the transient bind--unbind cycle described in
+Section~\ref{sec:gravity}.\ This inflow is the direct cause of gravitational time
+dilation.\ A static observer---one who maintains a fixed position while the Aether
+flows past---has all internal processes affected by the relative motion between
+their wave-based structure and the medium.\ Because internal processes depend on
+waves propagating at the local speed $c = \sqrt{\Ka/\rhoa}$ \emph{relative to the
+Aether}, a static observer in a flowing medium experiences a slowing of all
+processes identical to velocity time dilation.
+
+The inflow velocity at distance $r$ from a mass $M$ follows from energy
+conservation (an Aether element falling from rest at infinity):
+%
+\begin{equation}
+  \vin(r) = \sqrt{\frac{2GM}{r}}
+  \label{eq:inflow}
+\end{equation}
+%
+A static observer at radius $r$ is stationary while the Aether flows past at
+$\vin$.\ The time dilation experienced by this observer is:\footnote{A
+density-based approach would require $\Delta\rho/\rhoa = 2GM/(rc^2)$ to
+reproduce the observed time dilation from $c$-variation alone.\ However,
+Bernoulli's equation for the Aether's logarithmic equation of state shows
+this is unphysical: with inflow at $\vin = \sqrt{2GM/r}$, the kinetic energy
+exactly balances the gravitational potential energy, leaving zero energy for
+compression ($\Delta\rho/\rhoa = 0$ exactly).\ The maximum density perturbation
+(hydrostatic equilibrium, $v = 0$) is $GM/(rc^2)$---half the required value.\
+The flow-based derivation resolves this by attributing time dilation to the
+inflow velocity rather than to a density change.}
+%
+\begin{equation}
+  \frac{\Delta t}{t} = \frac{\vin^2}{2\,c^2} = \frac{GM}{r\,c^2}
+\end{equation}
+%
+This matches the observed gravitational time dilation confirmed by the
+Pound--Rebka experiment, the Gravity Probe~A mission, and the GPS satellite
+system.
+
+The Aether density $\rhoa$ and the speed of light $c = \sqrt{\Ka/\rhoa}$
+remain constant throughout the inflow.\ This follows from Bernoulli's equation
+for the Aether's logarithmic equation of state ($P = \Ka\ln(\rho/\rho_0)$):
+along a streamline, $\tfrac{1}{2}\vin^2 + h(\rho) + \Phi = \mathrm{const}$.\
+For free-fall inflow ($\tfrac{1}{2}\vin^2 = GM/r$ and $\Phi = -GM/r$,
+so $\tfrac{1}{2}\vin^2 + \Phi = 0$), the enthalpy terms cancel exactly,
+giving $\rho = \rho_0$ everywhere.\ This result is
+equation-of-state independent: for \emph{any} barotropic fluid in free-fall,
+the kinetic energy equals the gravitational potential energy, leaving no
+energy for compression.
+
+Both velocity and gravitational time dilation now arise from a single
+mechanism: motion relative to the local Aether.\ Velocity time dilation
+occurs when an object moves through the Aether; gravitational time dilation
+occurs when the Aether moves past a static object.\ In both cases, the
+fractional time dilation is $v_{\mathrm{rel}}^2/(2c^2)$, where
+$v_{\mathrm{rel}}$ is the velocity between the object and the local Aether.\
+A freely falling observer---one who co-moves with the inflowing
+Aether---experiences $v_{\mathrm{rel}} = 0$ and therefore \emph{no} time
+dilation, recovering the equivalence principle from the medium's dynamics.\
+$G$ connects directly to the medium: it measures the strength of the inflow
+driven by the bind--unbind cycle, expressed in units of the medium's wave
+speed ($c^2 = \Ka/\rhoa$).
+
+
+\subsection{The Event Horizon and Inflow Conservation}
+
+The inflow velocity $\vin(r) = \sqrt{2GM/r}$ (Eq.~\ref{eq:inflow}) is a steady-state
+\emph{circulation}, not a one-way accumulation.\ Aether flows inward, participates
+in transient binding near the mass, and is returned upon pair annihilation---only
+the tiny asymmetry fraction $\epsilon$ escapes as gravitational radiation (see
+Section~\ref{sec:steady-state} for the detailed conservation analysis).
+
+This inflow has two further consequences:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Gravitational lensing.}\ Light propagating through the inflowing
+    Aether follows geodesics of the acoustic metric---the effective spacetime
+    geometry experienced by waves in a moving medium.\ For an inflow at
+    $\vin = \sqrt{2GM/r}$ with uniform wave speed~$c$, the acoustic metric
+    takes the Painlev\'e--Gullstrand form, which is exactly equivalent to the
+    Schwarzschild geometry.\ The total deflection angle is $4GM/(r_0\,c^2)$,
+    matching general relativity (Section~\ref{sec:lensing}).
+
+  \item \textbf{The event horizon.}\ At the Schwarzschild radius $\rs = 2GM/c^2$,
+    the inflow velocity equals~$c$.\ Outward-propagating waves can no longer escape,
+    producing a sonic horizon analogous to those in supersonic fluid dynamics.\
+    Inside this radius, the transient binding cycle still operates locally, but the
+    restoring pressure pulses from pair annihilation are swept inward by the
+    superluminal flow.
+\end{enumerate}
+
+
+\subsection{Mass--Energy Equivalence (\texorpdfstring{$E = mc^2$}{E = mc²})}
+
+This theory requires that Aether can bind into mass.\ It follows that mass can also unbind---dissolving back into Aether.\ The energy released by this dissolution can be calculated,
+and the result connects directly to the transient binding mechanism that drives gravity.
+In quantum field theory terms, this dissolution is annihilation---the same process that
+ends each virtual particle cycle (and the reverse of the permanent binding produced by
+the Dynamic Casimir Effect).
+
+When a mass dissolves into Aether, its volume before dissolution is negligible compared
+to its volume as unbound Aether (we are considering the volume of the actual particle
+matter, not the empty space within atoms).\ The dissolved Aether must displace the
+surrounding ambient Aether, and the total mass of Aether displaced equals the original
+mass (imagine a box perfectly filled with identical marbles---forcing one additional marble
+in displaces exactly one marble's worth of mass).
+
+This displacement creates a compression wave propagating at the speed of light ($c$), since
+light speed is the propagation speed of compression waves in Aether.
+
+The total energy carried by the compression wave follows from the bulk
+modulus $\Ka$ and the displaced volume $V = m/\rhoa$:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Elastic energy} from the compression: the energy stored per
+    unit volume displaced in a medium of bulk modulus $\Ka$ is
+    $\tfrac{1}{2}\Ka$ (at unit strain).\ For volume $V = m/\rhoa$:
+    $E_p = \tfrac{1}{2}\Ka\,(m/\rhoa) = \tfrac{1}{2}({\Ka}/{\rhoa})\,m
+    = \tfrac{1}{2}mc^2$.
+  \item \textbf{Kinetic energy}: for a progressive compression wave in
+    a linear medium, the time-averaged kinetic and elastic energies are
+    equal (equipartition), so $E_k = E_p = \tfrac{1}{2}mc^2$.
+  \item \textbf{Total wave energy}: $E = E_k + E_p = mc^2$.
+\end{itemize}
+
+The result depends only on $c^2 = \Ka/\rhoa$: the energy per unit mass
+dissolved equals the square of the wave speed.\ This is the standard
+energy--mass relation for compression waves in an elastic medium.
+
+In the Aether model, this equation represents the electromagnetic energy released when mass
+of negligible pre-dissolution volume dissipates into ambient Aether---and equivalently,
+the energy required to compress Aether into mass (the energy cost paid when the DCE
+threshold is exceeded and a binding event becomes permanent).\ Each transient binding cycle
+in the gravity mechanism momentarily invests $mc^2$ of energy to form a virtual pair and
+recovers it upon annihilation.\ The gravitational wave carries only the tiny asymmetry of
+this process outward.\ The concept of mass as condensed energy, central to relativity, is
+independently predicted by compressible Aether.
+
+
+\subsection{Relativistic Kinetic Energy}
+
+The preceding sections derived two results purely from Aether mechanics: (1) all
+internal processes of an object moving at velocity $v$ through the medium slow by
+a factor $\gamma = 1/\sqrt{1 - v^2/c^2}$, from the geometric path-length increase
+of internal waves; and (2) $E = mc^2$, the energy stored in a mass at rest.\ These
+two results together determine the kinetic energy of a moving object without
+invoking any further assumptions.
+
+Consider a particle (a vortex excitation) being accelerated from rest to velocity
+$v$ by an applied force $F$.\ The particle's structural integrity is maintained by
+its internal circulation---the same wave processes that experience time dilation.\
+As the particle moves faster, these internal processes run slower by the factor
+$\gamma$, which means the particle's inertial response to the applied force
+decreases: its internal dynamics can redistribute momentum only at the dilated
+rate.\ The effective momentum of the moving particle is therefore:
+%
+\begin{equation}
+  p = \gamma m v
+  \label{eq:rel-momentum}
+\end{equation}
+%
+This is not an additional postulate---it follows directly from the time dilation
+already derived.\ A vortex whose internal clock runs $\gamma$ times slower responds
+to force $\gamma$ times more sluggishly, producing an effective inertia of
+$\gamma m$.
+
+The kinetic energy is the work done to accelerate the particle from rest,
+$W = \int_0^v v'\,dp$.\ Evaluating with $p = \gamma mv$ gives:
+%
+\begin{equation}
+  \mathrm{KE} = (\gamma - 1)\,mc^2
+\end{equation}
+%
+At low velocities, $\gamma \approx 1 + v^2/(2c^2)$, recovering the classical
+kinetic energy $\tfrac{1}{2}mv^2$.\ As $v \to c$, the energy diverges: the
+compression waves that constitute the object's internal structure can no longer
+propagate ahead of the object, and infinite energy would be required to reach
+the medium's wave speed.
+
+The total energy of a moving particle is thus $E_{\mathrm{total}} = \gamma mc^2$:
+rest energy plus kinetic energy, both arising from the mechanics of a vortex
+excitation in a compressible medium with finite propagation speed $c$.\ This
+completes the triad of $v^2/c^2$ effects---time dilation, magnetic force, and
+relativistic energy---all derived from the same Aether physics without recourse to
+special-relativistic postulates.
+
+
+% --------------------------------------------------
+\section{Classical Aether Experiments}
+\label{sec:classical-experiments}
+% ============================================================
+
+The experiments of the 19th and early 20th centuries are widely regarded as having
+disproved the existence of Aether.\ However, they disproved only the rigid, static
+luminiferous aether of that era---a medium assumed to have no physical effect on the
+objects moving through it.\ Dynamic Aether---a medium in which all forces
+propagate at speed $c$, producing length contraction, time dilation, and
+inflow-dependent gravitational effects---predicts the results of every
+classical aether experiment.\ Five key experiments and their explanations
+follow.
+
+
+\subsection{The Michelson--Morley Experiment}
+
+The Michelson--Morley experiment \cite{michelson1887} (1887) measured the round-trip travel time of light along
+two perpendicular arms of an interferometer.\ If Earth moves through a static Aether at
+velocity $v$, light traveling along the arm parallel to Earth's motion should take longer
+than light traveling perpendicular to it, producing an interference fringe shift.
+
+In this theory, the null result is predicted by length contraction.\ An object moving at
+velocity $v$ through the Aether is contracted in the direction of motion by the factor
+$\sqrt{1 - v^2/c^2}$, because the binding forces holding the interferometer together
+propagate at $c$ through the medium and their retarded-field equilibrium contracts by
+this factor (Section~\ref{sec:special-relativity}).\ The parallel arm of the
+interferometer is shortened by exactly $1/\gamma$, which precisely compensates for the
+longer light travel time along that arm.
+
+The round-trip travel time for light along the parallel arm is
+$t_{\parallel} = (2L/c)/(1 - v^2/c^2)$, while the perpendicular round-trip
+is $t_{\perp} = (2L/c)/\sqrt{1 - v^2/c^2}$ (Section~\ref{sec:special-relativity}).\
+These differ by a factor of $\gamma$.\ With the parallel arm contracted to
+$L' = L/\gamma$, the contracted parallel time becomes
+$t_{\parallel}(L') = (2L'/c)/(1 - v^2/c^2) = (2L/c)/\sqrt{1 - v^2/c^2}
+= t_{\perp}$.\ The fringe shift is exactly zero---not because the Aether
+does not exist, but because it contracts the apparatus in a way that
+conceals its own presence.
+
+
+\subsection{The Kennedy--Thorndike Experiment}
+
+The Kennedy--Thorndike experiment \cite{kennedy1932} (1932) modified the Michelson--Morley design by using
+arms of deliberately different lengths.\ Length contraction alone cannot produce a null
+result when the arms are unequal, because the contraction factor cancels only when both
+arms are the same length.\ A non-null result would therefore reveal that length contraction
+is the sole effect of motion through the medium.
+
+The null result of this experiment is explained by this theory because it predicts both
+length contraction and time dilation.\ The combination of spatial contraction (shortening
+the parallel arm) and temporal dilation (slowing the clock that measures the fringe
+pattern) together produce a complete null result for any arm length ratio.\ This is the
+same combination that special relativity invokes, but here both effects arise from the
+physical mechanics of moving through a medium in which all forces propagate at
+finite speed $c$.
+
+
+\subsection{The Sagnac Effect}
+
+The Sagnac effect \cite{sagnac1913} (1913) is the observed fringe shift when light travels around a rotating
+loop---light traveling with the rotation arrives later than light traveling against it.
+Unlike the Michelson--Morley null result, the Sagnac effect is a positive detection of
+motion.
+
+This result is more naturally explained by a medium theory than by special relativity.
+If light propagates at speed $c$ relative to the Aether (not relative to the apparatus),
+then in a rotating interferometer the co-rotating beam must travel a longer path (the
+far mirror has moved away) while the counter-rotating beam travels a shorter path (the
+near mirror has moved closer).\ The path difference produces a fringe shift proportional
+to the angular velocity and the enclosed area:
+%
+\begin{equation}
+  \Delta t = \frac{4A\omega}{c^2}
+\end{equation}
+%
+where $A$ is the enclosed area and $\omega$ is the angular velocity.\ This is exactly the
+observed result.\ In the Aether model, the explanation is straightforward: light moves at $c$
+relative to the medium, and the rotating apparatus moves relative to both.\ The Sagnac
+effect is direct evidence that light speed is determined by a local reference---precisely
+what a medium theory predicts.
+
+Modern ring laser gyroscopes and fiber optic gyroscopes exploit this effect for navigation,
+confirming the Sagnac fringe shift to extraordinary precision.
+
+
+\subsection{Stellar Aberration}
+
+Stellar aberration---the apparent displacement of star positions due to Earth's orbital
+velocity---was first observed by Bradley in 1728 \cite{bradley1728}.\ A telescope must be tilted slightly in
+the direction of Earth's motion to center a star's image, by an angle of approximately
+20.5 arc-seconds.
+
+In this theory, the explanation is direct: Earth moves through the Aether at orbital
+velocity $v$, while starlight propagates at $c$ through the same medium.\ The telescope must
+be tilted by angle $\theta$ where $\tan\theta = v/c$ to compensate for Earth's motion during
+the time light traverses the telescope tube.
+
+This result historically posed a dilemma for 19th-century aether theories.\ If the Aether
+were dragged along with Earth, aberration should not occur (the medium and telescope would
+move together).\ If the Aether were stationary, the Michelson--Morley experiment should
+have detected Earth's motion.\ Dynamic Aether resolves this dilemma: Earth moves freely
+through the Aether (producing aberration), while length contraction and time dilation
+(physical consequences of that motion) eliminate the Michelson--Morley signal.\ The two
+results, long considered contradictory for any aether model, are simultaneously explained.
+
+
+\subsection{The Fizeau Experiment and the Fresnel Drag Coefficient}
+
+The Fizeau experiment \cite{fizeau1851} (1851) measured the speed of light in moving water.\ If water fully
+drags the Aether with it, light in the moving water should travel at $c/n + v$ (where $n$ is
+the refractive index and $v$ is the water velocity).\ If water does not drag the Aether at
+all, light should travel at $c/n$ regardless of water motion.
+
+Fizeau found neither result.\ Instead, the speed of light in moving water is:
+%
+\begin{equation}
+  c_{\mathrm{observed}} = \frac{c}{n} + v\!\left(1 - \frac{1}{n^2}\right)
+\end{equation}
+%
+The factor $(1 - 1/n^2)$ is the Fresnel drag coefficient \cite{fresnel1818}---partial dragging, where only a
+fraction of the medium's velocity adds to the light speed.
+
+This result derives naturally from the Aether framework.\ A material with refractive index
+$n$ slows light because it increases the effective Aether density within the material's
+volume.\ (This is distinct from gravitational fields, where Bernoulli gives
+$\Delta\rhoa = 0$.)\ Since $c = \sqrt{\Ka / \rhoa}$ and the material reduces light speed
+by factor $n$,
+the effective density within the material is:
+%
+\begin{equation}
+  \rho_{\mathrm{material}} = n^2 \, \rhoa
+\end{equation}
+%
+The excess density above the ambient background is:
+%
+\begin{equation}
+  \Delta\rho = (n^2 - 1)\,\rhoa
+\end{equation}
+%
+When the material moves at velocity $v$, only this excess density moves with it.\ The ambient
+Aether density $\rhoa$ remains stationary---it is the background medium.\ The fraction of
+the total density that is dragged with the material is:
+%
+\begin{equation}
+  f_{\mathrm{drag}} = \frac{\Delta\rho}{\rho_{\mathrm{material}}} = \frac{(n^2 - 1)\,\rhoa}{n^2\,\rhoa}
+    = \frac{n^2 - 1}{n^2} = 1 - \frac{1}{n^2}
+\end{equation}
+%
+This is exactly the Fresnel drag coefficient.\ The partial dragging is not an empirical
+correction but a direct consequence of the density structure of Aether within refractive
+media.\ The ambient Aether is stationary; only the material's contribution to the local
+density moves with the material.
+
+This derivation also explains why the drag coefficient depends only on the refractive
+index: it is purely a density ratio, independent of the material's chemical composition,
+temperature (except through $n$), or other properties.
+
+This derivation carries a significant implication for the bulk modulus $\Ka$.\ The
+relationship $\rho_{\mathrm{material}} = n^2 \rhoa$ was derived by assuming that $\Ka$ remains constant
+inside the material---that the material changes only the density, not the stiffness, of
+the Aether.\ If the material also altered $\Ka$, then $c_{\mathrm{material}} = \sqrt{K_{\mathrm{material}} /
+\rho_{\mathrm{material}}}$ and the Fresnel drag coefficient would depend on both the density ratio and
+the stiffness ratio, not solely on the refractive index.\ The experimental success of the
+$1 - 1/n^2$ coefficient confirms that $\Ka$ is indeed invariant inside materials---the same
+conclusion reached independently from velocity time dilation, but here confirmed across
+a vastly wider range of density variation.
+
+The density relationship also means that every refractive index measurement is a
+measurement of local Aether density.\ Water ($n = 1.33$) multiplies the ambient Aether
+density by 1.77.\ Glass ($n = 1.52$) multiplies it by 2.31.\ Diamond ($n = 2.42$) multiplies
+it by 5.86.\ The entire field of optics becomes, in this framework, a body of evidence
+about how different materials modify the local Aether density---with refractive index
+serving as the density probe.
+
+
+% ============================================================
+
+% ============================================================
+\section{Summary of Theoretical Properties}
+% ============================================================
+
+\subsection{Properties of Interferometric Predictions}
+
+\begin{itemize}[leftmargin=2em]
+  \item The Michelson--Morley null result is predicted by length contraction: the parallel arm
+    contracts by $\sqrt{1 - v^2/c^2}$, exactly compensating for the directional light travel
+    time difference.
+  \item The Kennedy--Thorndike null result requires both length contraction and time dilation,
+    both of which this theory independently predicts from motion through the medium.
+  \item The Sagnac effect is a direct prediction of light propagating at $c$ relative to the
+    medium: rotating apparatus creates an asymmetric path length, producing a fringe shift
+    of $\Delta t = 4A\omega/c^2$.
+  \item Stellar aberration is explained by Earth's motion through Aether at orbital velocity,
+    requiring telescope tilt of $v/c$---approximately 20.5 arc-seconds.
+  \item The Fresnel drag coefficient ($1 - 1/n^2$) derives from the density structure of Aether
+    in refractive media: material with refractive index $n$ creates effective density
+    $n^2 \rhoa$, of which only the excess $(n^2 - 1)\rhoa$ moves with the material while
+    ambient $\rhoa$ remains stationary.
+  \item The Fresnel drag derivation independently confirms that $\Ka$ (bulk modulus) is invariant
+    inside materials: if $\Ka$ changed with density, the drag coefficient would deviate from
+    $1 - 1/n^2$.\ This extends the linearity confirmation from density perturbations of order
+    $v^2/c^2$ to density ratios up to 6:1.
+  \item Every refractive index measurement is a measurement of local Aether density: a material
+    with refractive index $n$ multiplies the ambient density by $n^2$.
+  \item The gravitational lensing bending angle $4GM/(r_0 c^2)$ arises entirely from the
+    acoustic metric of the inflowing Aether: transverse advection by the flow
+    ($2GM/(r_0 c^2)$) and time-delay asymmetry from the flow ($2GM/(r_0 c^2)$),
+    matching general relativity without spacetime curvature.
+  \item The classical aether experiments, once considered fatal to aether theories, are fully
+    explained by a medium in which all forces propagate at $c$, producing length contraction
+    and time dilation as physical consequences of motion.
+\end{itemize}
+
+
+
+
+% ============================================================
+\section{Experimental Support and Connections to Established Physics}
+% ============================================================
+
+The following experimentally confirmed phenomena support or align with the aspects of the theory presented in this paper:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Relativistic $\mathbf{E}$/$\mathbf{B}$ field mixing.} In special relativity, a pure electric field in one
+    reference frame appears as a combination of electric and magnetic fields in a frame
+    moving relative to the first.\ This is a direct consequence of the Aether model: a
+    stationary charge has a purely radial flow vector ($\mathbf{E}$ only), but in a frame where
+    the charge moves, that flow vector is tilted by the motion, developing angular
+    structure ($\mathbf{B}$ appears).
+
+  \item \textbf{Precision velocity time dilation.} The Lorentz factor $\gamma = 1/\sqrt{1 - v^2/c^2}$ has
+    been confirmed across velocities from $10^{-6}\,c$ (GPS \cite{ashby2003}, M\"ossbauer \cite{kundig1963}) to $0.9994c$ (CERN muon
+    storage ring), with no higher-order corrections ($v^4/c^4$ terms) detected to $10^{-8}$
+    precision.\ In the Aether model, this confirms that the medium is perfectly linear in
+    its pressure--density response.\ The Weber--Kohlrausch experiment \cite{weber1856} independently confirmed that the $c$ in the
+    electromagnetic force ratio is the same $c$ as the speed of light.
+
+  \item \textbf{The Michelson--Morley null result.} The Michelson--Morley experiment \cite{michelson1887} found no directional dependence
+    of light speed despite Earth's orbital velocity through space.\ This theory predicts
+    exactly this result: length contraction of the parallel interferometer arm by the
+    factor $\sqrt{1 - v^2/c^2}$ precisely compensates for the upstream/downstream travel
+    time difference, producing zero fringe shift.
+
+  \item \textbf{The Kennedy--Thorndike null result.} The Kennedy--Thorndike experiment \cite{kennedy1932} used unequal arm lengths,
+    where length contraction alone cannot produce a null result.\ This theory predicts
+    the null result because it provides both length contraction and time dilation---the
+    same combination that special relativity requires, but derived from physical motion
+    through a medium in which all forces propagate at $c$.
+
+  \item \textbf{The Sagnac effect.} Observed in 1913 \cite{sagnac1913} and confirmed to high precision in modern ring
+    laser gyroscopes, the fringe shift in a rotating interferometer
+    ($\Delta t = 4A\omega/c^2$) is a direct prediction of light propagating at $c$ relative
+    to the medium rather than relative to the apparatus.
+
+  \item \textbf{Stellar aberration.} Bradley's 1728 observation \cite{bradley1728} of 20.5 arc-second stellar displacement
+    due to Earth's orbital velocity is directly predicted by Earth's motion through Aether.
+    This theory simultaneously explains why aberration occurs (Earth moves through the
+    medium) and why the Michelson--Morley experiment is null (length contraction and time
+    dilation cancel the signal), resolving a long-standing dilemma for aether models.
+
+  \item \textbf{The Fresnel drag coefficient.} Fizeau's 1851 measurement \cite{fizeau1851} of light speed in moving water
+    found partial dragging by the factor $(1 - 1/n^2)$.\ This coefficient derives directly
+    from the Aether density framework: material with refractive index $n$ creates effective
+    density $n^2 \rhoa$, of which only the excess $(n^2 - 1)\rhoa$ moves with the
+    material.
+
+  \item \textbf{$\Ka$ invariance across refractive media.} The Fresnel drag coefficient ($1 - 1/n^2$) is
+    exact only if the bulk modulus $\Ka$ remains constant inside materials---if $\Ka$ varied
+    with density, the coefficient would acquire additional terms.\ The experimental exactness
+    of $1 - 1/n^2$ across materials with widely differing refractive indices confirms $\Ka$
+    invariance at density ratios up to $n^2 \approx 6$ (for diamond), extending the linearity
+    confirmation by three orders of magnitude beyond the velocity-based experiments.
+
+\end{enumerate}
+
+
+
+% ============================================================
+\section{Open Questions and Testable Predictions}
+% ============================================================
+
+The following areas relevant to this paper remain underdeveloped and represent opportunities for further refinement or falsification:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Extending the Fizeau framework to dispersive media.} The derivation of the Fresnel
+    drag coefficient from $\rho_{\mathrm{material}} = n^2 \rhoa$ assumes a single refractive index.
+    In dispersive media, $n$ varies with wavelength, and Lorentz \cite{lorentz1887} showed that the drag
+    coefficient acquires a dispersion correction:
+    $f = 1 - 1/n^2 - (\lambda/n)(dn/d\lambda)$.\ Deriving this correction from the Aether
+    density model would strengthen the connection between refractive index and
+    Aether density.
+
+\end{enumerate}
+
+
+
+% ============================================================
+\section{Mathematical Summary}
+% ============================================================
+
+This section collects the key equations relevant to the topics covered in this paper.
+\noindent\textit{For the complete mathematical summary, see Paper~1: General Overview \cite{otto-overview}.}
+
+\subsection{Fundamental Aether Parameters}
+% --------------------------------------------------
+
+The theory posits four microscopic parameters from which all macroscopic
+phenomena derive:
+%
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\hline
+\textbf{Symbol} & \textbf{Name} & \textbf{Constrained range} & \textbf{Primary constraint} \\
+\hline
+$\rhoa$  & Ambient density     & $10^{11}$--$10^{12}$~kg/m$^3$         & Electron vortex energy \\
+$\Ka$    & Bulk modulus         & $10^{28}$--$10^{29}$~J/m$^3$          & $\Ka = \rhoa\,c^2$ \\
+$m_A$    & Aether quantum mass  & $500$--$850$~MeV/$c^2$                & Flux tube width / glueball mass \\
+$\xi$    & Healing length       & $0.17$--$0.28$~fm                     & Bridge diameter (lattice QCD) \\
+\hline
+\end{tabular}
+\end{center}
+
+These four are not independent.\ Two defining relations connect them:
+%
+\begin{align}
+  c &= \sqrt{\Ka / \rhoa}
+    \label{eq:sum-speed-of-light} \\
+  \xi &= \frac{\hbar}{m_A\,c\,\sqrt{2}}
+    \label{eq:sum-healing-length}
+\end{align}
+%
+leaving two free Aether parameters (e.g., $\rhoa$ and $m_A$) from which all
+others follow.\ (A third parameter, $\epsilon$, enters through gravity; see below.)
+
+
+% --------------------------------------------------
+\subsection{Equation of State}
+% --------------------------------------------------
+
+The Aether obeys a logarithmic equation of state, the unique form that produces
+a density-independent bulk modulus (Section~\ref{sec:qss}):
+%
+\begin{equation}
+  P = \Ka \ln\!\Bigl(\frac{\rho}{\rho_0}\Bigr) + P_0
+  \label{eq:sum-eos}
+\end{equation}
+%
+Key consequence: the speed of sound $c_s = \sqrt{\Ka/\rho}$ varies with
+density.\ At ambient density, $c_s = c$.\ Note: in gravitational fields,
+Bernoulli's equation for free-fall inflow gives $\Delta\rho/\rhoa = 0$
+exactly, so $c$ does not vary near gravitating masses; the density
+dependence is relevant for material media and for the two-fluid
+cosmological structure.\ This equation of state guarantees that $\Ka$ is
+constant under compression, which is experimentally confirmed by:
+%
+\begin{itemize}[leftmargin=2em]
+  \item Velocity time dilation measurements spanning $10^{-6}\,c$ to $0.9994\,c$
+    (precision $\sim 10^{-8}$).
+  \item The Fresnel drag coefficient $1 - 1/n^2$, exact across materials with
+    density ratios up to $\sim$6:1.
+\end{itemize}
+
+
+% --------------------------------------------------
+\subsection{Special Relativity}
+% --------------------------------------------------
+
+All relativistic effects arise from motion through the medium.
+
+\paragraph{Lorentz factor.}
+%
+\begin{equation}
+  \gamma = \frac{1}{\sqrt{1 - v^2/c^2}}
+  \label{eq:sum-lorentz}
+\end{equation}
+%
+Derived geometrically from the ratio of helical to straight path lengths
+in the medium.
+
+\paragraph{Mass--energy equivalence.}
+%
+\begin{equation}
+  E = m\,c^2
+  \label{eq:sum-emc2}
+\end{equation}
+%
+Mass is bound Aether; $c^2 = \Ka/\rhoa$ is the medium's elastic energy per
+unit density.\ When mass dissolves, it releases a compression wave with this
+energy.
+
+\paragraph{Velocity time dilation.}
+A moving vortex must traverse a longer helical path through the medium.\ All
+internal processes slow by $\gamma$:
+%
+\begin{equation}
+  t_{\mathrm{moving}} = \gamma\,t_{\mathrm{rest}}
+  \label{eq:sum-vel-time-dilation}
+\end{equation}
+
+\paragraph{Length contraction.}
+All binding forces propagate at $c$; the shifted retarded-force equilibrium
+contracts bound systems along the direction of motion:
+%
+\begin{equation}
+  L_{\mathrm{moving}} = \frac{L_{\mathrm{rest}}}{\gamma}
+  \label{eq:sum-length-contraction}
+\end{equation}
+
+\paragraph{Fresnel drag coefficient.}
+%
+\begin{equation}
+  f = 1 - \frac{1}{n^2}
+  \label{eq:sum-fresnel}
+\end{equation}
+%
+where $n$ is the refractive index.\ A material with index $n$ has local Aether
+density $n^2\,\rhoa$; only the excess $(n^2 - 1)\rhoa$ moves with the material.
+
+
+% --------------------------------------------------
+\subsection{Linearity Constraint}
+% --------------------------------------------------
+
+The theory requires that all density perturbations from known particle
+interactions are small compared to $\rhoa$.\ The largest perturbation from
+the electron's own gravitational field occurs at its Compton wavelength,
+where the escape velocity is $v_{\mathrm{esc}} = \sqrt{2Gm_e/\lambdabar_C}$
+and the corresponding density ratio is $v_{\mathrm{esc}}^2/c^2$:
+%
+\begin{equation}
+  \frac{\delta\rho}{\rhoa} = \frac{v_{\mathrm{esc}}^2}{c^2}
+    = \frac{2\,G\,m_e}{\lambdabar_C\,c^2}
+    \approx 3.5 \times 10^{-45} \ll 1
+  \label{eq:sum-linearity}
+\end{equation}
+%
+This extraordinary smallness confirms the Lorentz factor to 45 decimal places
+and guarantees that the linear approximation underlying special relativity is
+valid for all accessible energies.\ Deviations from exact Lorentz symmetry
+are predicted only at compressions approaching $\delta\rho/\rhoa \sim 1$,
+far beyond current experimental reach.
+
+
+% --------------------------------------------------
+
+\section*{Acknowledgments}
+\addcontentsline{toc}{section}{Acknowledgments}
+
+The author acknowledges the use of Claude (Anthropic) for \LaTeX{} formatting
+and editorial assistance.
+
+\bigskip
+
+
+% ============================================================
+% BIBLIOGRAPHY
+% ============================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{weber1856}
+Weber, W.\ and Kohlrausch, R.,
+``Ueber die Elektricit\"{a}tsmenge, welche bei galvanischen Str\"{o}men durch den Querschnitt der Kette fliesst,''
+\textit{Annalen der Physik und Chemie}, \textbf{99}, 10--25 (1856).
+
+
+\bibitem{ashby2003}
+Ashby, N.,
+``Relativity in the Global Positioning System,''
+\textit{Living Reviews in Relativity}, \textbf{6}, 1 (2003).
+
+
+\bibitem{kundig1963}
+K\"{u}ndig, W.,
+``Measurement of the Transverse Doppler Effect in an Accelerated System,''
+\textit{Physical Review}, \textbf{129}, 2371--2375 (1963).
+
+
+\bibitem{fresnel1818}
+Fresnel, A.,
+``Lettre d'Augustin Fresnel \`{a} Fran\c{c}ois Arago, sur l'influence du mouvement terrestre dans quelques ph\'{e}nom\`{e}nes d'optique,''
+\textit{Annales de Chimie et de Physique}, \textbf{9}, 57--66 (1818).
+
+
+\bibitem{lorentz1887}
+Lorentz, H.~A.,
+``De l'influence du mouvement de la terre sur les ph\'{e}nom\`{e}nes lumineux,''
+\textit{Archives n\'{e}erlandaises des sciences exactes et naturelles}, \textbf{21}, 103--176 (1887).
+
+
+\bibitem{lorentz1904}
+Lorentz, H.~A.,
+``Electromagnetic phenomena in a system moving with any velocity smaller than that of light,''
+\textit{Proceedings of the Royal Netherlands Academy of Arts and Sciences}, \textbf{6}, 809--831 (1904).
+
+
+\bibitem{michelson1887}
+Michelson, A.~A.\ and Morley, E.~W.,
+``On the Relative Motion of the Earth and the Luminiferous Ether,''
+\textit{American Journal of Science}, \textbf{34}, 333--345 (1887).
+
+
+\bibitem{kennedy1932}
+Kennedy, R.~J.\ and Thorndike, E.~M.,
+``Experimental Establishment of the Relativity of Time,''
+\textit{Physical Review}, \textbf{42}, 400--418 (1932).
+
+
+\bibitem{sagnac1913}
+Sagnac, G.,
+``L'\'{e}ther lumineux d\'{e}montr\'{e} par l'effet du vent relatif d'\'{e}ther dans un interf\'{e}rom\`{e}tre en rotation uniforme,''
+\textit{Comptes Rendus}, \textbf{157}, 708--710 (1913).
+
+
+\bibitem{bradley1728}
+Bradley, J.,
+``A Letter from the Reverend Mr.\ James Bradley \ldots\ Giving an Account of a New Discovered Motion of the Fix'd Stars,''
+\textit{Phil.\ Trans.\ Royal Society}, \textbf{35}, 637--661 (1728).
+
+
+\bibitem{fizeau1851}
+Fizeau, H.,
+``Sur les hypoth\`{e}ses relatives \`{a} l'\'{e}ther lumineux,''
+\textit{Comptes Rendus}, \textbf{33}, 349--355 (1851).
+
+
+
+\bibitem{otto-overview}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: General Overview,''
+(2026).
+
+
+\bibitem{otto-quantum}
+Otto, E.,
+``Unifying Theory of Dynamic Aether Mechanics: Quantum Mechanics,''
+(2026).
+\end{thebibliography}
+
+\end{document}

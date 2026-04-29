@@ -1,0 +1,980 @@
+\documentclass[12pt,letterpaper]{article}
+
+% ---- Packages ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}  % Times New Roman text + math (replaces mathptmx)
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{booktabs}
+
+% ---- Section formatting ----
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ---- Spacing ----
+\setstretch{1.15}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% ---- Custom commands ----
+\newcommand{\rhoa}{\rho_{\!A}}
+\newcommand{\Ka}{K_{\!A}}
+\newcommand{\etaK}{\eta_{\!K}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Temperature-Dependent Bulk Modulus\\
+as the Origin of Dark Energy and Dark Matter}\\[1em]
+{\large Erik Otto}\\[0.5em]
+{\normalsize\itshape Working Paper in the Dynamic Aether Mechanics Framework}
+\end{center}
+
+\vspace{1em}
+
+\begin{abstract}
+Paper~6 identifies dark energy as the thermal pressure of hot void Aether
+and dark matter as the two-fluid first-sound correction from an outward
+temperature gradient.\ This working paper explores an alternative thermal
+landscape in which matter-containing regions are \emph{warmer} than
+voids---heated by viscous dissipation of gravitational inflow---while voids
+cool adiabatically through expansion.\ If the Aether bulk modulus $\Ka$
+increases with decreasing temperature (as the first-sound speed does in
+superfluid helium-4), the wave speed $c = \sqrt{\Ka/\rhoa}$ is higher in
+cold voids than near warm mass.\ On galactic scales, the outward-increasing
+$c$ produces dark matter through the acoustic metric ($\Delta\Ka/\Ka \sim
+4 \times 10^{-6}$).\ On cosmic scales, the growing $\Ka$ contrast from a
+cooling cascade drives accelerating expansion ($\Delta\Ka/\Ka \sim 2 \times
+10^{-4}$).\ A single parameter $\etaK \sim 10^{-4}$~K$^{-1}$---matching
+the measured temperature sensitivity of helium-4 at low
+temperature---governs both phenomena.\ The cascade naturally produces the
+phantom-to-quintessence crossing observed by DESI.\ The local Aether
+temperature at the Sun's position ($\sim$2.75~K) matches
+$T_{\mathrm{CMB}}$ to within 1\%.
+\end{abstract}
+
+\vspace{1em}
+
+\bigskip
+\noindent\textit{This working paper explores an alternative temperature model
+within the Dynamic Aether Mechanics framework.\ It references results from
+Paper~1 (General Overview), Paper~3 (Gravity), Paper~6 (Cosmology), and
+Paper~6(a) (Cooling Feedback Model) of the main series.\ The ideas presented
+here are under development and may be incorporated into the main papers in
+revised form.}
+\bigskip
+
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+Paper~6 establishes that the Aether possesses three independently varying
+properties---density, pressure, and temperature---decoupled by the mechanism
+of permanent binding \cite{otto-overview}.\ In that framework, matter-containing
+regions are \emph{cold} (thermal energy locked into mass by binding) and
+cosmic voids are \emph{hot} (heated by stellar radiation and bulk-viscous
+dissipation of the Hubble flow).\ This temperature landscape produces dark
+energy (thermal pressure in hot voids driving expansion) and dark matter
+(the two-fluid first-sound correction from the outward temperature gradient)
+\cite{otto-cosmology}.
+
+This paper asks: \emph{what if the temperature gradient is reversed?}
+
+Three observations motivate the question:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Matter creation was early.}\ Permanent binding occurred
+    primarily in the first few billion years of cosmic history.\ The thermal
+    deficit it created was enormous but finite, and stellar radiation plus
+    viscous dissipation have been returning energy to the near-mass Aether
+    for over ten billion years.\ The initial cooling from binding may be
+    long since compensated.
+
+  \item \textbf{Gravitational inflow creates large velocity gradients.}\
+    Near a Milky-Way-sized galaxy, the inflow velocity gradient
+    $dv/dr \sim v/r \sim 200~\text{km/s} / 10~\text{kpc} \sim 6 \times
+    10^{-16}$~s$^{-1}$ is approximately 100 times larger than the Hubble
+    flow gradient $\nabla \cdot \mathbf{v} = 3H \sim 7 \times
+    10^{-18}$~s$^{-1}$.\ Viscous dissipation is proportional to the square
+    of the velocity gradient, so the heating rate near mass can dominate
+    over the heating rate in voids by a factor of $\sim$$10^4$.
+
+  \item \textbf{Superfluid helium-4 is stiffer when cold.}\ The first-sound
+    speed in He-4 is higher at lower temperatures: cold superfluid has a
+    larger effective bulk modulus.\ If the Aether shares this property, cold
+    voids would have higher $\Ka$ and higher wave speed $c$ than warm
+    matter-containing regions.
+\end{enumerate}
+
+The resulting model---warm near mass, cold in voids, with
+temperature-dependent $\Ka$---produces both dark matter and dark energy
+from a single mechanism, governed by one parameter.\ The remainder of this
+paper develops the quantitative framework and checks its consistency with
+observations.
+
+
+% ============================================================
+\section{The Hot Matter Model}
+\label{sec:hot-matter}
+% ============================================================
+
+\subsection{Temperature Reversal}
+
+In the standard Paper~6 model, permanent binding continuously removes thermal
+energy from the Aether near matter, keeping mass-containing regions cold.\
+The alternative proposed here is that this thermal deficit has been more than
+compensated by viscous heating from gravitational flows.
+
+The normal (viscous) component of the two-fluid Aether dissipates kinetic
+energy from any flow with velocity gradients.\ The dissipation rate per unit
+volume is:
+%
+\begin{equation}
+  \dot\varepsilon \;=\; \zeta_n\,(\nabla \cdot \mathbf{v})^2
+    \;+\; \mu_n\left(\frac{\partial v_i}{\partial x_j}
+    + \frac{\partial v_j}{\partial x_i}
+    - \tfrac{2}{3}\delta_{ij}\nabla \cdot \mathbf{v}\right)^2
+  \label{eq:dissipation-general}
+\end{equation}
+%
+Near galaxies, gravitational inflow produces both shear and compressional
+velocity gradients of order $v/r \sim 6 \times 10^{-16}$~s$^{-1}$ (for a
+Milky-Way-sized galaxy at 10~kpc).\ In cosmic voids, the Hubble flow is
+pure dilation with $\nabla \cdot \mathbf{v} = 3H \sim 7 \times 10^{-18}$~s$^{-1}$
+and zero shear.\ The ratio of dissipation rates scales as the square of the
+velocity gradients:
+%
+\begin{equation}
+  \frac{\dot\varepsilon_{\mathrm{mass}}}{\dot\varepsilon_{\mathrm{void}}}
+    \;\sim\; \left(\frac{6 \times 10^{-16}}{7 \times 10^{-18}}\right)^2
+    \;\sim\; 10^4
+  \label{eq:heating-ratio}
+\end{equation}
+%
+Even after accounting for the lower normal fraction near mass (which reduces
+$\zeta_n$ and $\mu_n$), the gravitational flow gradients are so much larger
+that the near-mass heating rate can dominate.
+
+
+\subsection{Self-Reinforcing Feedback}
+
+The reversed temperature landscape is maintained by a positive feedback loop
+on both sides:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Near mass (warm).}\ Higher temperature $\Rightarrow$ larger
+    normal fraction $\rho_n/\rhoa$ $\Rightarrow$ larger bulk and shear
+    viscosity $\Rightarrow$ more dissipation from gravitational inflow
+    $\Rightarrow$ more heating $\Rightarrow$ stays warm.
+
+  \item \textbf{In voids (cold).}\ Lower temperature $\Rightarrow$ smaller
+    normal fraction $\Rightarrow$ lower viscosity $\Rightarrow$ negligible
+    dissipation (only the weak Hubble-flow dilation contributes, and even that
+    is suppressed by the low $\rho_n$) $\Rightarrow$ expansion cools the void
+    further $\Rightarrow$ stays cold.
+\end{enumerate}
+
+This is a stable configuration: neither side has a mechanism to reverse its
+thermal state.\ The warm region cannot cool (heating exceeds any losses),
+and the cold region cannot warm (no significant heat source).\ By contrast,
+the standard Paper~6 model must explain how voids remain hot despite
+adiabatic cooling from expansion---a question addressed by Paper~6(a)'s
+roton freeze-out mechanism \cite{otto-cooling}.
+
+
+\subsection{Temperature-Dependent Bulk Modulus}
+\label{sec:KA-T}
+
+In superfluid helium-4, the first-sound speed $c_1 = \sqrt{K/\rho}$ is
+higher at lower temperatures.\ At $T = 0$, the superfluid is maximally
+stiff; as temperature increases toward the lambda point ($T_\lambda =
+2.17$~K), thermal excitations soften the medium and $c_1$ decreases.\ The
+fractional sensitivity at low temperature ($T < 1$~K) is approximately
+$(1/c_1^2)|dc_1^2/dT| \sim 10^{-4}$~K$^{-1}$.
+
+If the Aether exhibits the same behavior, the bulk modulus depends on
+temperature:
+%
+\begin{equation}
+  \Ka(T) \;=\; K_0\bigl[1 - \etaK\,(T - T_{\mathrm{ref}})\bigr]
+  \label{eq:KA-T}
+\end{equation}
+%
+where $K_0 \sim 10^{28}$~J/m$^3$ is the bulk modulus at the reference
+temperature, and
+%
+\begin{equation}
+  \etaK \;\equiv\; \frac{1}{\Ka}\left|\frac{d\Ka}{dT}\right|
+  \label{eq:eta-def}
+\end{equation}
+%
+is the fractional temperature sensitivity (units: K$^{-1}$).\ The wave speed
+becomes position-dependent through the temperature field:
+%
+\begin{equation}
+  c(r)^2 \;=\; \frac{\Ka(T(r))}{\rhoa}
+  \label{eq:c-of-r}
+\end{equation}
+%
+In the reversed model: near mass (warm, higher $T$) $\Rightarrow$ lower $\Ka$
+$\Rightarrow$ lower $c$.\ In voids (cold, lower $T$) $\Rightarrow$ higher
+$\Ka$ $\Rightarrow$ higher $c$.\ The wave speed \emph{increases outward} from
+galaxies---precisely the gradient needed for the dark matter effect in the
+acoustic metric.
+
+The equation of state becomes $P = \Ka(T)\ln(\rho/\rho_0)$, coupling
+temperature to mechanical pressure.\ This is a departure from Paper~1's
+strict decoupling of the three properties, but the coupling is extremely
+weak: $\Delta\Ka/\Ka \sim 10^{-6}$ on galactic scales and $\sim$$10^{-4}$
+on cosmic scales.\ Lorentz invariance, the Fresnel drag coefficient, and all
+results derived from constant $\Ka$ hold to better than one part in $10^4$.
+
+
+% ============================================================
+\section{Dark Matter from \texorpdfstring{$\Ka(T)$}{K\_A(T)}}
+\label{sec:dark-matter}
+% ============================================================
+
+\subsection{Acoustic Metric Mechanism}
+
+The orbital equation in the acoustic metric (Paper~6, Eq.~6) generalizes
+to position-dependent wave speed:
+%
+\begin{equation}
+  v_{\mathrm{orbit}}^2 \;=\; \frac{GM}{r}
+    \;+\; \frac{r}{2}\,\frac{dc^2}{dr}
+  \label{eq:vorbit}
+\end{equation}
+%
+The dark matter contribution is the second term.\ Using the chain rule:
+%
+\begin{equation}
+  \frac{dc^2}{dr} \;=\; \frac{1}{\rhoa}\,\frac{d\Ka}{dr}
+    \;=\; \frac{K_0\,\etaK}{\rhoa}\left(-\frac{dT}{dr}\right)
+  \label{eq:dc2dr}
+\end{equation}
+%
+Since temperature \emph{decreases} outward ($dT/dr < 0$), the wave speed
+\emph{increases} outward ($dc^2/dr > 0$), producing additional centripetal
+acceleration---the dark matter effect with the correct sign.
+
+
+\subsection{Flat Rotation Curves}
+
+For a flat rotation curve ($v_{\mathrm{orbit}} = v_{\mathrm{flat}} =
+\mathrm{const}$) at large $r$ where the dark matter term dominates:
+%
+\begin{equation}
+  v_{\mathrm{flat}}^2 \;\approx\; \frac{r}{2}\,\frac{dc^2}{dr}
+    \;=\; \frac{K_0\,\etaK}{2\,\rhoa}\,r\left|
+    \frac{dT}{dr}\right|
+  \label{eq:flat-rotation}
+\end{equation}
+%
+For this to be independent of $r$, we require $r\,|dT/dr| = \mathrm{const}$,
+which gives:
+%
+\begin{equation}
+  T(r) \;=\; T_{\mathrm{center}} - \frac{2\,\rhoa\,v_{\mathrm{flat}}^2}
+    {K_0\,\etaK}\,\ln\!\left(\frac{r}{r_{\mathrm{core}}}\right)
+  \label{eq:T-profile}
+\end{equation}
+%
+A logarithmic temperature profile is the natural steady-state solution for
+viscous heating from a central gravitational flow source in a medium with
+constant thermal conductivity.
+
+
+\subsection{Quantitative Constraints}
+
+The total $\Ka$ variation across a halo (from $r_{\mathrm{core}} = 1$~kpc
+to $r_{\mathrm{halo}} = 200$~kpc, with $v_{\mathrm{flat}} = 220$~km/s) is:
+%
+\begin{equation}
+  \frac{\Delta\Ka}{\Ka} \;=\; \frac{2\,\rhoa\,v_{\mathrm{flat}}^2}{\Ka}
+    \,\ln\!\left(\frac{r_{\mathrm{halo}}}{r_{\mathrm{core}}}\right)
+  \;=\; \frac{2 \times (220~\text{km/s})^2}{c^2}\,\ln(200)
+  \;\approx\; 5.7 \times 10^{-6}
+  \label{eq:DKA-halo}
+\end{equation}
+%
+This result is \emph{independent of $\etaK$}: the fractional wave speed
+variation required for flat rotation curves depends only on
+$v_{\mathrm{flat}}/c$ and the logarithmic extent of the halo.\ The parameter
+$\etaK$ determines how this variation maps to a temperature difference:
+%
+\begin{equation}
+  \Delta T_{\mathrm{halo}} \;=\; \frac{\Delta\Ka/\Ka}{\etaK}
+  \label{eq:DT-halo}
+\end{equation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$\etaK$ (K$^{-1}$) & $\Delta T_{\mathrm{halo}}$ (K) &
+  Comparison with He-4 \\
+\midrule
+$10^{-5}$        & 0.57     & $10\times$ gentler than He-4 at low $T$ \\
+$5 \times 10^{-5}$ & 0.11   & $2\times$ gentler \\
+$1.07 \times 10^{-4}$ & 0.053 & \textbf{Same as He-4 at low $T$} \\
+$5 \times 10^{-4}$ & 0.011 & $5\times$ steeper \\
+\bottomrule
+\end{tabular}
+\caption{The $\etaK$--$\Delta T_{\mathrm{halo}}$ degeneracy.\ For helium-4
+  below 1~K, $(1/c_1^2)|dc_1^2/dT| \sim 10^{-4}$~K$^{-1}$.\ The benchmark
+  $\etaK = 1.07 \times 10^{-4}$~K$^{-1}$ matches this value exactly.}
+\label{tab:eta-DT}
+\end{table}
+
+
+\subsection{Gravitational Lensing}
+
+Photons propagate at $c(r) = \sqrt{\Ka(T(r))/\rhoa}$.\ The same $c(r)$
+gradient that produces enhanced rotation curves also bends light through the
+acoustic metric.\ The effective mass profile is the singular isothermal
+sphere (SIS):
+%
+\begin{equation}
+  M_{\mathrm{eff}}(r) \;=\; \frac{v_{\mathrm{flat}}^2\,r}{G}
+  \label{eq:Meff}
+\end{equation}
+%
+and the deflection angle is:
+%
+\begin{equation}
+  \theta \;=\; \frac{4\pi\,\sigma^2}{c^2}
+  \label{eq:deflection}
+\end{equation}
+%
+where $\sigma = v_{\mathrm{flat}}/\sqrt{2}$.\ This is identical to the
+Paper~6 result: rotation curves and gravitational lensing are automatically
+consistent because both light and matter follow geodesics of the same
+acoustic metric.
+
+
+\subsection{Profile Shape and Cores}
+
+The logarithmic temperature profile (Eq.~\ref{eq:T-profile}) produces flat
+rotation at large $r$, consistent with isothermal-sphere dark matter halos.\
+At $r < r_{\mathrm{core}}$, the temperature profile flattens: converging
+gravitational flows produce canceling velocity gradients, reducing the net
+shear and therefore the viscous heating rate.\ As $dT/dr \to 0$, the dark
+matter contribution vanishes, producing \emph{naturally cored} profiles
+without additional assumptions---the same qualitative behavior as the
+first-sound mechanism of Paper~6.
+
+\emph{Galaxy clusters.}\ For a massive cluster with velocity dispersion
+$\sigma \sim 1000$~km/s, the required $\Delta\Ka/\Ka \approx 10^{-4}$,
+roughly $17\times$ larger than for a Milky-Way-sized galaxy.\ This is
+physically expected: clusters are more massive, with stronger gravitational
+inflow and correspondingly larger viscous heating---producing a larger
+temperature gradient and therefore a larger $\Ka$ variation.
+
+
+\subsection{Galactic Temperature Profile}
+\label{sec:gal-profile}
+
+Using the benchmark $\etaK = 1.07 \times 10^{-4}$~K$^{-1}$ and
+anchoring the halo edge to $T_{\mathrm{CMB}} = 2.725$~K
+(Section~\ref{sec:cmb}):
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Location & $r$ & $T$ (K) & $\Delta c/c$ \\
+\midrule
+Galaxy center    & 0         & 2.778 & $-2.8 \times 10^{-6}$ \\
+Core edge        & 1~kpc     & 2.778 & (flat core) \\
+Solar radius     & 8~kpc     & 2.747 & $-1.2 \times 10^{-6}$ \\
+Disk edge        & 15~kpc    & 2.742 & $-0.9 \times 10^{-6}$ \\
+Mid-halo         & 50~kpc    & 2.733 & $-0.4 \times 10^{-6}$ \\
+Halo edge        & 200~kpc   & 2.725 & 0 (reference) \\
+\bottomrule
+\end{tabular}
+\caption{Temperature profile across a Milky-Way-sized galaxy in the hot matter
+  model, with $v_{\mathrm{flat}} = 220$~km/s, $\etaK = 1.07 \times
+  10^{-4}$~K$^{-1}$, and halo edge anchored to $T_{\mathrm{CMB}}$.\ The total
+  variation is only 0.053~K across 200~kpc.\ $\Delta c/c$ is relative to the
+  halo edge.}
+\label{tab:gal-profile}
+\end{table}
+
+The entire galaxy sits within a $\sim$0.05~K thermal envelope around
+$T_{\mathrm{CMB}}$.\ This extraordinarily gentle gradient is sufficient
+for flat rotation curves because even a fractional wave speed variation
+of $\Delta c/c \sim 10^{-6}$ produces the full dark matter effect through
+the acoustic metric.
+
+
+% ============================================================
+\section{Dark Energy from the Cooling Cascade}
+\label{sec:dark-energy}
+% ============================================================
+
+\subsection{\texorpdfstring{$\Ka$}{K\_A} Gradient on Cosmic Scales}
+
+On cosmic scales, the $\Ka$ contrast between warm walls
+($T_{\mathrm{wall}} \approx 2.725$~K) and cold void centers
+($T_{\mathrm{void}} \approx 0.91$~K) produces an outward acceleration
+through the acoustic metric:
+%
+\begin{equation}
+  a_K \;=\; \frac{1}{2}\,\frac{dc^2}{dr}
+    \;\approx\; \frac{1}{2\,\rhoa}\,\frac{\Delta\Ka}{R_{\mathrm{void}}}
+  \label{eq:aK}
+\end{equation}
+%
+The observed dark energy acceleration at the boundary of a typical void
+($R_{\mathrm{void}} \sim 50$~Mpc):
+%
+\begin{equation}
+  a_{\mathrm{DE}} \;=\; R_{\mathrm{void}}\,H_0^2\,\Omega_\Lambda
+    \;\approx\; 5.7 \times 10^{-12}~\text{m/s}^2
+  \label{eq:aDE}
+\end{equation}
+%
+Setting $a_K = a_{\mathrm{DE}}$ gives:
+%
+\begin{equation}
+  \frac{\Delta\Ka_{\mathrm{cosmic}}}{\Ka}
+    \;=\; \frac{2\,\rhoa\,R_{\mathrm{void}}\,a_{\mathrm{DE}}}{\Ka}
+    \;\approx\; 1.95 \times 10^{-4}
+  \label{eq:DKA-cosmic}
+\end{equation}
+%
+With $\etaK = 1.07 \times 10^{-4}$~K$^{-1}$:
+%
+\begin{equation}
+  \Delta T_{\mathrm{cosmic}} \;=\;
+    \frac{\Delta\Ka_{\mathrm{cosmic}}/\Ka}{\etaK}
+    \;\approx\; 1.82~\text{K}
+  \label{eq:DT-cosmic}
+\end{equation}
+%
+A temperature difference of less than 2~K between walls and void centers
+is sufficient to produce the observed dark energy.\ Both the dark matter
+constraint ($\Delta\Ka/\Ka \sim 6 \times 10^{-6}$ on galactic scales) and
+the dark energy constraint ($\Delta\Ka/\Ka \sim 2 \times 10^{-4}$ on cosmic
+scales) are satisfied by the \emph{same} $\etaK$.
+
+
+\subsection{The Cooling Cascade}
+
+The $\Ka$ gradient is not static---it is maintained and strengthened by
+a self-reinforcing feedback loop:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Cold void has high $\Ka$.}\ The wave speed $c$ is elevated,
+    and the acoustic metric drives expansion of the void.
+
+  \item \textbf{Expansion cools the void.}\ Adiabatic cooling:
+    %
+    \begin{equation}
+      \frac{dT_{\mathrm{void}}}{dt} \;=\; -\beta\,H\,T_{\mathrm{void}}
+      \label{eq:Tvoid-evolution}
+    \end{equation}
+    %
+    where $\beta$ parameterizes the effective adiabatic index.
+
+  \item \textbf{Cooling increases $\Ka$.}\ Lower temperature $\Rightarrow$
+    higher $\Ka$ $\Rightarrow$ higher $c$ $\Rightarrow$ stronger expansion
+    drive.
+
+  \item \textbf{Return to step 1.}\ The cascade is self-reinforcing: each
+    cycle of expansion produces further cooling, which increases $\Ka$,
+    which drives more expansion.
+\end{enumerate}
+
+Meanwhile, matter-containing walls are maintained at approximately constant
+temperature by the viscous heating feedback (Section~\ref{sec:hot-matter}).
+
+This cascade is \emph{more direct} than the roton freeze-out mechanism of
+Paper~6(a) \cite{otto-cooling}.\ In Paper~6(a), the feedback goes: cooling
+$\to$ roton freeze-out $\to$ viscosity collapse $\to$ less braking $\to$
+faster expansion (indirect, through viscosity).\ Here: cooling $\to$ $\Ka$
+increase $\to$ $c$ increase $\to$ stronger expansion drive (direct, through
+the wave speed).
+
+The void temperature evolves as:
+%
+\begin{equation}
+  T_{\mathrm{void}}(z) \;=\; T_{\mathrm{void},0}\,(1 + z)
+  \label{eq:Tvoid-z}
+\end{equation}
+%
+while $T_{\mathrm{wall}} \approx \mathrm{const}$.\ The $\Ka$ contrast at
+redshift $z$ is:
+%
+\begin{equation}
+  \frac{\Delta\Ka(z)}{\Ka} \;=\; \etaK\bigl[T_{\mathrm{wall}}
+    - T_{\mathrm{void},0}\,(1 + z)\bigr]
+  \label{eq:DKA-z}
+\end{equation}
+
+
+\subsection{Cascade Evolution}
+
+The temperature contrast \emph{reverses} at:
+%
+\begin{equation}
+  z_{\mathrm{rev}} \;=\; \frac{T_{\mathrm{wall}}}{T_{\mathrm{void},0}} - 1
+  \label{eq:z-reversal}
+\end{equation}
+%
+For $T_{\mathrm{wall}} = 2.725$~K and $T_{\mathrm{void},0} = 0.91$~K:
+$z_{\mathrm{rev}} \approx 2.0$.\ At $z > 2$, voids were \emph{warmer} than
+walls, and no dark energy operated.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+$z$ & $T_{\mathrm{void}}$ (K) & $\Delta T$ (K) &
+  $\Delta\Ka/\Ka$ & DE fraction \\
+\midrule
+0   & 0.91 & 1.82 & $1.95 \times 10^{-4}$ & 100\% \\
+0.5 & 1.37 & 1.36 & $1.45 \times 10^{-4}$ & 74\% \\
+1.0 & 1.82 & 0.91 & $0.97 \times 10^{-4}$ & 50\% \\
+2.0 & 2.73 & 0.00 & 0 & 0\% \\
+5.0 & 5.46 & $-2.74$ & reversed & 0\% \\
+\bottomrule
+\end{tabular}
+\caption{Evolution of the $\Ka$ contrast.\ At $z > 2$, voids are warmer than
+  walls and no dark energy operates.\ The contrast builds gradually as voids
+  cool, reaching full strength at $z = 0$.}
+\label{tab:cascade}
+\end{table}
+
+This provides a natural explanation for \emph{why dark energy is a
+late-universe phenomenon}: the $\Ka$ contrast had to build up through
+billions of years of void cooling before it became cosmologically significant.
+
+
+% ============================================================
+\section{The \texorpdfstring{$w(z)$}{w(z)} Equation of State}
+\label{sec:wz}
+% ============================================================
+
+\subsection{Phantom--Quintessence Crossing}
+
+The effective dark energy density is proportional to the $\Ka$ gradient,
+which evolves through two competing effects:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Cascade growth} (strengthens dark energy): as voids cool,
+    $\Delta\Ka$ increases, adding to the expansion drive.
+  \item \textbf{Expansion dilution} (weakens dark energy): as voids grow
+    larger, the gradient $\Delta\Ka/R_{\mathrm{void}}$ decreases for
+    fixed $\Delta\Ka$.
+\end{itemize}
+
+The equation of state parameter:
+%
+\begin{equation}
+  w(z) \;=\; -1 \;-\; \frac{1}{3H}\,\frac{d\ln\rho_{\mathrm{DE}}}{dt}
+  \label{eq:w-def}
+\end{equation}
+%
+The cascade growth rate is proportional to $T_{\mathrm{void}}$ (faster
+cooling when voids are warmer), while the expansion dilution rate is
+proportional to $H$.\ The crossing ($w = -1$) occurs when these rates
+balance:
+%
+\begin{equation}
+  T_{\mathrm{void,cross}} \;=\;
+    \frac{T_{\mathrm{wall}}}{1 + \beta}
+  \label{eq:T-cross}
+\end{equation}
+%
+For the DESI crossing at $z_{\mathrm{cross}} \sim 0.5$:
+%
+\begin{equation}
+  T_{\mathrm{void},0}\,(1 + z_{\mathrm{cross}})
+    \;=\; \frac{T_{\mathrm{wall}}}{1 + \beta}
+  \label{eq:z-cross}
+\end{equation}
+%
+With $T_{\mathrm{wall}} = 2.725$~K and $z_{\mathrm{cross}} = 0.5$:
+$T_{\mathrm{void},0} = T_{\mathrm{wall}}/[1.5\,(1 + \beta)]$.
+
+\begin{itemize}[leftmargin=2em]
+  \item At $z > z_{\mathrm{cross}}$: cascade growth dominates
+    $\Rightarrow$ $\rho_{\mathrm{DE}}$ increasing $\Rightarrow$ $w < -1$
+    \textbf{(phantom)}.
+  \item At $z < z_{\mathrm{cross}}$: expansion dilution dominates
+    $\Rightarrow$ $\rho_{\mathrm{DE}}$ decreasing $\Rightarrow$ $w > -1$
+    \textbf{(quintessence)}.
+\end{itemize}
+
+This is the phantom-to-quintessence crossing observed by DESI at
+2.8--4.2$\sigma$ significance \cite{desi2025}.
+
+
+\subsection{Constraining Parameters from DESI}
+
+The crossing condition (Eq.~\ref{eq:z-cross}) combined with the dark energy
+magnitude (Eq.~\ref{eq:DT-cosmic}) and the dark matter constraint
+(Eq.~\ref{eq:DKA-halo}) yields a self-consistent parameter set:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Parameter & $\beta = 1$ & $\beta = 3$ \\
+\midrule
+$T_{\mathrm{wall}}$        & 2.725~K & 2.725~K \\
+$T_{\mathrm{void},0}$      & 0.91~K  & 0.45~K  \\
+$\Delta T_{\mathrm{cosmic}}$ & 1.82~K & 2.27~K \\
+$\etaK$                     & $1.07 \times 10^{-4}$ & $8.6 \times 10^{-5}$ \\
+$\Delta T_{\mathrm{halo}}$  & 0.053~K & 0.066~K \\
+$z_{\mathrm{rev}}$          & 2.0     & 5.1     \\
+\bottomrule
+\end{tabular}
+\caption{Self-consistent parameter sets for $\beta = 1$ and $\beta = 3$,
+  with $T_{\mathrm{wall}} = 2.725$~K and DESI crossing at
+  $z_{\mathrm{cross}} = 0.5$.}
+\label{tab:parameters}
+\end{table}
+
+Both solutions give $\etaK \sim 10^{-4}$~K$^{-1}$, matching the measured
+temperature sensitivity of helium-4's first-sound speed at low temperature.
+
+
+\subsection{Comparison with Paper 6(a)}
+
+Paper~6(a) and this paper predict the same qualitative $w(z)$
+trajectory---phantom at high $z$, quintessence today, with a crossing near
+$z \sim 0.5$--$1$---but through different physical mechanisms:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Feature & Paper~6(a) & This paper \\
+\midrule
+Temperature near mass & Cold & Warm \\
+Temperature in voids  & Hot  & Cold \\
+Dark matter mechanism & $c_1$ gradient (two-fluid) & $c$ gradient ($\Ka(T)$) \\
+Dark energy mechanism & Viscosity collapse & $\Ka$ cascade \\
+Feedback pathway      & Indirect (via $\zeta_n$) & Direct (via $\Ka \to c$) \\
+Key parameter         & $\Delta/k_B \approx 6$~K & $\etaK \sim 10^{-4}$~K$^{-1}$ \\
+He-4 analog           & Roton gap & Sound speed sensitivity \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of the two alternative dark sector mechanisms.}
+\label{tab:comparison}
+\end{table}
+
+
+% ============================================================
+\section{CMB and Local Temperature}
+\label{sec:cmb}
+% ============================================================
+
+\subsection{\texorpdfstring{$T_{\mathrm{CMB}}$}{T\_CMB} at Our Position}
+
+Paper~6 identifies the CMB as the thermal excitation spectrum of the Aether:
+``$T_{\mathrm{CMB}} = 2.725$~K is the Aether's temperature''
+\cite{otto-cosmology}.\ In the hot matter model, the Aether temperature
+at the Sun's galactic position (8~kpc from center) is:
+%
+\begin{equation}
+  T_\odot \;\approx\; 2.747~\text{K}
+  \label{eq:Tsun}
+\end{equation}
+%
+(Table~\ref{tab:gal-profile})---only 22~mK above $T_{\mathrm{CMB}}$, a
+0.8\% offset.
+
+This near-equality is not a coincidence.\ Both $T_{\mathrm{CMB}}$ and
+$T_{\mathrm{wall}}$ are governed by the same cosmic expansion history:
+the CMB temperature tracks the relic photon field redshifted from last
+scattering ($T_{\mathrm{CMB}} = T_{\mathrm{LSS}}/(1 + z_{\mathrm{LSS}})
+\approx 2.725$~K), while the wall temperature is set by the balance of
+viscous heating and expansion cooling---both of which depend on $H(t)$ and
+the age of the universe.\ The two converge to similar values at the current
+epoch.
+
+The hot matter model has a structural advantage here.\ In the standard
+Paper~6 model, $T_{\mathrm{wall}} \approx 2.7$~K but
+$T_{\mathrm{void}} \approx 7$~K, giving a volume-weighted average of
+$0.3 \times 2.7 + 0.7 \times 7 \approx 5.7$~K---not $T_{\mathrm{CMB}}$.\
+In the hot matter model, the locally measured temperature (at our position
+near mass) \emph{is} $T_{\mathrm{CMB}}$ to within 1\%.
+
+
+\subsection{CMB Isotropy}
+
+The galactic temperature gradient (0.053~K across 200~kpc) would produce
+$\delta T/T \sim 10^{-2}$ on galactic angular scales if the CMB reflected
+the local Aether temperature.\ However, CMB photons from the last scattering
+surface propagate through the local Aether without thermalizing: direct
+photon--quasiparticle scattering is suppressed by
+$P_{\mathrm{th}}/\Ka \sim 10^{-38}$ \cite{otto-cosmology}.\ The observed
+anisotropy ($\delta T/T \sim 10^{-5}$) reflects the primordial temperature
+fluctuations at $z \sim 1100$, not the current local temperature structure.\
+The $\Ka$ gradient contributes to the integrated Sachs--Wolfe effect
+(photons gaining or losing energy as they traverse evolving $c(r)$ regions),
+at a level consistent with observations.
+
+
+% ============================================================
+\section{Observational Consistency}
+\label{sec:observations}
+% ============================================================
+
+\subsection{Rotation Curves}
+
+\textbf{Observation:} Flat rotation curves with $v_{\mathrm{flat}} \sim
+200$~km/s for Milky-Way-sized galaxies.
+
+\textbf{Model:} $\Delta\Ka/\Ka \approx 5.7 \times 10^{-6}$ from the
+logarithmic temperature profile (Eq.~\ref{eq:T-profile}).
+
+\textbf{Status:} \textbf{Consistent by construction.}
+
+
+\subsection{Gravitational Lensing}
+
+\textbf{Observation:} Lensing mass agrees with dynamical mass from rotation
+curves.
+
+\textbf{Model:} Both light and matter follow geodesics of the same acoustic
+metric with position-dependent $c(r)$.\ No separate mechanism needed.
+
+\textbf{Status:} \textbf{Automatically consistent.}
+
+
+\subsection{Cored Dark Matter Profiles}
+
+\textbf{Observation:} Dwarf and low-surface-brightness galaxies show cored
+(not cuspy) dark matter profiles.
+
+\textbf{Model:} The temperature profile flattens at $r < r_{\mathrm{core}}$
+(converging flows reduce velocity gradients), so $dT/dr \to 0$ and the dark
+matter contribution vanishes smoothly.
+
+\textbf{Status:} \textbf{Naturally cored.}
+
+
+\subsection{Bullet Cluster}
+
+\textbf{Observation:} Gravitational lensing follows the galaxies, not the
+shocked gas, in the 1E~0657-56 cluster collision.
+
+\textbf{Model:} Each galaxy's temperature profile (and therefore $\Ka(r)$
+gradient) is maintained by its own gravitational inflow.\ The shocked gas
+between the sub-clusters heats the local Aether, \emph{reducing} $\Ka$ and
+weakening the $c$ gradient in the collision region.\ The surviving $\Ka$
+gradients follow the galaxies, not the gas---producing the observed
+lensing--gas separation.
+
+\textbf{Status:} \textbf{Consistent.}
+
+
+\subsection{Hubble Tension}
+
+\textbf{Observation:} Local measurements give $H_0 \approx 73$~km\,s$^{-1}$\,Mpc$^{-1}$;
+CMB-derived values give $\approx$67~km\,s$^{-1}$\,Mpc$^{-1}$.
+
+\textbf{Model:} The KBC void (local underdensity, $\delta \approx 0.25$)
+is colder than average $\Rightarrow$ higher $\Ka$ $\Rightarrow$ higher $c$.\
+Photons from distant sources traversing this region travel at higher-than-average
+speed, biasing local distance measurements and producing a higher apparent $H_0$.\
+The qualitative mechanism parallels Paper~6's thermal pressure excess in the void
+\cite{otto-cosmology}, but operates through $\Ka$ rather than $P_{\mathrm{th}}$.
+
+\textbf{Status:} \textbf{Qualitatively consistent; quantitative calculation
+needed.}
+
+
+\subsection{Galaxy Clusters}
+
+\textbf{Observation:} Clusters require $\Delta c^2/c^2 \sim 10^{-4}$,
+roughly $17\times$ larger than galaxies.
+
+\textbf{Model:} Clusters have more massive gravitational inflows, stronger
+velocity gradients, and therefore larger viscous heating---producing a larger
+temperature contrast and $\Ka$ variation.\ The scaling
+$\Delta\Ka/\Ka \propto v_{\mathrm{flat}}^2$ naturally produces the observed
+galaxy-to-cluster ratio.
+
+\textbf{Status:} \textbf{Consistent.}
+
+
+\subsection{DESI Dark Energy Equation of State}
+
+\textbf{Observation:} Phantom-to-quintessence crossing at $z \gtrsim 0.5$
+\cite{desi2025}.
+
+\textbf{Model:} The cooling cascade produces $w < -1$ at high $z$ (cascade
+growth dominates) transitioning to $w > -1$ at low $z$ (expansion dilution
+dominates), with crossing at $z \sim 0.5$ for $\beta = 1$
+(Table~\ref{tab:parameters}).
+
+\textbf{Status:} \textbf{Consistent.}
+
+
+% ============================================================
+\section{Predictions}
+\label{sec:predictions}
+% ============================================================
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{$\etaK \sim 10^{-4}$~K$^{-1}$.}\ The temperature
+    sensitivity of the Aether's bulk modulus must match the measured
+    sensitivity of helium-4 at low temperature.\ If the Aether's excitation
+    spectrum can be derived from first principles, this is a specific,
+    testable prediction.
+
+  \item \textbf{$w(z)$ follows a cascade curve, not a polynomial.}\ The
+    dark energy evolution is determined by the void cooling history
+    (Eq.~\ref{eq:DKA-z}), not the smooth CPL parameterization.\ Future
+    DESI data releases and Euclid could distinguish the two functional
+    forms.
+
+  \item \textbf{Dark energy is absent at $z > 2$.}\ The temperature
+    contrast reverses (Table~\ref{tab:cascade}): at $z \gtrsim 2$, voids
+    were warmer than walls, so no $\Ka$-driven dark energy operated.\ This
+    contrasts with $\Lambda$CDM, where dark energy is present at all epochs.
+
+  \item \textbf{$T_{\mathrm{CMB}} \approx T_{\mathrm{wall}}$.}\ The CMB
+    temperature directly measures the Aether temperature in mass-containing
+    regions (where all observers reside).\ Any departure from
+    $T_{\mathrm{wall}} \approx T_{\mathrm{CMB}}$ would falsify this model.
+
+  \item \textbf{Void regions are cold and expand faster.}\ Voids with
+    lower Aether temperatures should show stronger local expansion rates and
+    enhanced ISW imprints.\ This is testable with upcoming void catalogs
+    from DESI and Euclid.
+
+  \item \textbf{Single parameter determines both dark phenomena.}\ The same
+    $\etaK$ that produces dark matter on galactic scales produces dark energy
+    on cosmic scales.\ Independent measurements of both should converge on
+    the same value---a powerful consistency test.
+\end{enumerate}
+
+
+% ============================================================
+\section{Open Questions}
+\label{sec:open}
+% ============================================================
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Derivation of $\etaK$ from Aether microscopic parameters.}\
+    Can $\etaK \sim 10^{-4}$~K$^{-1}$ be derived from $m_A$, $\rhoa$, and
+    $\Ka$?\ In helium-4, the temperature dependence of the sound speed
+    arises from the phonon-roton excitation spectrum; the analogous
+    calculation for the Aether requires knowledge of the full excitation
+    spectrum.
+
+  \item \textbf{Three-dimensional temperature profile.}\ The logarithmic
+    $T(r)$ profile (Eq.~\ref{eq:T-profile}) produces flat rotation, but the
+    full three-dimensional profile---including the transition from halo to
+    void---needs to be derived from the viscous heating equation with
+    appropriate boundary conditions.
+
+  \item \textbf{Tully--Fisher relation.}\ The model predicts
+    $v_{\mathrm{flat}}^2 \propto (\text{heating rate}) \times
+    \ln(r_{\mathrm{halo}}/r_{\mathrm{core}})$.\ Whether this reproduces the
+    observed $M \propto v^4$ scaling depends on how the viscous heating rate
+    scales with baryonic mass.\ For $\dot\varepsilon \propto M^{0.7}$
+    (sublinear, from the star-formation main sequence), the predicted slope
+    approaches the observed value.
+
+  \item \textbf{CMB power spectrum.}\ How does the $\Ka(T)$ mechanism affect
+    baryon-photon acoustic oscillations at $z \sim 1100$?\ At the CMB epoch,
+    the temperature was nearly uniform ($\delta T/T \sim 10^{-5}$), so
+    $\delta\Ka/\Ka \sim \etaK \times \delta T \sim 10^{-4} \times 10^{-5}
+    \times 3000 \sim 3 \times 10^{-6}$---small but potentially detectable in
+    the damping tail.
+
+  \item \textbf{Reconciliation with Paper~6.}\ The standard model (cold near
+    mass) and the hot matter model (warm near mass) produce qualitatively
+    similar observational signatures through different mechanisms.\ Are they
+    limiting cases of a more general framework?\ Could the truth lie between
+    the two extremes?
+
+  \item \textbf{The $\beta$ parameter.}\ The adiabatic cooling rate of void
+    Aether determines the cascade evolution and the $w(z)$ crossing redshift.\
+    In a standard fluid, $\beta = 3$; for the nearly incompressible Aether,
+    $\beta$ depends on how thermal energy couples to the expansion and
+    requires a first-principles calculation.
+
+  \item \textbf{Specific heat.}\ The viscous heating rate constrains the
+    product $\rhoa\,c_v\,T_{\mathrm{wall}}$.\ For
+    $T_{\mathrm{wall}} \approx 2.7$~K, the required specific heat is
+    $c_v \sim 5 \times 10^{-20}$~J/(kg\,K)---consistent with a superfluid
+    far below $T_c$ (Debye $c_v \propto (T/T_c)^3$), but the consistency
+    with the same excitation spectrum that determines $\etaK$ needs to
+    be verified.
+
+  \item \textbf{Hubble tension magnitude.}\ The qualitative mechanism
+    (cold KBC void $\Rightarrow$ higher $\Ka$ $\Rightarrow$ higher local
+    $c$) is clear, but the quantitative requirement ($\sim$8\% discrepancy
+    in $H_0$) needs detailed modeling of the KBC void temperature profile
+    and its effect on distance-ladder measurements.
+\end{enumerate}
+
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{desi2025}
+DESI Collaboration,
+``DESI DR2 Results: Measurement of the Baryon Acoustic Oscillation
+scale and Hubble parameter across 11 billion years,''
+\textit{arXiv:2503.14738} (2025).
+
+\bibitem{berezhiani2015}
+L.~Berezhiani and J.~Khoury,
+``Theory of dark matter superfluidity,''
+\textit{Phys.\ Rev.\ D}, \textbf{92}, 103510 (2015).
+
+\bibitem{planck2020}
+Planck Collaboration,
+``Planck 2018 results.\ VI.\ Cosmological parameters,''
+\textit{Astron.\ Astrophys.}, \textbf{641}, A6 (2020).
+
+\bibitem{riess2022}
+A.~G.~Riess \textit{et al.},
+``A comprehensive measurement of the local value of the Hubble constant
+with 1 km/s/Mpc uncertainty from the Hubble Space Telescope and the SH0ES
+Team,''
+\textit{Astrophys.\ J.\ Lett.}, \textbf{934}, L7 (2022).
+
+\bibitem{otto-overview}
+E.~Otto,
+``Unifying Theory of Dynamic Aether Mechanics: General Overview,''
+this series, Paper~1.
+
+\bibitem{otto-gravity}
+E.~Otto,
+``Unifying Theory of Dynamic Aether Mechanics: Gravity,''
+this series, Paper~3.
+
+\bibitem{otto-cosmology}
+E.~Otto,
+``Unifying Theory of Dynamic Aether Mechanics: Cosmology,''
+this series, Paper~6.
+
+\bibitem{otto-cooling}
+E.~Otto,
+``Superfluid Cooling Feedback as the Origin of Dark Energy and Dark Matter,''
+this series, Paper~6(a).
+
+\end{thebibliography}
+
+\end{document}
