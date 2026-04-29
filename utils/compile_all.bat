@@ -38,12 +38,13 @@ echo Moving PDFs to aether-mechanics root...
 echo ============================================================
 for %%F in (*.pdf) do call :move_pdf "%%F"
 
-REM Clean up: ONLY delete .log .out .toc files (not .tex, .aux, or .pdf)
+REM Clean up: delete .log .out .toc .aux files (keep .tex and .pdf)
 echo.
-echo Cleaning up .log .out .toc files...
+echo Cleaning up .log .out .toc .aux files...
 del /Q *.log 2>nul
 del /Q *.out 2>nul
 del /Q *.toc 2>nul
+del /Q *.aux 2>nul
 
 echo.
 echo Done! PDFs are in the aether-mechanics root.
