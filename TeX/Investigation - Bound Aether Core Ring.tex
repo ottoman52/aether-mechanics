@@ -1,0 +1,585 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% ---- macros consistent with main papers ----
+\newcommand{\rhoa}{\rho_{\!A}}
+\newcommand{\Ka}{K_{\!A}}
+\newcommand{\rloop}{r_{\mathrm{loop}}}
+
+\title{Investigation: Electron as a Vortex Ring\\
+with a Bound Aether Core}
+\author{Erik Otto}
+\date{April 2026 --- Working Document}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We investigate a formation model for the electron in which a quantized
+vortex ring, created in the high-energy early universe, accumulates a bound
+Aether core through the Dynamic Casimir Effect (DCE).  The bound ring grows
+until the core-boundary velocity drops below the DCE permanence threshold,
+at which point only transient binding (gravity) occurs and the electron mass
+stabilizes.  Using the theory's fundamental parameters ($m_A \approx
+500$--$850$~MeV/$c^2$, $\rhoa \approx 4 \times 10^{11}$--$10^{12}$~kg/m$^3$),
+the self-consistent vortex equation predicts $m_e \approx 0.4$--$0.6$~MeV,
+bracketing the observed $0.511$~MeV.  Including corrections for the
+core energy ($+5$--$14\%$, model-dependent) and the Bernoulli density
+deficit near the vortex core ($-1.7\%$), the prediction matches $0.511$~MeV exactly for
+$m_A \approx 628$--$689$~MeV/$c^2$, well within the independently
+constrained convergence zone.
+\end{abstract}
+
+
+% ================================================================
+\section{Formation Narrative}
+\label{sec:narrative}
+% ================================================================
+
+The electron forms through the following sequence in the early universe:
+
+\begin{enumerate}
+  \item \textbf{Vortex ring creation.}  In the high-energy early universe,
+    turbulent Aether flows create quantized vortex rings with circulation
+    $\kappa_e = h/(2m_A)$---the minimum (spin-$\tfrac{1}{2}$) quantum.
+    Initially these are pure fluid vortices: no bound material, no core
+    structure beyond the healing-length depletion.
+
+  \item \textbf{DCE creates matter.}  The circulation velocity at the
+    healing length is $v(\xi) = c/\sqrt{2} \approx 0.707\,c$
+    (Eq.~\ref{eq:v-healing}).  This exceeds the DCE permanence threshold,
+    so the rapidly-circulating boundary continuously converts vacuum
+    fluctuations into permanent bound Aether.
+
+  \item \textbf{Matter migrates inward.}  The Bernoulli pressure in a vortex
+    is lowest at the core (Eq.~\ref{eq:bernoulli}).  Bound material, no
+    longer part of the superfluid flow, is pushed inward by the pressure
+    gradient and accumulates along the vortex tube axis---forming a toroidal
+    ring of bound Aether tracing the vortex's major radius $\rloop$.
+
+  \item \textbf{Ring grows.}  As more bound material falls to the center,
+    the ring expands radially outward from the tube axis.  The effective
+    core boundary moves from $\xi$ to a larger radius $r_{\mathrm{eq}}$.
+
+  \item \textbf{Boundary velocity drops.}  The circulation $\kappa_e$ is
+    quantized and fixed, but the velocity at the boundary is
+    $v(r) = \kappa_e/(2\pi r)$.  As $r_{\mathrm{eq}}$ increases, the
+    boundary velocity decreases.
+
+  \item \textbf{Permanence threshold reached.}  When $v(r_{\mathrm{eq}})$
+    drops to $v_{\mathrm{perm}}$---the minimum velocity for permanent
+    DCE binding---the vortex can no longer create permanent mass.  Only
+    transient bind--unbind cycling occurs at the boundary, producing
+    the pressure asymmetry that manifests as gravity (Paper~3).
+
+  \item \textbf{Mass stabilizes.}  The electron's mass is the sum of the
+    circulation kinetic energy and the bound ring's rest mass at this
+    equilibrium point.
+\end{enumerate}
+
+This is a \emph{self-regulating} process: the creation of mass enlarges the
+core, which reduces the boundary velocity, which eventually shuts off mass
+creation.  The electron mass is not a free parameter but an equilibrium
+outcome determined by medium properties.
+
+\textbf{Energy source.}  Where does the ring's rest-mass energy come from?
+The DCE mechanism converts energy from the vortex's circulation into bound
+material---the moving boundary does work on the vacuum fluctuations, and
+the energy is drawn from the kinetic energy of the flow.  As the ring
+grows, the circulation KE decreases by the same amount that the ring mass
+increases.  The total energy (KE + ring mass) is therefore approximately
+\emph{conserved} during the formation process: $m_e \approx
+E_{\mathrm{KE,initial}} = E_{\mathrm{KE,final}} + m_{\mathrm{ring}}\,c^2$.
+The electron's final mass is set by the initial vortex energy at creation,
+not by the partitioning between KE and ring mass.
+
+
+% ================================================================
+\section{Key Equations}
+\label{sec:equations}
+% ================================================================
+
+% ----------------------------------------------------------------
+\subsection{Circulation Velocity}
+% ----------------------------------------------------------------
+
+For a quantized vortex with circulation $\kappa_e = h/(2m_A) = \pi\hbar/m_A$,
+the flow velocity at distance $r$ from the tube axis is:
+%
+\begin{equation}
+  v(r) = \frac{\kappa_e}{2\pi\,r}
+  \label{eq:v-of-r}
+\end{equation}
+
+At the healing length $\xi = \hbar/(m_A c\sqrt{2})$:
+%
+\begin{equation}
+  v(\xi) = \frac{\pi\hbar/m_A}{2\pi\,\hbar/(m_A c\sqrt{2})}
+         = \frac{c}{\sqrt{2}} \approx 0.707\,c
+  \label{eq:v-healing}
+\end{equation}
+
+% ----------------------------------------------------------------
+\subsection{Bernoulli Pressure}
+% ----------------------------------------------------------------
+
+The pressure distribution in the vortex flow:
+%
+\begin{equation}
+  P(r) = P_\infty - \tfrac{1}{2}\,\rhoa\,v^2(r)
+       = P_\infty - \frac{\rhoa\,\kappa_e^2}{8\pi^2\,r^2}
+  \label{eq:bernoulli}
+\end{equation}
+
+Pressure is lowest at the core center ($r \to 0$) and increases outward.
+Bound material (not participating in superfluid flow) experiences a net
+inward force from the surrounding higher-pressure fluid.
+
+% ----------------------------------------------------------------
+\subsection{Equilibrium Condition}
+% ----------------------------------------------------------------
+
+The bound ring grows until the boundary velocity reaches the permanence
+threshold:
+%
+\begin{equation}
+  v(r_{\mathrm{eq}}) = v_{\mathrm{perm}}
+  \quad\Longrightarrow\quad
+  r_{\mathrm{eq}} = \frac{\kappa_e}{2\pi\,v_{\mathrm{perm}}}
+  \label{eq:req}
+\end{equation}
+
+For $v_{\mathrm{perm}} < c/\sqrt{2}$, the ring extends beyond the healing
+length: $r_{\mathrm{eq}} > \xi$.
+
+% ----------------------------------------------------------------
+\subsection{Core Energy: Already Accounted For}
+\label{sec:core-energy}
+% ----------------------------------------------------------------
+
+An important subtlety: does the Donnelly formula already include the core's
+energy?
+
+The Donnelly formula computes only the \emph{kinetic energy of the
+circulating flow outside the core}.  In a standard GPE vortex, the total
+energy also includes the core's gradient and potential energy---the cost of
+depleting the condensate.  This core energy is of order $1/\ln(\rloop/\xi)$
+of the kinetic energy.  For the electron's aspect ratio, this is
+$\sim\!5$--$14\%$ depending on the condensate potential (the exact value for
+the logarithmic potential used in this theory has not been computed from first
+principles).
+
+In the bound-core model, the core region is filled with bound material
+instead of depleted vacuum.  The bound ring's rest mass \emph{replaces} the
+gradient and potential energy of the depleted core---it is the physical
+realization of the same core energy, not an additional contribution on top of
+it.  The total electron energy is therefore:
+%
+\begin{equation}
+  m_e\,c^2 \;\approx\; E_{\mathrm{KE}}(\text{circulation})
+  + E_{\mathrm{core}}
+  \label{eq:me-general}
+\end{equation}
+%
+where $E_{\mathrm{core}}$ exists in both models (depleted or bound) and is
+$\sim\!5$--$14\%$ of $E_{\mathrm{KE}}$.  In the depleted model it is
+gradient + potential energy; in the bound model it is the ring's rest mass.
+The Donnelly formula (which captures only $E_{\mathrm{KE}}$) undercounts
+the total by this amount regardless of core interpretation.
+
+% ----------------------------------------------------------------
+\subsection{Bernoulli Density Deficit Near the Core}
+\label{sec:bernoulli-density}
+% ----------------------------------------------------------------
+
+The Donnelly formula assumes constant density $\rhoa$ everywhere.  But the
+vortex circulation itself produces a Bernoulli density deficit (fixes.txt,
+Fix~4.1: ``venturi-like deficit from driven spin energy''):
+%
+\begin{equation}
+  \frac{\delta\rho(r)}{\rhoa} \approx -\frac{v^2(r)}{2\,c^2}
+  = -\frac{\kappa_e^2}{8\pi^2\,c^2\,r^2}
+  \label{eq:density-deficit}
+\end{equation}
+
+At the healing length ($r = \xi$, $v = c/\sqrt{2}$), this gives
+$\delta\rho/\rhoa \approx -25\%$---not negligible.  The density drops
+rapidly with distance:
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$r/\xi$ & $v/c$ & $\delta\rho/\rhoa$ \\
+\midrule
+1.0 & 0.707 & $-25\%$ \\
+1.5 & 0.471 & $-11\%$ \\
+2.0 & 0.354 & $-6\%$ \\
+5.0 & 0.141 & $-1\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+The density deficit reduces the kinetic energy because
+$E_{\mathrm{KE}} \propto \rho(r)\,v^2(r)$.  The correction is
+$\delta E = \int\!\tfrac{1}{2}\,(-\delta\rho)\,v^2\,dV$, giving:
+%
+\begin{equation}
+  \frac{\delta E_{\mathrm{KE}}}{E_{\mathrm{KE}}} \approx
+  -\frac{1}{8\,\ln(\rloop/\xi)}
+  \approx -1.7\%
+  \label{eq:ke-correction}
+\end{equation}
+%
+(The factor $1/8$ arises because $\kappa_e^2/(16\pi^2 c^2 \xi^2) = 1/8$
+for $v(\xi) = c/\sqrt{2}$.)  Note: $\delta\rho/\rhoa$ is a genuine density
+change (not just a pressure change with constant $\rhoa$) because the vortex
+circulation is \emph{driven} flow, not free-fall---the persistent spin energy
+maintains the flow against Bernoulli pressure, creating a venturi-like deficit.
+This is physically distinct from gravitational inflow, where free-fall dynamics
+ensure $\Delta\rho = 0$ exactly (Paper~2).  For the logarithmic equation of
+state, the exact compressible Bernoulli gives $\rho(r) = \rhoa\,e^{-v^2/(2c^2)}$
+rather than the linearized $\rhoa\,[1 - v^2/(2c^2)]$; the integrated KE
+correction differs by less than $3\%$ between exact and linear forms, so the
+linearized result $-1.7\%$ is adequate.
+
+The Donnelly formula itself is non-relativistic.  In the Aether framework,
+relativistic effects emerge from the medium at $O(v^2/c^2)$: time dilation
+from wave path geometry, length contraction from density changes (Paper~2).
+The Bernoulli density correction is the leading such correction to the vortex
+energy; higher-order terms are $O(v^4/c^4) \sim 0.4\%$, negligible at this
+level of precision.
+
+% ----------------------------------------------------------------
+\subsection{Electron Mass}
+% ----------------------------------------------------------------
+
+Combining all contributions:
+%
+\begin{equation}
+  \boxed{m_e\,c^2 \;\approx\;
+  \underbrace{\tfrac{1}{2}\,\rhoa\,\kappa_e^2\,\rloop
+  \left[\ln\!\left(\frac{8\,\rloop}{r_{\mathrm{eq}}}\right)
+  - \tfrac{1}{2}\right]}_{\displaystyle E_{\mathrm{KE}}\;\text{(circulation)}}
+  \;\times\;\underbrace{(1 - 0.017)}_{\text{Bernoulli}}
+  \;+\; \underbrace{E_{\mathrm{core}}}_{\displaystyle\sim\!5\text{--}14\%\text{ of }E_{\mathrm{KE}}}}
+  \label{eq:me-total}
+\end{equation}
+
+The first term is the Donnelly formula corrected for the Bernoulli density
+deficit ($-1.7\%$).  The second is the core energy ($5$--$14\%$ of
+$E_{\mathrm{KE}}$), which in the bound-core model is the ring's rest mass.
+The net correction from the bare Donnelly formula is:
+%
+\begin{equation}
+  m_e\,c^2 \approx E_{\mathrm{KE}}^{\mathrm{Donnelly}} \times
+  (1 - 0.017 + f_{\mathrm{core}})
+\end{equation}
+%
+where $f_{\mathrm{core}} \approx 0.05$--$0.14$ is the core energy fraction
+(model-dependent).  The net correction ranges from $+3\%$ to $+12\%$
+above the bare Donnelly value.
+
+The loop radius is set by the quantum minimum:
+$\rloop = \hbar/(m_e\,c)$ (the reduced Compton wavelength).
+
+
+% ================================================================
+\section{Mass Estimate}
+\label{sec:estimate}
+% ================================================================
+
+% ----------------------------------------------------------------
+\subsection{Circulation KE as a Lower Bound}
+% ----------------------------------------------------------------
+
+As a first step, ignore the ring mass and set $m_e c^2 = E_{\mathrm{KE}}$
+alone.  Using the self-consistent condition $\rloop = \hbar/(m_e c)$ and
+setting $r_{\mathrm{eq}} = \xi$:
+%
+\begin{equation}
+  m_e^2\,c^3 = \tfrac{1}{2}\,\rhoa\,\kappa_e^2\,\hbar
+  \left[\ln\!\left(\frac{8\,\rloop}{r_{\mathrm{eq}}}\right) - \tfrac{1}{2}\right]
+  \label{eq:self-consistent}
+\end{equation}
+%
+\begin{equation}
+  m_e^2 = \frac{\pi^2\,\rhoa\,\hbar^3}{2\,m_A^2\,c^3}
+  \left[\ln\!\left(\frac{8\sqrt{2}\,m_A}{m_e}\right) - \tfrac{1}{2}\right]
+  \label{eq:self-consistent-explicit}
+\end{equation}
+
+This gives a \emph{lower bound} on $m_e$ (since it ignores the ring's mass).
+Solving iteratively for $\rhoa = 5 \times 10^{11}$~kg/m$^3$:
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$m_A$ & $\xi$ & $\rloop$ & $m_e$ (KE only) & vs.\ observed \\
+(MeV/$c^2$) & (fm) & (fm) & (MeV) & \\
+\midrule
+500 & 0.28 & 325 & 0.61 & $+19\%$ \\
+550 & 0.25 & 354 & 0.56 & $+9\%$ \\
+600 & 0.23 & 383 & 0.515 & $+1\%$ \\
+650 & 0.21 & 411 & 0.48 & $-6\%$ \\
+700 & 0.20 & 439 & 0.45 & $-12\%$ \\
+800 & 0.17 & 495 & 0.40 & $-22\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+The bare KE-only equation gives $m_e = 0.515$~MeV at $m_A = 600$.
+Applying the net correction from
+Sections~\ref{sec:core-energy}--\ref{sec:bernoulli-density} ($+3\%$ to
+$+12\%$, depending on core energy) increases the prediction.  Matching
+$0.511$~MeV requires $m_A$ above $600$~MeV (see below).
+
+% ----------------------------------------------------------------
+\subsection{Full Prediction with Energy Conservation}
+% ----------------------------------------------------------------
+
+Since DCE converts circulation KE into ring mass (energy conserved),
+the total electron mass is set by the initial vortex energy, not by the
+ring's size.  The self-consistent equation remains
+Eq.~(\ref{eq:self-consistent-explicit})---but now $m_e$ represents the
+\emph{total} energy (KE + ring), and the Donnelly formula gives only the
+KE portion.
+
+Including the core energy correction and Bernoulli deficit from
+Sections~\ref{sec:core-energy}--\ref{sec:bernoulli-density}, the corrected
+prediction depends on the core energy fraction $f_{\mathrm{core}}$:
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$f_{\mathrm{core}}$ & Net correction & Best-fit $m_A$ & KE only (MeV) & Corrected (MeV) \\
+\midrule
+$5\%$ & $+3\%$ & 628~MeV & 0.495 & 0.511 \\
+$8\%$ & $+6\%$ & 649~MeV & 0.480 & 0.510 \\
+$11\%$ & $+9\%$ & 669~MeV & 0.468 & 0.512 \\
+$14\%$ & $+12\%$ & 689~MeV & 0.455 & 0.511 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+For any core energy in the $5$--$14\%$ range, there exists an $m_A$ in the
+convergence zone ($500$--$850$~MeV/$c^2$) that matches the observed mass:
+%
+\begin{equation}
+  \boxed{m_e \approx 0.511\;\text{MeV} \quad\text{(predicted, }m_A \approx
+  628\text{--}689\;\text{MeV)}
+  \qquad\text{vs.}\qquad
+  m_e = 0.511\;\text{MeV} \quad\text{(observed)}}
+  \label{eq:result}
+\end{equation}
+
+The match is exact for $m_A$ values well within the convergence zone.  The
+Bernoulli density deficit ($-1.7\%$) partially offsets the core energy
+($+5$--$14\%$), and the remaining net correction ($+3$--$12\%$) is absorbed
+by $m_A$, which shifts from $600$~MeV (bare Donnelly) to $628$--$689$~MeV
+(corrected).
+
+% ----------------------------------------------------------------
+\subsection{Effect of Threshold Velocity}
+% ----------------------------------------------------------------
+
+Under energy conservation, the total electron mass is fixed by the initial
+vortex energy at creation.  The threshold velocity $v_{\mathrm{perm}}$
+determines only the \emph{partitioning} between circulation KE and ring
+rest mass, not the total.  As $v_{\mathrm{perm}}$ decreases (ring grows),
+more KE converts to ring mass, but $m_e$ stays constant.
+
+The ring mass at equilibrium is:
+%
+\begin{equation}
+  m_{\mathrm{ring}}\,c^2 = f_{\mathrm{core}} \times m_e\,c^2
+  \label{eq:mring}
+\end{equation}
+%
+where $f_{\mathrm{core}} \approx 5$--$14\%$ (the fraction of total energy
+in the core, see Section~\ref{sec:core-energy}).  This is a small fraction:
+the electron remains circulation-dominated at equilibrium.
+
+
+% ================================================================
+\section{Physical Structure at Equilibrium}
+\label{sec:structure}
+% ================================================================
+
+% ----------------------------------------------------------------
+\subsection{Compression Ratio}
+\label{sec:compression}
+% ----------------------------------------------------------------
+
+Even if the entire electron mass were packed into the core ring (the extreme
+$f = 1$ case), the compression ratio would be remarkably low:
+%
+\begin{equation}
+  X = \frac{\rho_{\mathrm{core}}}{\rhoa}
+    = \frac{m_e}{\rhoa\,\cdot\,2\pi^2\,\rloop\,\xi^2}
+    \approx 4\text{--}5
+  \label{eq:compression}
+\end{equation}
+
+(varying from $\sim\!4.4$ at $m_A = 600$ to $\sim\!4.9$ at $m_A = 630$).
+Only $\sim\!5$ times ambient density even in the extreme case---far below
+the $\sim\!7 \times 10^7$ compression in QCD bridges.  This reflects the
+electron's small mass ($0.511$~MeV) spread over a large circumference
+($2\pi\rloop \approx 2400$~fm).
+
+For the core energy range $f_{\mathrm{core}} = 5$--$14\%$, the ring carries
+only $0.03$--$0.07$~MeV.  Spread over the core volume
+($\sim\!300$--$400$~fm$^3$), the ring density is well below
+$\rhoa$---the core is sparsely filled, not compressed.
+
+% ----------------------------------------------------------------
+\subsection{What Stops the Growth}
+% ----------------------------------------------------------------
+
+The self-regulation mechanism works as follows:
+
+\begin{enumerate}[leftmargin=2em]
+  \item DCE creates bound material at the core boundary where $v > v_{\mathrm{perm}}$
+  \item Material falls inward, expanding the effective core from $\xi$ to $r_{\mathrm{eq}}$
+  \item At $r_{\mathrm{eq}}$, the velocity has dropped: $v(r_{\mathrm{eq}}) < v(\xi)$
+  \item When $v(r_{\mathrm{eq}}) = v_{\mathrm{perm}}$, permanent binding ceases
+  \item Transient binding continues (producing gravity), but no new mass accumulates
+\end{enumerate}
+
+The quantized circulation $\kappa_e = h/(2m_A)$ is topologically fixed---it
+cannot change.  Only the boundary radius changes as the ring grows, reducing
+the velocity through the $v \propto 1/r$ dependence.
+
+
+% ================================================================
+\section{The DCE Permanence Threshold}
+\label{sec:threshold}
+% ================================================================
+
+The permanence threshold $v_{\mathrm{perm}}$ is the single most important
+unknown in this model.  It determines:
+\begin{itemize}[leftmargin=2em]
+  \item The equilibrium core size $r_{\mathrm{eq}} = \kappa_e/(2\pi v_{\mathrm{perm}})$
+  \item The partitioning between circulation KE and bound ring mass
+  \item The detailed structure of the electron
+\end{itemize}
+
+For $v_{\mathrm{perm}}$ near $c/\sqrt{2}$ (modest ring growth), the total
+mass varies only weakly with $v_{\mathrm{perm}}$: the logarithmic KE
+decrease partially cancels the ring mass increase.  For
+$v_{\mathrm{perm}} \ll c$, however, the ring mass (scaling as
+$r_{\mathrm{eq}}^2$) dominates the logarithmic KE decrease, and the total
+mass grows without bound.  This constrains $v_{\mathrm{perm}}$ to be close
+to $c/\sqrt{2}$.
+
+The threshold must satisfy $v_{\mathrm{perm}} < c/\sqrt{2}$ (otherwise no
+ring growth occurs) and $v_{\mathrm{perm}} > 0$ (otherwise the ring grows
+without limit).  A natural estimate from the Schwinger pair-production
+analogy---where the creation rate transitions from exponentially suppressed
+to significant when the exponent $(c/v)^2 \sim \pi$---gives:
+%
+\begin{equation}
+  v_{\mathrm{perm}} \sim \frac{c}{\sqrt{\pi}} \approx 0.56\,c
+  \label{eq:threshold-estimate}
+\end{equation}
+
+This corresponds to $r_{\mathrm{eq}} \approx 1.26\,\xi$---a modest expansion
+of the core beyond the healing length.
+
+Quantifying $v_{\mathrm{perm}}$ from first principles (the DCE pair creation
+rate in vortex geometry) is the key open problem identified in Paper~7.
+
+
+% ================================================================
+\section{Significance}
+\label{sec:significance}
+% ================================================================
+
+\subsection{Electron Mass from Medium Properties}
+
+The central result is Eq.~(\ref{eq:self-consistent-explicit}) combined with
+Eq.~(\ref{eq:mring}): the electron mass is determined by $m_A$, $\rhoa$,
+$c$, and the ring density $\alpha$---all properties of the Aether medium and
+the equilibrium vortex structure, not free parameters of the electron.  The
+mass arises from:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Circulation quantization}: $\kappa_e = h/(2m_A)$ fixes the
+    flow speed at each radius
+  \item \textbf{Quantum minimum size}: $\rloop = \hbar/(m_e c)$ prevents the
+    vortex ring from shrinking to zero
+  \item \textbf{Self-consistency}: $m_e$ must equal the energy of a vortex
+    ring of size $\rloop$, which itself depends on $m_e$
+\end{itemize}
+
+For $m_A \approx 628$--$689$~MeV (within the convergence zone), the
+corrected prediction matches the observed $0.511$~MeV exactly.  The
+inputs---$m_A$ and $\rhoa$---are independently constrained by QCD bridge
+physics (Paper~5) and the healing-length convergence (Paper~7).  The core
+energy fraction $f_{\mathrm{core}}$ is the remaining model-dependent
+quantity; computing the vortex core structure in the logarithmic potential
+would pin down both $f_{\mathrm{core}}$ and the best-fit $m_A$
+simultaneously.
+
+\subsection{Self-Regulating Mass}
+
+The bound-core model explains \emph{why} the electron has the mass it does:
+the DCE mechanism creates mass until it shuts itself off.  Every electron
+reaches the same equilibrium because every minimum-circulation vortex ring
+has the same $\kappa_e$, the same velocity profile, and therefore the same
+threshold crossing point.  Mass universality follows from circulation
+quantization.
+
+\subsection{Open Tube / Closed Tube Taxonomy}
+
+The bound electron core ring is a \emph{closed tube} of gently compressed
+Aether, stabilized by the encircling vortex circulation.  The QCD bridge is
+an \emph{open tube} of strongly compressed Aether, stabilized by quark
+vortex endpoints.  Both are topologically-stabilized bound Aether structures
+in the same medium, differing in topology (closed vs.\ open), compression
+($\ll 1$ to $\sim\!5$ vs.\ $\sim\!7 \times 10^7$), and energy scale ($0.5$~MeV
+vs.\ $\sim\!1$~GeV/fm).
+
+
+% ================================================================
+\section{Open Questions}
+\label{sec:open}
+% ================================================================
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{DCE permanence threshold.}  What is $v_{\mathrm{perm}}$?
+    A first-principles DCE calculation in vortex geometry would determine the
+    equilibrium core size and the KE/ring mass partitioning.
+
+  \item \textbf{Muon and tau.}  Could higher-energy vortex configurations
+    (multiply-wound cores, knotted rings) stabilize at different masses?
+    The self-regulation mechanism would apply to any circulation quantum,
+    potentially producing the lepton mass hierarchy.
+
+  \item \textbf{Form factor.}  Electron scattering experiments probe to
+    $\sim\!10^{-18}$~m with no structure seen, yet the vortex model predicts
+    structure at $\rloop \sim 400$~fm.  How does the vortex ring's
+    scattering cross-section mimic a point particle?
+
+  \item \textbf{Charge origin.}  The bound core ring surface is a permanent
+    DCE boundary.  Could the intense transient cycling at this surface be
+    the microscopic mechanism that implements the radial Aether flow defining
+    electric charge (an acknowledged gap in Paper~4)?
+
+  \item \textbf{Cosmological formation.}  What conditions in the early
+    universe create vortex rings with the minimum circulation quantum?  What
+    determines the initial $\rloop$, and how does it relax to
+    $\hbar/(m_e c)$?
+\end{enumerate}
+
+
+\end{document}
