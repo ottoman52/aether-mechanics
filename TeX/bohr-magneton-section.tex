@@ -1,0 +1,121 @@
+% =====================================================================
+% Section to insert into Paper 7(a) — Bound Core Electron Model.
+% Recommended placement: as a new \section{} between §10 (Coulomb's
+% Constant Derivation) and the existing §11 (Open Questions). Renumber
+% Open Questions to §12.
+% =====================================================================
+
+\section{Structural Confirmation: The Bohr Magneton from Ring Geometry}
+\label{sec:bohr-magneton}
+
+The derivation of §\ref{sec:force-constants} fixes the Coulomb constant
+$k$ from the bound core ring's axial-oscillation source amplitude. A
+complementary, parameter-free check on the ring geometry comes from
+computing its classical magnetic moment and comparing to the observed
+Bohr magneton $\mu_B = e\hbar/(2m_e)$. The match is exact: no fit,
+no closure assumptions, no source-identification factor.
+
+\subsection{Effective Current of the Bound Core Ring}
+
+The ring carries charge $e$ as a topological winding number
+(§\ref{sec:form-factor-topological}) and oscillates axially at the
+Compton frequency $\omega_C = m_e c^2/\hbar$. Each axial cycle advances
+the topological winding by one period, so an external observer averaging
+over the ring's circulation sees an effective azimuthal current of one
+quantum of charge per Compton period:
+\begin{equation}
+I_{\text{eff}} = \frac{e}{T_C}
+              = \frac{e\,\omega_C}{2\pi}
+              = \frac{e\,m_e c^2}{2\pi\,\hbar}.
+\label{eq:I-eff-bohr}
+\end{equation}
+
+\subsection{Magnetic Moment of the Loop}
+
+Treating the ring as a closed current loop of radius $r_{\text{loop}}$
+and area $\mathcal{A} = \pi r_{\text{loop}}^2$, the classical magnetic
+moment is $\mu_M = I_{\text{eff}}\,\mathcal{A}$. Substituting
+$r_{\text{loop}} = \hbar/(m_e c)$ from Paper 7:
+\begin{equation}
+\mu_M = \frac{e\,m_e c^2}{2\pi\,\hbar}\cdot \pi\cdot\frac{\hbar^2}{m_e^2 c^2}
+      = \frac{e\,\hbar}{2 m_e}
+      = \mu_B.
+\label{eq:bohr-magneton}
+\end{equation}
+The cancellation in~(\ref{eq:bohr-magneton}) is exact and parameter-free.
+
+\subsection{What the Match Confirms}
+
+Equation~(\ref{eq:bohr-magneton}) requires three independently-motivated
+structural inputs to combine in precisely the right way:
+\begin{itemize}
+\item The ring radius is the reduced Compton wavelength:
+  $r_{\text{loop}} = \hbar/(m_e c)$. Any other length scale produces the
+  wrong answer.
+\item The driving frequency is the Compton frequency:
+  $\omega_C = m_e c^2/\hbar$. This is the natural frequency of the bound
+  core ring's axial oscillation mode (Paper 7).
+\item The effective current is one charge per period:
+  $I_{\text{eff}} = e\,\omega_C/(2\pi)$. This follows from the
+  topological character of charge established in
+  §\ref{sec:form-factor-topological}: the ring carries a single winding
+  number swept once per cycle.
+\end{itemize}
+Each input is motivated independently elsewhere in the framework. Their
+conspiratorial product yielding exactly $\mu_B$ is a non-trivial
+geometric self-consistency.
+
+\subsection{Gyromagnetic Ratio $g = 2$}
+
+The same construction gives the Dirac value of the gyromagnetic ratio
+without further assumptions. The bound core ring carries
+quantized half-circulation $\kappa_e = h/(2 m_A)$
+(cf.\ Paper~7, §\ref{sec:qss}), which corresponds to spin angular
+momentum $S = \hbar/2$. Combining with~(\ref{eq:bohr-magneton}):
+\begin{equation}
+\mu_B \;=\; g\cdot\frac{e}{2 m_e}\cdot S \quad\Longrightarrow\quad
+g \;=\; 2,
+\end{equation}
+to leading order. The standard QED anomalous corrections
+$g = 2 + \alpha/\pi + \mathcal O(\alpha^2)$ are expected to arise from
+coupled fluctuations of the surrounding Aether condensate (the analog of
+the radiative diagrams in QED) and lie beyond the classical ring
+picture.
+
+\subsection{What This Does \emph{Not} Determine}
+
+The match in~(\ref{eq:bohr-magneton}) yields $\mu_B$ in SI units of
+$\mathrm{A\cdot m^2}$ from purely geometric and kinematic ring
+properties. It does \emph{not} fix the vacuum permeability $\mu_0$.
+The constant $\mu_0$ enters only when one computes the magnetic field
+produced by the moment at distance $r$
+($B = \mu_0\mu_M/(4\pi r^3)$) or the interaction energy of two such
+moments. Both require the longitudinal-to-transverse mode conversion at
+the ring's healing-length boundary, which is the same physics packaged
+into the $A=\xi$ amplitude closure of §\ref{sec:force-constants}. The
+Bohr-magneton calculation bypasses this conversion entirely, which is
+why it is parameter-free, but also why it cannot serve as an independent
+anchor on $\mu_0$.
+
+In this respect the Bohr-magneton match is complementary to
+§\ref{sec:force-constants}:
+\begin{itemize}
+\item §\ref{sec:force-constants} fixes $k$ (and hence
+  $\mu_0 = 4\pi k/c^2$) by computing the Bjerknes secondary force
+  between two phase-locked rings.
+\item The present section fixes the ring's geometric inputs
+  ($r_{\text{loop}}$, $\omega_C$, the topological-charge cycle picture)
+  by computing the ring's magnetic moment.
+\end{itemize}
+Together they confirm that the same bound core ring responsible for the
+Coulomb constant also produces the correct Bohr magneton, and that the
+geometric and kinematic inputs entering both calculations are mutually
+consistent.
+
+\subsection{Status}
+
+\textbf{Derived (D).} Given (i) the ring radius from Paper 7,
+(ii) the topological character of charge
+(§\ref{sec:form-factor-topological}), and (iii) the half-quantum
+circulation from Paper 7 §\ref{sec:qss}, the Bohr magneton and $g = 2$
+follow with no free parameters or fits.
