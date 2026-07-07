@@ -53,8 +53,13 @@ electron mass stabilizes.\ This self-regulating mechanism explains why the
 electron has the mass it does.\ The self-consistent vortex equation, corrected
 for core energy ($+5$--$14\%$) and the Bernoulli density deficit ($-1.7\%$),
 predicts $m_e \approx 0.4$--$0.6$~MeV across the allowed parameter range and
-matches the observed $0.511$~MeV for $m_A \approx 628$--$689$~MeV/$c^2$, well
-within the independently constrained convergence zone.
+matches the observed $0.511$~MeV for $m_A \approx 616$--$644$~MeV/$c^2$, well
+within the independently constrained convergence zone.\ A companion
+derivation obtains Coulomb's constant from the ring's spin-phase winding
+pump ($k e^2 = \rhoa \kappa_e^2 \rloop^2/8\pi$) and the Bohr magneton with
+$g = 2$ exactly from the same geometry, tying the electric, magnetic, and
+mass sectors to a single topological postulate: one winding advance per
+Compton cycle.
 \end{abstract}
 
 \vspace{1em}
@@ -414,7 +419,15 @@ Eq.~\ref{eq:energy-conservation}), the total electron mass is set by the
 initial vortex energy.\ The Donnelly formula gives only the KE portion.\
 Including the core energy and Bernoulli corrections
 (Eq.~\ref{eq:net-correction}), the corrected prediction depends on the core
-energy fraction $f_{\mathrm{core}}$:
+energy fraction $f_{\mathrm{core}}$.
+
+One propagation subtlety must be handled carefully.\ The energy relation
+$m_e c^2 = E_{\mathrm{KE}} \times (1 + \mathrm{net})$ does not shift the
+self-consistent mass linearly, because
+$E_{\mathrm{KE}} \propto \rloop \propto 1/m_e$: substituting
+$\rloop = \hbar/(m_e c)$ places the correction in the \emph{squared}
+mass, $m_e^2 \propto (1 + \mathrm{net})$, so the self-consistent solution
+shifts by $\sqrt{1 + \mathrm{net}}$---half the naive exponent:
 
 \begin{center}
 \begin{tabular}{@{}ccccc@{}}
@@ -422,10 +435,10 @@ energy fraction $f_{\mathrm{core}}$:
 $f_{\mathrm{core}}$ & Net correction & Best-fit $m_A$ & KE only (MeV) &
 Corrected (MeV) \\
 \midrule
-$5\%$ & $+3\%$ & 628~MeV & 0.495 & 0.511 \\
-$8\%$ & $+6\%$ & 649~MeV & 0.480 & 0.510 \\
-$11\%$ & $+9\%$ & 669~MeV & 0.468 & 0.512 \\
-$14\%$ & $+12\%$ & 689~MeV & 0.455 & 0.511 \\
+$5\%$ & $+3\%$ & 616~MeV & 0.503 & 0.511 \\
+$8\%$ & $+6\%$ & 625~MeV & 0.496 & 0.511 \\
+$11\%$ & $+9\%$ & 635~MeV & 0.490 & 0.511 \\
+$14\%$ & $+12\%$ & 644~MeV & 0.484 & 0.511 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -435,15 +448,16 @@ convergence zone that matches the observed mass:
 %
 \begin{equation}
   \boxed{m_e \approx 0.511\;\text{MeV} \quad\text{(predicted, }m_A \approx
-  628\text{--}689\;\text{MeV)}
+  616\text{--}644\;\text{MeV)}
   \qquad\text{vs.}\qquad
   m_e = 0.511\;\text{MeV} \quad\text{(observed)}}
   \label{eq:result}
 \end{equation}
 
 The Bernoulli density deficit ($-1.7\%$) partially offsets the core energy
-($+5$--$14\%$), and the remaining net correction ($+3$--$12\%$) is absorbed
-by $m_A$, which shifts from $600$~MeV (bare Donnelly) to $628$--$689$~MeV
+($+5$--$14\%$), and the remaining net correction
+($+3$--$12\%$)---entering as $\sqrt{1+\mathrm{net}}$---is absorbed by
+$m_A$, which shifts from $600$~MeV (bare Donnelly) to $616$--$644$~MeV
 (corrected).
 
 
@@ -555,7 +569,7 @@ arises from three interlocking constraints:
     ring of size $\rloop$, which itself depends on $m_e$
 \end{itemize}
 
-For $m_A \approx 628$--$689$~MeV (within the convergence zone), the
+For $m_A \approx 616$--$644$~MeV (within the convergence zone), the
 corrected prediction matches the observed $0.511$~MeV.\ The inputs $m_A$ and
 $\rhoa$ are independently constrained by QCD bridge physics
 \cite{otto-strong} and the healing-length convergence
@@ -622,8 +636,10 @@ Paper~7:
   \item \textbf{Energy corrections.}\ The Donnelly formula undercounts the
     total energy by $\sim\!5$--$14\%$ (core energy, model-dependent) and
     overcounts by $\sim\!1.7\%$ (Bernoulli density deficit).\ The net
-    correction shifts the best-fit $m_A$ from $\sim\!600$~MeV to
-    $\sim\!628$--$689$~MeV, still within the convergence zone.
+    correction, entering the self-consistent mass as
+    $\sqrt{1+\mathrm{net}}$, shifts the best-fit $m_A$ from
+    $\sim\!600$~MeV to $\sim\!616$--$644$~MeV, still within the
+    convergence zone.
 
   \item \textbf{Mass origin.}\ The electron mass is not merely
     \emph{determined by} the vortex equation---it is \emph{selected} by the
@@ -704,7 +720,7 @@ distributed around the ring itself.
 
 Paper~4's description of the electric field as spherically symmetric is
 therefore exact (not approximate): the symmetry arises from topology, and
-the coherent axial-oscillation wave field radiated by the ring inherits
+the coherent spin-phase wave field radiated by the ring inherits
 this exact spherical symmetry at the monopole level.
 
 \subsection{Status}
@@ -713,310 +729,491 @@ The topological-versus-geometric question that was previously open is
 answered by the revised Paper~4 \cite{otto-em}: charge is topological, the
 form factor satisfies $F(Q^2) = 1$ exactly, and the vortex-ring model is
 consistent with electron-scattering data at all tested momentum transfers.\
-A first-principles derivation of the ring's axial-oscillation amplitude
-is developed in the following section
-(Section~\ref{sec:coulomb-derivation}), which closes the quantitative
-Coulomb-constant gap using the healing-length amplitude~$A = \xi$, and is
-independent of---and does not affect---the topological resolution of the
-form-factor challenge.
+The quantitative Coulomb-constant derivation is developed in the following
+section (Section~\ref{sec:coulomb-derivation}), where the same relative
+winding that carries the charge acts as a quantized spin-phase pump; that
+derivation is independent of---and does not affect---the topological
+resolution of the form-factor challenge.
 
 
 % ============================================================
-\section{Derivation of Coulomb's Constant from Ring Axial Oscillation}
+\section{Derivation of Coulomb's Constant from the Ring's Spin-Phase Winding Pump}
 \label{sec:coulomb-derivation}
 % ============================================================
 
 Paper~4~\cite{otto-em} develops the electric field as a phase-locked
-acoustic force between two coherent monopole radiators of discrete charge
-sign, deriving the Coulomb-force \emph{structure} ($1/r^2$ falloff, sign
-rule, near-field reactive coupling) from the secondary Bjerknes force
-without committing to a specific source topology.\ What that analysis does
-not set is the numerical value of Coulomb's constant $k$: the constant
-depends on the specific geometry and oscillation amplitude of the
-radiating source.\ This section supplies those ingredients from the bound
-core ring topology of Sections~\ref{sec:formation}--\ref{sec:form-factor}
-and derives $k$ to within a few percent of its measured value with no free
-parameters beyond those already fixed elsewhere in this paper.
+interaction between two coherent sources of discrete topological sign,
+deriving the Coulomb-force \emph{structure} ($1/r^2$ falloff, sign rule)
+without committing to a specific source realization.\ This section
+supplies the quantitative source from the bound core ring topology of
+Sections~\ref{sec:formation}--\ref{sec:form-factor} and derives $k$.\ An
+earlier version of this section modeled the source as an axially
+oscillating piston radiating density (sound) waves; that route is closed
+by the channel-selection result below, and by Paper~7's identification of
+photons as spin-wave excitations of the spinor condensate
+\cite{otto-quantum}, which places the electromagnetic sector in the spin
+channel from the outset.
 
-\subsection{Secondary Bjerknes Force Between Two Monopoles}
-\label{sec:bjerknes-formula}
+\subsection{Channel Selection: The Source Cannot Be a Density Monopole}
+\label{sec:channel-selection}
 
-For two acoustic monopole sources oscillating at a common angular frequency
-$\omega$ with volume-displacement amplitudes $V_{0,1}$, $V_{0,2}$ and phase
-difference $\Delta\varphi$, the time-averaged force on source~2 from
-source~1 in the near-field (reactive) regime is the standard secondary
-Bjerknes result \cite{bjerknes1906}:
+For any closed surface around the particle, the monopole (isotropic,
+$1/r^2$-force-producing) component of a radiated field is fixed by
+conservation: the net flux equals the rate of change of the corresponding
+\emph{content} enclosed.\ For density (sound) waves the content is
+displaced volume, and for a structure made of flow the available volume
+is pinned by an identity: the Bernoulli deficit volume of a flow
+structure equals its flow energy divided by the bulk modulus,
+$V_{\mathrm{def}} = E_{\mathrm{flow}}/\Ka$.\ Matching the observed
+Coulomb force through the acoustic (secondary Bjerknes) route
+\cite{bjerknes1906} requires a volume amplitude
+$V_0 = \sqrt{8\pi k e^2/(\rhoa\,\omega^2)} \approx 1.4\times10^{-40}$~m$^3$,
+whose energy cost is
 %
 \begin{equation}
-  \langle F \rangle \;=\; -\,\frac{\rhoa\,\omega^2\,V_{0,1}\,V_{0,2}\,\cos\Delta\varphi}{8\pi\,r^2},
-  \label{eq:bjerknes-monopole}
+  \Ka V_0 \;\approx\; (75\text{--}110)\; m_e c^2
+  \label{eq:density-nogo}
 \end{equation}
 %
-where $r$ is the separation between sources and $\rhoa$ is the Aether
-density.\ Same-species charges phase-lock anti-symmetrically
-($\Delta\varphi = \pi$; Paper~4 \cite{otto-em}, §Self-Perpetuation),
-giving $\cos\Delta\varphi = -1$, so Eq.~(\ref{eq:bjerknes-monopole})
-inverts to a repulsive force:
+---two orders of magnitude beyond the electron's entire energy budget,
+which the mass equation of Section~\ref{sec:combined} has already spent
+on the circulation.\ (Motion-based sources fare no better: a translating
+or flexing structure that conserves its volume radiates as a dipole at
+every instant, whatever its stiffness.)\ The density channel therefore
+cannot host the Coulomb source.\ The spin channel can: the transverse
+spin $S_+ = \psi_\uparrow^* \psi_\downarrow$ is a complex field whose
+phase is \emph{compact}---a precessing source pumps it indefinitely
+without accumulating content---so monopole sources of spin phase are not
+content-bounded.\ The density no-go thus acts as a channel-selection
+theorem, and it doubles as a structural reason why the density-channel
+residual (gravity, Paper~3~\cite{otto-gravity}) is so much weaker than
+electromagnetism.
+
+\subsection{Spin-Phase Stiffness of the Condensate}
+\label{sec:spin-stiffness}
+
+Write the spinor condensate as $\Psi = (\psi_\uparrow, \psi_\downarrow)$
+with $\psi_i = \sqrt{n_i}\,e^{i\theta_i}$ over a balanced background
+($n_\uparrow = n_\downarrow = n/2$, $n = \rhoa/m_A$), and define the
+total phase $\theta = (\theta_\uparrow + \theta_\downarrow)/2$ and the
+relative (spin) phase $\varphi = \theta_\uparrow - \theta_\downarrow$.\
+The Gross--Pitaevskii kinetic energy splits exactly:
 %
 \begin{equation}
-  F_{\mathrm{same}} \;=\; +\,\frac{\rhoa\,\omega^2\,V_{0,1}\,V_{0,2}}{8\pi\,r^2}.
-  \label{eq:bjerknes-repulsive}
-\end{equation}
-
-\subsection{Ring as Monopole Piston}
-\label{sec:ring-piston}
-
-For a bound core ring of major radius $\rloop$ oscillating axially with
-amplitude $A$, the leading-order monopole volume-displacement amplitude is
-%
-\begin{equation}
-  V_0 \;\approx\; S_{\mathrm{eff}}\,A, \qquad
-  S_{\mathrm{eff}} \;=\; \pi\,\rloop^2,
-  \label{eq:piston-volume}
-\end{equation}
-%
-where $S_{\mathrm{eff}}$ is the effective piston area---the disc bounded
-by the ring.\ This is the natural monopole projection of coherent axial
-motion: the ring's entire enclosed disc sweeps a volume
-$\pi \rloop^2 \cdot A$ on each half-cycle, and only this
-in-phase projection contributes to monopole radiation at wavelengths
-comparable to or larger than~$\rloop$.\ Higher multipoles exist but do not
-contribute to Bjerknes-type coupling at the monopole level.
-
-\subsection{Coulomb Equation and Ring-Geometry Substitution}
-\label{sec:coulomb-equation}
-
-Setting Eq.~(\ref{eq:bjerknes-repulsive}) for two same-sign charges equal
-to Coulomb's law $F = k e^2/r^2$ and substituting
-Eq.~(\ref{eq:piston-volume}) gives
-%
-\begin{equation}
-  k \;=\; \frac{\rhoa\,\omega^2\,S_{\mathrm{eff}}^2\,A^2}{8\pi\,e^2}.
-  \label{eq:k-general}
+  \frac{\hbar^2}{2 m_A}\!\left[n_\uparrow(\nabla\theta_\uparrow)^2
+  + n_\downarrow(\nabla\theta_\downarrow)^2\right]
+  = \frac{K_\theta}{2}(\nabla\theta)^2
+  + \frac{K_\varphi}{2}(\nabla\varphi)^2,
+  \qquad
+  K_\varphi = \frac{\rhoa \hbar^2}{4 m_A^2}
+            = \frac{\rhoa\,\kappa_e^2}{4\pi^2}.
+  \label{eq:spin-stiffness}
 \end{equation}
 %
-Substituting the ring geometry $\omega = m_e c^2/\hbar$
-(Paper~4 \cite{otto-em}, Eq.\ for axial Compton frequency) and
-$\rloop = \hbar/(m_e c)$ (Section~\ref{sec:significance}), the combination
-$\omega^2 S_{\mathrm{eff}}^2$ simplifies exactly:
+The spin-phase stiffness $K_\varphi$ is purely kinetic---the interaction
+terms set wave speeds and healing lengths but do not enter
+Eq.~(\ref{eq:spin-stiffness})---so the static results below carry no new
+parameters, and the factor of~$4$ that previously had to be supplied by
+the half-quantum assumption emerges here from the two-component
+kinematics ($\theta_i = \theta \pm \varphi/2$).
+
+\subsection{Flux Sources and the Interaction}
+\label{sec:spin-force}
+
+A particle that pumps relative phase is a flux source of the $\varphi$
+field, with source strength
+$q = \oint \nabla\varphi \cdot d\mathbf{A}$; by two-component
+continuity, $q = (2 m_A/\hbar n)\,d(\Delta N)/dt$, where $\Delta N$ is
+the enclosed spin-population imbalance.\ The energy functional
+(\ref{eq:spin-stiffness}) is mathematically identical to incompressible
+potential flow under $\rho \leftrightarrow K_\varphi$ and volume flux
+$\leftrightarrow q$, so potential theory gives the interaction of two
+sources directly: $E_{\mathrm{int}} = K_\varphi q_1 q_2/(4\pi d)$, and
+for two synchronized oscillating pumps $q_i(t) = q_0 \sin(\pm\omega t)$
+the time-averaged force is
 %
 \begin{equation}
-  \omega^2\,S_{\mathrm{eff}}^2
-  \;=\; \left(\frac{m_e c^2}{\hbar}\right)^2 \left(\pi\,\frac{\hbar^2}{m_e^2 c^2}\right)^2
-  \;=\; \frac{\pi^2\,\hbar^2}{m_e^2}.
-  \label{eq:omega-S-exact}
+  F \;=\; \frac{K_\varphi\, q_1 q_2}{8\pi\, d^{\,2}}.
+  \label{eq:spin-force}
 \end{equation}
 %
-The electron mass and the Planck constant combine into a ring-independent
-scale, leaving
+The sign structure is that of flux sources of a gradient field (the
+vortex-gas rule): like signs repel, opposite signs attract.\ The sign of
+each pump is its winding sense---co-rotating versus counter-rotating
+core, exactly the topological charge of
+Section~\ref{sec:form-factor}---so Eq.~(\ref{eq:spin-force}) is
+electrostatics with Gauss-law charges: field lines are steady
+spin-current streamlines, and Gauss's law is pump conservation.
+
+\subsection{The Winding Pump}
+\label{sec:winding-pump}
+
+The source amplitude follows from the ring's two rotations
+(§\ref{sec:two-clocks}).\ The bound core co-rotates with the host flow
+that created it, so the winding rotates poloidally---about the core
+tube's axis---at the inherited rate
 %
 \begin{equation}
-  k \;=\; \frac{\pi\,\rhoa\,\hbar^2\,A^2}{8\,m_e^2\,e^2}.
-  \label{eq:k-with-amplitude}
+  \Omega \;=\; \frac{v(\xi)}{\xi} \;=\; \frac{m_A c^2}{\hbar},
+  \label{eq:pump-clock}
 \end{equation}
-
-\subsection{Amplitude Closure: \texorpdfstring{$A = \xi$}{A = xi}}
-\label{sec:amplitude-xi}
-
-The only unknown remaining in Eq.~(\ref{eq:k-with-amplitude}) is the
-equilibrium axial-oscillation amplitude~$A$.\ The natural closure is
-$A$ equal to the Aether healing length
+%
+a property of the medium ($v(\xi) = c/\sqrt{2}$ and $\xi$ scale so that
+$m_A$ cancels from the construction), and hence common to every
+singly-wound structure---which is what allows unequal-mass charges to
+remain synchronized.\ A rigidly rotating pattern changes no enclosed
+totals; what pumps is the rotation's effect at the boundary: the $m = 1$
+winding rotating at $\Omega$ makes the \emph{local} relative phase at
+every boundary point precess uniformly at $\Omega$ (an axisymmetric,
+monopole-compatible drive), which is an AC Josephson condition with bias
+$\hbar\Omega = m_A c^2$---one constituent rest energy, the DCE
+bind--unbind scale of Section~\ref{sec:threshold}.\ The boundary layer
+therefore converts spin population sinusoidally at $\Omega$.\ The pump
+amplitude is normalized by the same topological postulate that fixes the
+effective current in §\ref{sec:bohr-magneton}: \emph{one winding quantum
+per cycle}, giving
 %
 \begin{equation}
-  \xi \;=\; \frac{\hbar}{m_A\,c\,\sqrt{2}},
+  q_0 \;=\; 2\pi\,\rloop,
+  \label{eq:q0}
 \end{equation}
 %
-the intrinsic thickness of the core transition zone where density and
-phase smoothly join the ambient condensate.\ Axial excursions exceeding
-$\xi$ would disrupt the coherent bound-ring structure: the ring's material
-would be pushed out of the permanence-threshold region established in
-Section~\ref{sec:equilibrium} and either remix with the ambient condensate
-or trigger pair creation.\ The healing length is therefore a geometric
-upper bound on the equilibrium amplitude, and saturation of this bound is
-the expected ground-state configuration for an oscillation that carries
-the full Coulomb coupling.
+the ring's own circumference.\ Three computed checks support this
+normalization without yet deriving it: the required conversion current
+is $I = n\,\kappa_e\,\rloop$ (frequency-independent); the boundary
+layer's required duty is $2/\pi$ of its population per turn (order
+unity---compare the factor $\sim\!300$ by which the density channel
+falls short); and the layer then operates at $\approx 1/(2\pi)$ of its
+critical spin current, i.e.\ well subcritical, which is what makes the
+pumping sinusoidal.\ The remaining first-principles gap is the
+boundary-layer conversion calculation itself
+(Section~\ref{sec:open-questions}).
 
-With $A = \xi$, so $A^2 = \hbar^2/(2 m_A^2 c^2)$,
-Eq.~(\ref{eq:k-with-amplitude}) becomes
+\subsection{The Coulomb Constant}
+\label{sec:k-result}
+
+Combining Eqs.~(\ref{eq:spin-stiffness}), (\ref{eq:spin-force}), and
+(\ref{eq:q0}), the frequency, the amplitude conventions, and all
+effective areas cancel, leaving
 %
 \begin{equation}
-  \boxed{\;k \;=\; \frac{\pi\,\rhoa\,\hbar^4}{16\,m_e^2\,m_A^2\,c^2\,e^2}\;}
+  \boxed{\;k\,e^2 \;=\; \frac{K_\varphi\,q_0^2}{8\pi}
+  \;=\; \frac{\rhoa\,\kappa_e^2\,\rloop^2}{8\pi}\;}
   \label{eq:k-final}
 \end{equation}
 %
-or, equivalently, using $\Ka = \rhoa c^2$:
+---Coulomb's constant from the medium density, the circulation quantum,
+and the loop radius alone.\ Eliminating $\rhoa\kappa_e^2\rloop$ with the
+mass equation (Section~\ref{sec:combined}) and using
+$m_e c^2\, \rloop = \hbar c$ gives the dimensionless content of the
+joint model:
 %
 \begin{equation}
-  k \;=\; \frac{\pi\,\Ka\,\hbar^4}{16\,m_e^2\,m_A^2\,c^4\,e^2}.
-  \label{eq:k-final-KA}
+  \alpha^{-1} \;=\; 4\pi \left[\ln\!\left(\frac{8\sqrt{2}\,m_A}{m_e}\right)
+  - \tfrac{1}{2}\right]\left(1 + f_{\mathrm{core}} - 0.017\right),
+  \label{eq:alpha-master}
 \end{equation}
 %
-Coulomb's constant is now determined entirely by the pair
-$(\rhoa, m_A)$ together with $m_e$, $\hbar$, $c$, and $e$.\ No free
-parameters remain beyond those already fixed by Paper~7~\cite{otto-quantum}
-and Paper~5~\cite{otto-strong}.
+in which $\rhoa$ cancels entirely and $m_A$ enters only
+logarithmically.\ Numerically, Eq.~(\ref{eq:k-final}) reproduces the
+observed $k = 8.99\times10^{9}$~N\,m$^2$/C$^2$ to $0.2\%$ at
+$\rhoa = 5\times10^{11}$~kg/m$^3$ (the reference density of
+Section~\ref{sec:ke-only}) and $m_A = 666$~MeV/$c^2$.\ The substantive
+tests are not this evaluation, which selects the point, but the joint
+consistency of Section~\ref{sec:k-cross-check} and the parameter-free
+magneton match of §\ref{sec:bohr-magneton}, which shares the
+normalization postulate of Eq.~(\ref{eq:q0}).
 
-\subsection{Numerical Check}
-\label{sec:k-numerical}
-
-At the midpoint of the parameter ranges of Paper~7(a),
-$\rhoa = 10^{12}$~kg/m$^3$ and $m_A = 680$~MeV$/c^2$,
-Eq.~(\ref{eq:k-final}) evaluates to
-%
-\begin{align}
-  k_{\mathrm{pred}}
-  &\;\approx\; \frac{\pi \cdot 10^{12}\ \mathrm{kg/m^3} \cdot (1.055 \times 10^{-34}\ \mathrm{J\,s})^4}
-            {16 \cdot (9.11 \times 10^{-31}\ \mathrm{kg})^2 \cdot (1.21 \times 10^{-27}\ \mathrm{kg})^2
-             \cdot (3.00 \times 10^{8}\ \mathrm{m/s})^2 \cdot (1.60 \times 10^{-19}\ \mathrm{C})^2} \nonumber \\
-  &\;\approx\; 8.6 \times 10^{9}\ \mathrm{N\,m^2/C^2}.
-\end{align}
-%
-The measured value is $k = 8.99 \times 10^9$~N~m$^2$/C$^2$:
-\textbf{agreement within $4\%$ with no adjustable parameters}.
-
-\subsection{Cross-Check with the Electron-Mass Self-Consistency}
+\subsection{Joint Consistency with the Electron Mass}
 \label{sec:k-cross-check}
 
-The pair $(\rhoa, m_A)$ that determines $k$ via
-Eq.~(\ref{eq:k-final}) also determines the electron mass via the
-self-consistent equation of Section~\ref{sec:combined}.\ The two
-constraints are independent in form:
-Eq.~(\ref{eq:k-final}) involves $(\rhoa, m_A)$ through the combination
-$\rhoa/m_A^2$, whereas the electron-mass equation involves them through
-the condensate-coherence condition at the vortex boundary.
-
-Inverting Eq.~(\ref{eq:k-final}) for exact agreement with the measured
-$k$ at $\rhoa = 10^{12}$~kg/m$^3$ gives $m_A \approx 666$~MeV$/c^2$.\
-This lies inside the electron-mass convergence zone of
-Section~\ref{sec:corrected} ($m_A \approx 628$--$689$~MeV$/c^2$ for
-$m_e = 0.511$~MeV)---a non-trivial two-constraint consistency check that
-tightens the joint $(\rhoa, m_A)$ posterior.\ Had the two fits produced
-disjoint $m_A$ ranges, either the ring topology, the amplitude closure
-$A = \xi$, or the electron-mass equation would have been falsified.\ They
-do not, which is a substantive self-consistency test of the framework.\
-The caveat on this consistency---what must the core-energy correction
-$f_{\mathrm{core}}$ actually do to reconcile the two constraints---is
-developed in Section~\ref{sec:k-tightened} below.
-
-
-\subsection{Tightened Parameter Ranges from the Coulomb Constraint}
-\label{sec:k-tightened}
-
-The Coulomb constraint of Eq.~(\ref{eq:k-final}) pins the ratio
-$\rhoa / m_A^2$ to a single numerical value:
+Both the Coulomb constant and the electron mass pin the same combination
+of medium parameters.\ Eq.~(\ref{eq:k-final}) fixes
 %
 \begin{equation}
   K_C \;\equiv\; \frac{\rhoa}{m_A^2}
-  \;=\; \frac{16\,m_e^2\,c^2\,e^2\,k}{\pi\,\hbar^4}
-  \;\approx\; 7.085 \times 10^{65}\ \mathrm{kg^{-1}\,m^{-3}}.
+  \;=\; \frac{8\, m_e^2 c^2 e^2 k}{\pi \hbar^4}
+  \;\approx\; 3.54 \times 10^{65}\ \mathrm{kg^{-1}\,m^{-3}},
   \label{eq:k-C}
 \end{equation}
 %
-Combined with the electron-mass convergence zone
-$m_A \in [628, 689]$~MeV/$c^2$ from Section~\ref{sec:corrected}, this
-substantially narrows the four fundamental Aether parameters from the
-historical ranges stated in Papers~1--7.\ Table~\ref{tab:tightened}
-summarises the result.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{@{}llll@{}}
-\hline
-\textbf{Parameter} & \textbf{Historical range} & \textbf{Coulomb-tightened} & \textbf{Narrowing} \\
-\hline
-$m_A$     & $500$--$850$~MeV$/c^2$              & $628$--$689$~MeV$/c^2$                     & $1.55\times$ \\
-$\rhoa$   & $10^{11}$--$10^{12}$~kg/m$^3$        & $8.9\times10^{11}$--$1.07\times10^{12}$    & $8.3\times$  \\
-$\xi$     & $0.17$--$0.28$~fm                    & $0.20$--$0.22$~fm                          & $1.50\times$ \\
-$K_A$     & $10^{28}$--$10^{29}$~J/m$^3$         & $8.0\times10^{28}$--$9.6\times10^{28}$     & $8.3\times$  \\
-\hline
-\end{tabular}
-\caption{Parameter ranges tightened by the Coulomb constraint
-Eq.~(\ref{eq:k-C}) restricted to the electron-mass convergence zone.\
-The $\rhoa$ and $K_A$ ranges collapse by nearly an order of magnitude
-because $K_C$ fixes their ratio to $m_A^2$; the $m_A$ and $\xi$ ranges
-are bounded by the electron-mass zone.}
-\label{tab:tightened}
-\end{table}
-
-\noindent
-The compression ratio $X = 4\sigma/(\pi\,\xi^2\,K_A)$ is \emph{exactly}
-invariant along the Coulomb curve: using $K_A = \rhoa c^2$ and
-$\xi^2 = \hbar^2/(2 m_A^2 c^2)$ gives
-$\xi^2 K_A = \hbar^2 K_C / 2 \approx 3.94 \times 10^{-3}$~J/m, independent
-of which point on the curve is chosen.\ Evaluating with the lattice-QCD
-string tension $\sigma \approx 1.6 \times 10^5$~J/m (1~GeV/fm),
+while the mass equation fixes $\rhoa/m_A^2$ up to the core-energy
+correction.\ Requiring both---equivalently, solving
+Eq.~(\ref{eq:alpha-master}) for the observed $\alpha$---demands
 %
 \begin{equation}
-  X_{\mathrm{Coulomb}} \;=\; \frac{8\,\sigma}{\pi\,\hbar^2\,K_C}
-  \;\approx\; 5.2 \times 10^{7}, \qquad
-  \log_{10} X \;\approx\; 7.71.
-  \label{eq:X-coulomb}
+  f_{\mathrm{core}} \;\approx\; 0.18\text{--}0.26
+  \qquad (0.22\ \text{at}\ m_A = 666\ \mathrm{MeV}/c^2),
+  \label{eq:fcore-requirement}
 \end{equation}
 %
-This differs from the value $X \approx 7 \times 10^7$ (log$_{10} X \approx 7.85$)
-quoted in Paper~7 \cite{otto-quantum} by about $35\%$.\ The Paper~7 value
-is obtained from the electron-mass constraint alone (without the Coulomb
-cross-check) and is approximately invariant across the historical
-$\xi$ scenarios used there; adding the Coulomb constraint further pins
-$X$ to Eq.~(\ref{eq:X-coulomb}).\ The corresponding bridge speed of sound
-becomes $c_s = c/\sqrt{X} \approx 4.2 \times 10^4$~m/s (vs.\ $\sim 3.6 \times 10^4$~m/s
-at Paper~7's~$X$), a $\sim 15\%$ shift.\ Both values sit within the same
-order of magnitude and neither overturns any qualitative conclusion of
-the strong-force analysis.
+somewhat above the a-priori estimate
+$f_{\mathrm{core}} \sim 5$--$14\%$ of Section~\ref{sec:core-energy}.\
+With that a-priori band the predicted $k$ runs $7$--$17\%$ high across
+the convergence zone; exact agreement is a sharp, pre-registered
+requirement on the GPE core-energy calculation.\ The joint consistency
+is a \emph{requirement on} $f_{\mathrm{core}}$, not an independent
+overdetermination---but it is now stated at a single common density, and
+the exact-agreement point ($m_A \approx 666$~MeV/$c^2$ at
+$\rhoa \approx 5.0\times10^{11}$~kg/m$^3$) coincides with the reference
+density of the mass analysis rather than sitting at a different one.\
+The requirement is also sensitive to the vortex-energy bracket constant
+inherited from Paper~7 (the $-\tfrac12$ in Eq.~\ref{eq:paper7-mass});
+verifying that constant against the vortex-ring literature shifts
+Eq.~(\ref{eq:fcore-requirement}) accordingly and is flagged in
+Section~\ref{sec:k-flags}.
 
-\paragraph{$f_{\mathrm{core}}$-reconciliation caveat.}\ The joint
-consistency of the Coulomb and electron-mass constraints within
-$m_A \in [628, 689]$~MeV/$c^2$ is \emph{not} an automatic
-two-parameter overdetermination.\ The KE-only mass equation of
-Section~\ref{sec:ke-only}, evaluated at the same $m_A$ range, gives a
-different ratio $\rhoa/m_A^2 \approx 4.25 \times 10^{65}$, differing from
-the Coulomb value~$K_C$ by a factor of~$1.67$.\ The core-energy correction
-$f_{\mathrm{core}} \sim 5$--$14\%$ (Section~\ref{sec:corrected}) is what
-reconciles the two: within its stated uncertainty, the corrected
-electron-mass equation can be brought onto the Coulomb curve in the quoted
-$m_A$ range.\ The observed consistency of the two constraints is therefore
-equivalent to a \emph{consistency requirement on $f_{\mathrm{core}}$},
-not an independent overdetermination of $f_{\mathrm{core}}$-free
-physics---a finding that turns the Coulomb cross-check into a quantitative
-target for the GPE calculation of $f_{\mathrm{core}}$ rather than an
-independent confirmation of it.
+\subsection{Parameter Constraints}
+\label{sec:k-tightened}
 
+Eq.~(\ref{eq:k-C}) collapses the two-dimensional $(\rhoa, m_A)$ space to
+a curve.\ Along it:
+
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$m_A$ (MeV/$c^2$) & $\rhoa$ (kg/m$^3$) & $\xi$ (fm) & $\Ka$ (J/m$^3$) \\
+\midrule
+$500$ & $2.8\times10^{11}$ & $0.28$ & $2.5\times10^{28}$ \\
+$666$ & $5.0\times10^{11}$ & $0.21$ & $4.5\times10^{28}$ \\
+$850$ & $8.1\times10^{11}$ & $0.16$ & $7.3\times10^{28}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The combination
+$\xi^2 \Ka = \hbar^2 K_C/2 \approx 1.97\times10^{-3}$~J/m is exactly
+invariant along the curve.\ Evaluating the compression ratio of Paper~7
+with the lattice-QCD string tension
+$\sigma \approx 1.6\times10^{5}$~J/m gives
+$X_{\mathrm{Coulomb}} = 8\sigma/(\pi\hbar^2 K_C) \approx 1.0\times10^{8}$
+($\log_{10} X \approx 8.0$), about $50\%$ above Paper~7's
+electron-mass-only estimate $X \approx 7\times10^{7}$, with bridge sound
+speed $c_s = c/\sqrt{X} \approx 2.9\times10^{4}$~m/s; the shift does not
+overturn any qualitative strong-force conclusion.\ Final pinning of the
+point on the curve awaits the $f_{\mathrm{core}}$ calculation
+(Eq.~\ref{eq:fcore-requirement}).
 
 \subsection{Honest Flags}
 \label{sec:k-flags}
 
-The derivation makes two geometric assumptions that are not yet
-first-principles derived:
+The derivation rests on stated, checkable assumptions:
 
 \begin{enumerate}[leftmargin=2em]
-  \item \textbf{Piston area $S_{\mathrm{eff}} = \pi \rloop^2$.}\ The disc
-    bounded by the ring is the natural monopole projection of coherent
-    axial motion, but a toroidal-piston alternative
-    $S_{\mathrm{eff}} = 2\pi\,\rloop\,\xi$ (the ring's lateral
-    cross-section rather than its enclosed disc) would rescale the
-    predicted $k$ by a factor of order $(\rloop / 2\xi)^2 \sim 10^{5}$--$10^{6}$
-    (depending on where $\xi$ falls in its $0.17$--$0.28$~fm range),
-    far from observed.\ The disc choice is therefore \emph{selected} by
-    agreement with observed~$k$, not derived from GP dynamics of the
-    ring cross-section.\ A full first-principles calculation of
-    $S_{\mathrm{eff}}$ from the axial flow pattern around an oscillating
-    toroidal vortex would close this.
-
-  \item \textbf{Amplitude $A = \xi$.}\ The healing length is a geometric
-    upper bound, not a derived equilibrium value.\ A rigorous closure
-    would solve for the axial restoring force from GP dynamics on the
-    ring's Bernoulli pressure profile and show that the ground-state
-    amplitude saturates the healing-length bound, or alternatively show
-    that the zero-point amplitude with a correctly enhanced effective
-    mass reduces to~$\xi$.
+  \item \textbf{Pump normalization (one winding per cycle).}\
+    Eq.~(\ref{eq:q0}) is the same postulate that yields the Bohr
+    magneton exactly (§\ref{sec:bohr-magneton}), and the capacity and
+    operating-point checks of §\ref{sec:winding-pump} pass, but the
+    boundary-layer conversion (duty $2/\pi$ per turn) has not been
+    derived from the GPE.
+  \item \textbf{Species inheritance of the charge quantum.}\
+    Eq.~(\ref{eq:q0}) uses the \emph{electron's} loop radius.\ Because
+    $m_e$ is itself fixed by the medium (Section~\ref{sec:combined}),
+    $q_0 = 2\pi\hbar/(m_e c)$ can be read as a medium constant---the
+    charge quantum of the condensate's ground ring mode---but the
+    mechanism by which a muon or proton inherits exactly this quantum
+    is open (§\ref{sec:species-scaling}).
+  \item \textbf{Core-energy requirement.}\
+    Eq.~(\ref{eq:fcore-requirement}) demands
+    $f_{\mathrm{core}} \approx 0.18$--$0.26$, above the rough
+    $1/\ln(\rloop/\xi)$ estimate of Section~\ref{sec:core-energy}; the
+    GPE calculation decides.\ The target moves if the vortex-energy
+    bracket constant ($-\tfrac12$) is revised against the literature.
+  \item \textbf{Synchronization.}\ Universal phase-locking of the pumps
+    (in-phase for like signs) is taken from the injection-locking
+    behavior of mutually coupled self-sustained oscillators and is not
+    derived here.
+  \item \textbf{Isolated-charge energetics.}\ The reactive (standing)
+    character of a single charge's spin-phase field, as opposed to
+    radiative loss at $\Omega$, requires an explicit treatment.
+  \item \textbf{Spin-sector mode bookkeeping.}\ The statics above use
+    only the kinetic stiffness (\ref{eq:spin-stiffness}), but
+    photons-at-$c$ requires the magnon branch at $c$ while the
+    cosmological spin-nematic modes of Paper~6 are slow; the mode
+    inventory should be made explicit.
 \end{enumerate}
 
-Both flags narrow the previously-open amplitude question (Paper~4
-\cite{otto-em}, Open Question~2; Section~\ref{sec:open-questions} below)
-from ``derive $A$ to match $k$'' to the much more specific sub-problems
-(1) and (2) above.\ With the $A = \xi$ working assumption in hand, the
-quantitative framework is predictive at the $4\%$ level with no adjustable
-parameters.
+
+% ============================================================
+\section{Structural Confirmation: The Bohr Magneton from Ring Geometry}
+\label{sec:bohr-magneton}
+% ============================================================
+
+The derivation of §\ref{sec:coulomb-derivation} fixes the Coulomb
+constant $k$ from the bound core ring's spin-phase source amplitude.\ A
+complementary, parameter-free check on the ring geometry comes from
+computing its classical magnetic moment and comparing to the observed
+Bohr magneton $\mu_B = e\hbar/(2m_e)$.\ The match is exact: no fit, no
+closure assumptions, no source-identification factor.
+
+\subsection{Effective Current of the Bound Core Ring}
+
+The ring carries charge $e$ as a topological winding number
+(§\ref{sec:form-factor}).\ The winding \emph{pattern} advances
+azimuthally around the loop once per Compton period
+$T_C = 2\pi\hbar/(m_e c^2)$.\ This advance is a phase motion, not a
+material flow: the pattern speed at the loop radius is
+$\omega_C\,\rloop = c$ exactly, while the host circulation at that
+radius moves constituents at only
+$v(\rloop) = m_e c/(2 m_A) \approx 4\times10^{-4}\,c$.\ (Were the
+advance material transport, the combined azimuthal and poloidal speeds
+of the core constituents would exceed $c$; the winding advance is the
+motion of a pattern in the relative phase, not of the constituents that
+carry it.)\ An external observer averaging over the loop therefore sees
+one quantum of charge pass any azimuthal cross-section per Compton
+period:
+\begin{equation}
+I_{\text{eff}} = \frac{e}{T_C}
+              = \frac{e\,\omega_C}{2\pi}
+              = \frac{e\,m_e c^2}{2\pi\,\hbar}.
+\label{eq:I-eff-bohr}
+\end{equation}
+
+\subsection{Two Windings, Two Clocks}
+\label{sec:two-clocks}
+
+The azimuthal advance above is one of \emph{two} rotations the bound
+structure carries, and they must not be conflated.\ The same
+relative-phase winding also rotates poloidally---about the core tube's
+own axis---at the rate inherited from the host vortex flow at the
+formation boundary, $\Omega = v(\xi)/\xi = m_A c^2/\hbar$
+(Eq.~\ref{eq:pump-clock}): a property of the medium, common to every
+singly-wound structure regardless of its loop radius.\ The two clocks
+differ by $\Omega/\omega_C = m_A/m_e \approx 1.3\times10^{3}$: the
+winding re-threads poloidally some thirteen hundred times per azimuthal
+cycle---a fine-pitch screw.\ The division of labor is clean.\ The
+poloidal rotation is material (the bound core co-rotates with the flow
+that created it, at $v(\xi) = c/\sqrt{2}$, safely subluminal) and is the
+clock of the Coulomb source (§\ref{sec:winding-pump}).\ The azimuthal
+advance is pattern motion and is the clock of the magnetic moment
+computed here.\ The poloidal rotation is also compatible with everything
+below: its local rotation axes point azimuthally and close around the
+loop, so it contributes no net angular momentum about the symmetry axis
+and leaves both $\mu_M$ and $S$ untouched.
+
+\subsection{Magnetic Moment of the Loop}
+
+Treating the ring as a closed current loop of radius $\rloop$ and area
+$\mathcal{A} = \pi \rloop^2$, the classical magnetic moment is
+$\mu_M = I_{\text{eff}}\,\mathcal{A}$.\ Substituting
+$\rloop = \hbar/(m_e c)$ from Paper~7:
+\begin{equation}
+\mu_M = \frac{e\,m_e c^2}{2\pi\,\hbar}\cdot \pi\cdot\frac{\hbar^2}{m_e^2 c^2}
+      = \frac{e\,\hbar}{2 m_e}
+      = \mu_B.
+\label{eq:bohr-magneton}
+\end{equation}
+The cancellation in~(\ref{eq:bohr-magneton}) is exact and
+parameter-free.
+
+\subsection{What the Match Confirms}
+
+Equation~(\ref{eq:bohr-magneton}) requires three
+independently-motivated structural inputs to combine in precisely the
+right way:
+\begin{itemize}
+\item The ring radius is the reduced Compton wavelength:
+  $\rloop = \hbar/(m_e c)$.\ Any other length scale produces the wrong
+  answer.
+\item The azimuthal clock is the Compton frequency:
+  $\omega_C = m_e c^2/\hbar$.\ This is the frequency of the winding
+  pattern's advance around the loop (Paper~7), distinct from the
+  poloidal clock $\Omega$ of §\ref{sec:two-clocks}.
+\item The effective current is one charge per period:
+  $I_{\text{eff}} = e\,\omega_C/(2\pi)$.\ This follows from the
+  topological character of charge established in
+  §\ref{sec:form-factor}: the ring carries a single winding whose
+  azimuthal pattern advances exactly once per cycle.
+\end{itemize}
+Each input is motivated independently elsewhere in the framework, and
+their product yielding exactly $\mu_B$ is a non-trivial geometric
+self-consistency.\ As developed below, the third input is not unique to
+this calculation: the same one-winding-per-cycle normalization
+independently fixes the Coulomb source amplitude, making the pair of
+results a single-postulate structure rather than a coincidence.
+
+\subsection{Gyromagnetic Ratio $g = 2$}
+
+The same construction gives the Dirac value of the gyromagnetic ratio
+without further assumptions.\ The bound core ring carries quantized
+half-circulation $\kappa_e = h/(2 m_A)$
+(cf.\ Paper~7~\cite{otto-quantum}), which corresponds to spin angular
+momentum $S = \hbar/2$.\ Combining with~(\ref{eq:bohr-magneton}):
+\begin{equation}
+\mu_B \;=\; g\cdot\frac{e}{2 m_e}\cdot S \quad\Longrightarrow\quad
+g \;=\; 2,
+\end{equation}
+to leading order.\ (The identification is exact per constituent---each
+participant in the half-quantum flow carries
+$m_A \kappa_e/2\pi = \hbar/2$---while the bookkeeping that assigns the
+\emph{structure} a total of exactly $\hbar/2$ is carried by Paper~7's
+quantized-circulation argument and is not re-derived here.)\ The
+standard QED anomalous corrections
+$g = 2 + \alpha/\pi + \mathcal{O}(\alpha^2)$ are expected to arise from
+coupled fluctuations of the surrounding Aether condensate (the analog
+of the radiative diagrams in QED) and lie beyond the classical ring
+picture.
+
+\subsection{What This Does \emph{Not} Determine}
+
+The match in~(\ref{eq:bohr-magneton}) yields $\mu_B$ in SI units of
+$\mathrm{A\cdot m^2}$ from purely geometric and kinematic ring
+properties.\ It does \emph{not} fix the vacuum permeability $\mu_0$.\
+That constant enters only when one computes the magnetic field produced
+by the moment at distance $r$ ($B = \mu_0\mu_M/(4\pi r^3)$) or the
+interaction energy of two such moments, and it is fixed
+($\mu_0 = 4\pi k/c^2$) by the Coulomb-constant derivation of
+§\ref{sec:coulomb-derivation}, whose source amplitude is normalized by
+the \emph{same} postulate used in Eq.~(\ref{eq:I-eff-bohr}): one winding
+advance per Compton cycle, giving pump strength
+$q_0 = 2\pi\,\rloop$---one winding quantum across the ring aperture per
+cycle.\ The two calculations therefore share their single dimensionless
+input:
+\begin{itemize}
+\item one winding per cycle, counted as an azimuthal current
+  $\;\rightarrow\;$ $\mu_B$, exactly;
+\item one winding per cycle, counted as a spin-phase pump
+  $\;\rightarrow\;$ $k$, to $0.2\%$ at the reference point of
+  §\ref{sec:k-result}.
+\end{itemize}
+One topological postulate, two observables.\ This is the sense in which
+the product in the preceding subsection is quantized rather than tuned:
+a normalization adjusted by hand to fit $k$ would have no reason to
+land the magneton exactly, and vice versa.
+
+\subsection{Species Scaling: Why $\mu$ Scales and $e$ Must Not}
+\label{sec:species-scaling}
+
+The construction extends across the charged leptons by
+$\rloop \to \hbar/(m c)$ and $T_C \to 2\pi\hbar/(m c^2)$, predicting
+$\mu = e\hbar/(2m)$---as observed: the muon's moment is
+$e\hbar/(2m_\mu)$ with the same $g \approx 2$.\ The scaling succeeds
+precisely because $e$ enters~(\ref{eq:I-eff-bohr}) as a universal input
+while only the geometry scales with the species mass.\ This is a
+structural constraint on the companion Coulomb derivation: the charge
+quantum must \emph{not} inherit the $\rloop$ scaling that the moment
+correctly does---a source strength proportional to each species' own
+loop radius would make the muon's charge smaller than the electron's by
+$m_e/m_\mu$, against observation.\ The resolution direction is
+available within the framework: $m_e$ is itself fixed by the medium
+through the self-consistent mass equation (§\ref{sec:combined}), so
+$q_0 = 2\pi\hbar/(m_e c)$ is a constant of the medium---the charge
+quantum of the condensate's ground ring mode---to be inherited by any
+charged structure, whatever its own size and clocks.\ Making that
+inheritance mechanism explicit is an open problem
+(§\ref{sec:open-questions}).
+
+\subsection{Status}
+
+\textbf{Derived (D).}\ Given (i) the ring radius from Paper~7, (ii) the
+topological character of charge (§\ref{sec:form-factor}), and (iii) the
+half-quantum circulation from Paper~7, the Bohr magneton and $g = 2$
+follow with no free parameters or fits.\ The shared
+one-winding-per-cycle normalization ties this result to the Coulomb
+source amplitude, elevating the two to a single-postulate pair.\
+\textbf{Open:} the total angular-momentum bookkeeping behind
+$S = \hbar/2$, and the species-inheritance mechanism for the charge
+quantum (§\ref{sec:species-scaling}).
 
 
 % ============================================================
@@ -1033,7 +1230,11 @@ parameters.
   \item \textbf{Core energy in the logarithmic potential.}\ Computing the
     gradient and potential energy of a vortex core in the logarithmic
     condensate would determine $f_{\mathrm{core}}$ and, combined with the
-    mass equation, pin down $m_A$ uniquely.
+    mass equation, pin down $m_A$ uniquely.\ The Coulomb constraint makes
+    this fully quantitative: joint consistency requires
+    $f_{\mathrm{core}} \approx 0.18$--$0.26$
+    (Eq.~\ref{eq:fcore-requirement}), a pre-registered target for the
+    calculation.
 
   \item \textbf{Muon and tau.}\ Could higher-energy vortex configurations
     (multiply-wound cores, knotted rings) stabilize at different masses
@@ -1047,21 +1248,20 @@ parameters.
     the monopole level.\ A narrower remaining question is whether
     subleading geometric corrections of order $(Q r_{\mathrm{loop}})^2$ arise
     from the ring's finite extent in higher multipole moments of the
-    coherent axial-oscillation wave field.
+    coherent spin-phase wave field.
 
-  \item \textbf{Piston area and amplitude saturation from GP dynamics.}\
-    Section~\ref{sec:coulomb-derivation} closes the previously-open
-    Coulomb-constant gap by adopting $\omega = m_e c^2/\hbar$ on
-    dimensional grounds and the healing-length amplitude $A = \xi$ as a
-    geometric saturation bound, reproducing $k$ to $4\%$ with no free
-    parameters.\ Two geometric inputs remain to be derived from first
-    principles rather than assumed: (a) the effective piston area
-    $S_{\mathrm{eff}} = \pi \rloop^2$ as the correct monopole projection
-    of the axial flow pattern around an oscillating toroidal vortex, and
-    (b) the saturation of the equilibrium amplitude at the healing-length
-    bound from GP dynamics on the ring's Bernoulli pressure profile.\
-    Solving the GP equation for the axial flow field around an
-    oscillating ring would close both sub-problems simultaneously.
+  \item \textbf{Winding-pump closure.}\
+    Section~\ref{sec:coulomb-derivation} derives the Coulomb constant
+    from the spin-phase winding pump with one normalization postulate
+    ($q_0 = 2\pi\rloop$; one winding quantum per cycle,
+    Eq.~\ref{eq:q0}).\ Remaining first-principles work:
+    (a) the boundary-layer conversion calculation---the driven
+    two-component GP problem at the rotating winding boundary, with
+    pre-registered answer: duty $2/\pi$ of the layer population per
+    poloidal turn; (b) the species-inheritance mechanism for the charge
+    quantum (§\ref{sec:species-scaling}); (c) universal synchronization
+    of the pumps from injection locking; (d) the isolated-charge
+    energetics of the spin-phase field.
 
   \item \textbf{Cosmological formation.}\ What conditions in the early
     universe create vortex rings with the minimum circulation quantum?\ What
