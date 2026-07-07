@@ -1,15 +1,42 @@
 % =====================================================================
 % Section to insert into Paper 7(a) — Bound Core Electron Model.
+% Second draft, 2026-06-12 (first draft in git history).
 % Recommended placement: as a new \section{} between §10 (Coulomb's
 % Constant Derivation) and the existing §11 (Open Questions). Renumber
 % Open Questions to §12.
+%
+% Revision notes (vs. first draft):
+%   (1) The two windings are distinguished: azimuthal pattern advance at
+%       omega_C (phase motion, carries the charge cycle -> I_eff, mu_B)
+%       vs. poloidal material rotation at Omega = m_A c^2/hbar (inherited
+%       from the host vortex flow -> the Coulomb source clock).
+%   (2) The mu_0 paragraph is rewired: the deferral to the longitudinal
+%       A = xi amplitude closure is superseded by the winding-pump
+%       normalization (q_0 = 2 pi r_loop), which is the SAME
+%       one-winding-per-cycle postulate used for I_eff here.
+%   (3) New subsection on species scaling: mu scales as 1/m across the
+%       leptons (observed) precisely because e is a universal input —
+%       stated as a structural constraint on the charge-source derivation.
+%
+% NOTES FOR INSERTION:
+%   - Cross-references \ref{sec:force-constants},
+%     \ref{sec:form-factor-topological}, \ref{sec:qss} are placeholders —
+%     verify against the actual labels in 7(a) (§10 is
+%     \label{sec:coulomb-derivation}) and Paper 7.
+%   - The quoted Coulomb accuracy (-0.07%) refers to the spin-channel
+%     (winding-pump) formulation at the joint parameter point
+%     (rho_A ~ 5e11 kg/m^3, m_A ~ 666 MeV/c^2). If this section is
+%     inserted before §10 is revised to that formulation, quote the
+%     current §10 figure (4%) instead.
+%   - r_{loop} is written out as in the first draft; harmonize to the
+%     \rloop macro when inserting.
 % =====================================================================
 
 \section{Structural Confirmation: The Bohr Magneton from Ring Geometry}
 \label{sec:bohr-magneton}
 
 The derivation of §\ref{sec:force-constants} fixes the Coulomb constant
-$k$ from the bound core ring's axial-oscillation source amplitude. A
+$k$ from the bound core ring's spin-phase source amplitude. A
 complementary, parameter-free check on the ring geometry comes from
 computing its classical magnetic moment and comparing to the observed
 Bohr magneton $\mu_B = e\hbar/(2m_e)$. The match is exact: no fit,
@@ -18,17 +45,57 @@ no closure assumptions, no source-identification factor.
 \subsection{Effective Current of the Bound Core Ring}
 
 The ring carries charge $e$ as a topological winding number
-(§\ref{sec:form-factor-topological}) and oscillates axially at the
-Compton frequency $\omega_C = m_e c^2/\hbar$. Each axial cycle advances
-the topological winding by one period, so an external observer averaging
-over the ring's circulation sees an effective azimuthal current of one
-quantum of charge per Compton period:
+(§\ref{sec:form-factor-topological}). The winding \emph{pattern}
+advances azimuthally around the loop once per Compton period
+$T_C = 2\pi\hbar/(m_e c^2)$. This advance is a phase motion, not a
+material flow: the pattern speed at the loop radius is
+$\omega_C\,r_{\text{loop}} = c$ exactly, while the host circulation at
+that radius moves constituents at only
+$v(r_{\text{loop}}) = m_e c/(2 m_A) \approx 4\times10^{-4}\,c$. (Were
+the advance material transport, the combined azimuthal and poloidal
+speeds of the core constituents would exceed $c$; the winding advance
+is the motion of a pattern in the relative phase, not of the
+constituents that carry it.) An external observer averaging over the
+loop therefore sees one quantum of charge pass any azimuthal
+cross-section per Compton period:
 \begin{equation}
 I_{\text{eff}} = \frac{e}{T_C}
               = \frac{e\,\omega_C}{2\pi}
               = \frac{e\,m_e c^2}{2\pi\,\hbar}.
 \label{eq:I-eff-bohr}
 \end{equation}
+
+\subsection{Two Windings, Two Clocks}
+\label{sec:two-clocks}
+
+The azimuthal advance above is one of \emph{two} rotations the bound
+structure carries, and they must not be conflated. The same
+relative-phase winding also rotates poloidally---about the core tube's
+own axis---at the rate inherited from the host vortex flow at the
+formation boundary:
+\begin{equation}
+\Omega \;=\; \frac{v(\xi)}{\xi}
+        \;=\; \frac{c/\sqrt{2}}{\hbar/(\sqrt{2}\,m_A c)}
+        \;=\; \frac{m_A c^2}{\hbar},
+\label{eq:poloidal-clock}
+\end{equation}
+exact because $v(\xi) = c/\sqrt{2}$ is itself exact and
+$m_A$-independent in construction: $\Omega$ is a property of the
+medium, common to every singly-wound structure regardless of its loop
+radius. The two clocks differ by
+$\Omega/\omega_C = m_A/m_e \approx 1.3\times10^{3}$: the winding
+re-threads poloidally some thirteen hundred times per azimuthal
+cycle---a fine-pitch screw. The division of labor is clean. The
+poloidal rotation is material (the bound core co-rotates with the flow
+that created it, at $v(\xi) = c/\sqrt{2}$, safely subluminal) and is
+the clock of the Coulomb source (§\ref{sec:force-constants}): its
+uniform phase precession at the boundary drives the spin-phase pump.
+The azimuthal advance is pattern motion and is the clock of the
+magnetic moment computed here. The poloidal rotation is also
+compatible with everything below: its local rotation axes point
+azimuthally and close around the loop, so it contributes no net
+angular momentum about the symmetry axis and leaves both $\mu_M$ and
+$S$ untouched.
 
 \subsection{Magnetic Moment of the Loop}
 
@@ -52,18 +119,22 @@ structural inputs to combine in precisely the right way:
 \item The ring radius is the reduced Compton wavelength:
   $r_{\text{loop}} = \hbar/(m_e c)$. Any other length scale produces the
   wrong answer.
-\item The driving frequency is the Compton frequency:
-  $\omega_C = m_e c^2/\hbar$. This is the natural frequency of the bound
-  core ring's axial oscillation mode (Paper 7).
+\item The azimuthal clock is the Compton frequency:
+  $\omega_C = m_e c^2/\hbar$. This is the frequency of the winding
+  pattern's advance around the loop (Paper 7), distinct from the
+  poloidal clock $\Omega$ of §\ref{sec:two-clocks}.
 \item The effective current is one charge per period:
   $I_{\text{eff}} = e\,\omega_C/(2\pi)$. This follows from the
   topological character of charge established in
   §\ref{sec:form-factor-topological}: the ring carries a single winding
-  number swept once per cycle.
+  whose azimuthal pattern advances exactly once per cycle.
 \end{itemize}
-Each input is motivated independently elsewhere in the framework. Their
-conspiratorial product yielding exactly $\mu_B$ is a non-trivial
-geometric self-consistency.
+Each input is motivated independently elsewhere in the framework, and
+their product yielding exactly $\mu_B$ is a non-trivial geometric
+self-consistency. As developed below, the third input is not unique to
+this calculation: the same one-winding-per-cycle normalization
+independently fixes the Coulomb source amplitude, making the pair of
+results a single-postulate structure rather than a coincidence.
 
 \subsection{Gyromagnetic Ratio $g = 2$}
 
@@ -76,7 +147,12 @@ momentum $S = \hbar/2$. Combining with~(\ref{eq:bohr-magneton}):
 \mu_B \;=\; g\cdot\frac{e}{2 m_e}\cdot S \quad\Longrightarrow\quad
 g \;=\; 2,
 \end{equation}
-to leading order. The standard QED anomalous corrections
+to leading order. (The identification is exact per constituent---each
+participant in the half-quantum flow carries
+$m_A \kappa_e/2\pi = \hbar/2$---while the bookkeeping that assigns the
+\emph{structure} a total of exactly $\hbar/2$ is carried by Paper 7's
+quantized-circulation argument and is not re-derived here.) The
+standard QED anomalous corrections
 $g = 2 + \alpha/\pi + \mathcal O(\alpha^2)$ are expected to arise from
 coupled fluctuations of the surrounding Aether condensate (the analog of
 the radiative diagrams in QED) and lie beyond the classical ring
@@ -87,30 +163,53 @@ picture.
 The match in~(\ref{eq:bohr-magneton}) yields $\mu_B$ in SI units of
 $\mathrm{A\cdot m^2}$ from purely geometric and kinematic ring
 properties. It does \emph{not} fix the vacuum permeability $\mu_0$.
-The constant $\mu_0$ enters only when one computes the magnetic field
+That constant enters only when one computes the magnetic field
 produced by the moment at distance $r$
 ($B = \mu_0\mu_M/(4\pi r^3)$) or the interaction energy of two such
-moments. Both require the longitudinal-to-transverse mode conversion at
-the ring's healing-length boundary, which is the same physics packaged
-into the $A=\xi$ amplitude closure of §\ref{sec:force-constants}. The
-Bohr-magneton calculation bypasses this conversion entirely, which is
-why it is parameter-free, but also why it cannot serve as an independent
-anchor on $\mu_0$.
-
-In this respect the Bohr-magneton match is complementary to
-§\ref{sec:force-constants}:
+moments, and it is fixed ($\mu_0 = 4\pi k/c^2$) by the
+Coulomb-constant derivation of §\ref{sec:force-constants}. An earlier
+draft of this section deferred that derivation to the longitudinal
+amplitude closure $A = \xi$; that closure is superseded. The Coulomb
+source is the ring's spin-phase winding pump, and its amplitude is
+normalized by the \emph{same} postulate used in
+Eq.~(\ref{eq:I-eff-bohr}): one winding advance per Compton cycle,
+giving source strength $q_0 = 2\pi\,r_{\text{loop}}$---one winding
+quantum across the ring aperture per cycle. The two calculations
+therefore share their single dimensionless input:
 \begin{itemize}
-\item §\ref{sec:force-constants} fixes $k$ (and hence
-  $\mu_0 = 4\pi k/c^2$) by computing the Bjerknes secondary force
-  between two phase-locked rings.
-\item The present section fixes the ring's geometric inputs
-  ($r_{\text{loop}}$, $\omega_C$, the topological-charge cycle picture)
-  by computing the ring's magnetic moment.
+\item one winding per cycle, counted as an azimuthal current
+  $\;\rightarrow\;$ $\mu_B$, exactly;
+\item one winding per cycle, counted as a spin-phase pump
+  $\;\rightarrow\;$ $k$, to $-0.07\%$ at the joint parameter point
+  ($\rho_A \approx 5\times10^{11}$~kg/m$^3$,
+  $m_A \approx 666$~MeV/$c^2$).
 \end{itemize}
-Together they confirm that the same bound core ring responsible for the
-Coulomb constant also produces the correct Bohr magneton, and that the
-geometric and kinematic inputs entering both calculations are mutually
-consistent.
+One topological postulate, two observables. This is the sense in which
+the product in the preceding subsection is quantized rather than
+tuned: a normalization adjusted by hand to fit $k$ would have no reason
+to land the magneton exactly, and vice versa.
+
+\subsection{Species Scaling: Why $\mu$ Scales and $e$ Must Not}
+\label{sec:species-scaling}
+
+The construction extends across the charged leptons by
+$r_{\text{loop}} \to \hbar/(m c)$ and $T_C \to 2\pi\hbar/(m c^2)$,
+predicting $\mu = e\hbar/(2m)$---as observed: the muon's moment is
+$e\hbar/(2m_\mu)$ with the same $g \approx 2$. The scaling succeeds
+precisely because $e$ enters~(\ref{eq:I-eff-bohr}) as a universal input
+while only the geometry scales with the species mass. This is a
+structural constraint on the companion Coulomb derivation: the charge
+quantum must \emph{not} inherit the $r_{\text{loop}}$ scaling that the
+moment correctly does---a source strength proportional to each
+species' own loop radius would make the muon's charge smaller than the
+electron's by $m_e/m_\mu$, against observation. The resolution
+direction is available within the framework: $m_e$ is itself fixed by
+the medium through the self-consistent mass equation
+(§\ref{sec:combined}), so $q_0 = 2\pi\hbar/(m_e c)$ is a constant of
+the medium---the charge quantum of the condensate's ground ring
+mode---to be inherited by any charged structure, whatever its own size
+and clocks. Making that inheritance mechanism explicit is an open
+problem (§\ref{sec:open-questions}).
 
 \subsection{Status}
 
@@ -118,4 +217,9 @@ consistent.
 (ii) the topological character of charge
 (§\ref{sec:form-factor-topological}), and (iii) the half-quantum
 circulation from Paper 7 §\ref{sec:qss}, the Bohr magneton and $g = 2$
-follow with no free parameters or fits.
+follow with no free parameters or fits. The shared
+one-winding-per-cycle normalization ties this result to the Coulomb
+source amplitude, elevating the two to a single-postulate pair.
+\textbf{Open:} the total angular-momentum bookkeeping behind
+$S = \hbar/2$, and the species-inheritance mechanism for the charge
+quantum (§\ref{sec:species-scaling}).
